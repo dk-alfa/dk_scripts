@@ -1,0 +1,11 @@
+diff -r /root/dk_scripts/tmp/2/sw-east-1-3_192.168.200.243.conf /root/dk_scripts/tmp/1/sw-east-1-3_192.168.200.243.conf
+192c192
+<  switchport access vlan 237 
+---
+>  switchport access vlan 30 
+220,222c220
+<  switchport general allowed vlan add 33,952 tagged 
+<  switchport general allowed vlan add 237 untagged 
+<  switchport default-vlan tagged 
+---
+>  switchport general allowed vlan add 33,237,952 tagged 

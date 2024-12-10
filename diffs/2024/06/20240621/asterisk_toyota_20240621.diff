@@ -1,0 +1,7 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+1,5d0
+< [default]
+< exten=>_[0-9a-zA-Z].,1,NoOp()
+< same => n,Busy()
+< same => n,HangUp()
+< 

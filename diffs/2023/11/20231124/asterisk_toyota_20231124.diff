@@ -1,0 +1,50 @@
+Только в /root/dk_scripts/tmp/1: extensions_est.conf
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+0a1
+> ;Диалплан Альфа-Сервис СЕВЕР [2023-11-23]
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+0a1,2
+> ;Диалплан Альфа-Сервис СТЕРЛИТАМАК [2023-11-23]
+> 
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+47d46
+< register =>2625500:14353602@10.108.210.7/2625500				;Мегафон Альфа-Сервис Восток[Chery]
+51c50,52
+< register =>73473203620:hfRqB0PWMFZ@sip9088.sitnet.ru/73473203620		;CallTouch для Стерлитамака
+---
+> 
+> ;=========== Стерлитамак  ===========
+> register =>73473203620:hfRqB0PWMFZ@sip9088.sitnet.ru/73473203620		;CallTouch для Стерлитамака (Chery)
+54,55c55
+< ;register =>alfa-tank:HIXfLMGP5EHopOAW@sip7829.sitnet.ru/alfa-tank~120
+< ;register =>alfa-tank:HIXfLMGP5EHopOAW@sip7829.sitnet.ru/alfa-tank	;CallTouch для TANK
+---
+> ;=========== Альфа-Сервис Восток [Зубово] ===========
+56a57,59
+> register =>2625500:14353602@10.108.210.7/2625500				;Мегафон Альфа-Сервис Восток[Chery]
+> ;register =>2867777:UGu40F41HW@92.50.152.146:5401/2867777			;Уфанет  Альфа-Сервис Восток[Hyundai]
+> ;register =>2867776:HNLshtf6HQ@92.50.152.146:5401/2867776			;Уфанет  Альфа-Сервис Восток[Genesis]
+57a61,63
+> ;=========== Стерлитамак  ===========
+> register =>73473203620:hfRqB0PWMFZ@sip9088.sitnet.ru/73473203620		;CallTouch для Стерлитамака (Chery)
+> register =>3473207716:ev3Lh9LcWfso@83.174.196.84/3473207716			;Ростелеком 1 (Для Стерлитамака)
+1330,1331c1336,1337
+< #include /etc/asterisk/sip_users_str.conf  ;Телефоны стерлитамакского офиса
+< #include /etc/asterisk/sip_trunks_str.conf ;Транки стерлитамакского офиса
+---
+> #include /etc/asterisk/sip_users_str.conf  ;Телефоны Стерлитамакского офиса
+> #include /etc/asterisk/sip_trunks_str.conf ;Транки   Стерлитамакского офиса
+1333c1339,1342
+< #include /etc/asterisk/sip_trunks_nrt.conf ;Транки  Северного офиса
+---
+> #include /etc/asterisk/sip_trunks_nrt.conf ;Транки   Северного офиса
+> 
+> ;#include /etc/asterisk/sip_users_est.conf  ;Телефоны Восточного офиса [Зубово]
+> ;#include /etc/asterisk/sip_trunks_est.conf ;Транки   Восточного офиса [Зубово]
+Только в /root/dk_scripts/tmp/1: sip_trunks_est.conf
+diff -r /root/dk_scripts/tmp/2/sip_trunks_nrt.conf /root/dk_scripts/tmp/1/sip_trunks_nrt.conf
+1d0
+< 
+8a8
+> 
+Только в /root/dk_scripts/tmp/1: sip_users_est.conf

@@ -1,0 +1,38 @@
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+1c1
+< interface range fa4,fa7-9,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-9,fa12,fa29,fa39,fa42,fa45
+27a28,33
+> interface fastethernet12
+> storm-control broadcast level 10 
+> exit
+> interface fastethernet12
+> storm-control include-multicast 
+> exit
+53c59
+< interface range fa4,fa7-9,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-9,fa12,fa29,fa39,fa42,fa45
+68c74
+< interface range fa4,fa7-9,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-9,fa12,fa29,fa39,fa42,fa45
+71c77
+< interface range fa4,fa7-9,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-9,fa12,fa29,fa39,fa42,fa45
+74c80
+< interface range fa4,fa7-9,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-9,fa12,fa29,fa39,fa42,fa45
+172c178
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+301a308,312
+> !next command is internal.
+> macro auto smartport dynamic_type ip_phone_desktop 
+> switchport trunk allowed vlan add 2 
+> exit
+> interface fastethernet12

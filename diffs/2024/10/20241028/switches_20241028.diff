@@ -1,0 +1,12 @@
+Только в /root/dk_scripts/tmp/2: 7-Oct-2024015311LINK-W-Downgi27Ksw-sever-2-2_10.9.1.6.conf
+diff -r /root/dk_scripts/tmp/2/sw-east-1-1_192.168.200.240.conf /root/dk_scripts/tmp/1/sw-east-1-1_192.168.200.240.conf
+136,137c136,137
+<  switchport mode access 
+<  switchport access vlan 30 
+---
+>  switchport mode general 
+>  switchport general allowed vlan add 33,237 tagged 
+Только в /root/dk_scripts/tmp/1: sw-sever-2-2_10.9.1.6.conf
+diff -r /root/dk_scripts/tmp/2/TBR21-SW3-52_192.168.22.80.conf /root/dk_scripts/tmp/1/TBR21-SW3-52_192.168.22.80.conf
+343a344
+>  switchport trunk native vlan 66 

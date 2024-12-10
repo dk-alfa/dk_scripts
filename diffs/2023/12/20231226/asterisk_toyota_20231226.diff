@@ -1,0 +1,23 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+254a255
+> exten => 2465,2,macro(record,${UNIQUEID},${CALLERID(num)},${EXTEN})
+259,270c260,265
+< exten => 1556,1,Answer()
+< exten => 1556,n,Dial(SIP/2301,10)
+< exten => 1556,n,Busy(60)
+< exten => 1556,n,Hangup()
+< 
+< 
+< exten => 1566,1,Answer()
+< exten => 1566,2,Set(CALLERID(num)=3472466565)
+< exten => 1566,3,macro(record,${UNIQUEID},${CALLERID(num)},${EXTEN})
+< exten => 1566,4,Dial(SIP/BeelineVoice/89273090490,30,NtT)
+< exten => 1566,n,Busy(60)
+< exten => 1566,n,Hangup()
+---
+> ;exten => 1566,1,Answer()
+> ;exten => 1566,2,Set(CALLERID(num)=3472466565)
+> ;exten => 1566,3,macro(record,${UNIQUEID},${CALLERID(num)},${EXTEN})
+> ;exten => 1566,4,Dial(SIP/BeelineVoice/89273090490,30,NtT)
+> ;exten => 1566,n,Busy(60)
+> ;exten => 1566,n,Hangup()

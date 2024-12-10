@@ -1,0 +1,26 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+666c666
+< exten => 1745,1,macro(fmc,1745)
+---
+> ;exten => 1745,1,macro(fmc,1745)
+711a712,713
+> ;exten => 1701,1,macro(mobile,1701,1701)
+> 
+790c792
+< exten => 2325,1,macro(fmc,2325,2325)
+---
+> exten => 2370,1,macro(fmc,2370,2370)
+793,796c795,798
+< exten => 911,1,Answer()
+< exten => 911,n,Macro(record,${UNIQUEID})
+< exten => 911,n,Dial(SIP/BeelineFMC/1745,25,rt)
+< exten => 911,n,Hangup()
+---
+> ;exten => 911,1,Answer()
+> ;exten => 911,n,Macro(record,${UNIQUEID})
+> ;exten => 911,n,Dial(SIP/BeelineFMC/1745,25,rt)
+> ;exten => 911,n,Hangup()
+799c801
+< exten => 912,1,Dial(SIP/912)
+---
+> exten => 911,1,Dial(SIP/911)

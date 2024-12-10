@@ -1,0 +1,14 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+538a539
+> exten => 3107,1,macro(fmc,3107,3107)
+579a581
+> 
+581c583,584
+< exten => 1742,1,Dial(SIP/1742&SIP/Cisco-Gateway/5989177522273,40,tm(dk))
+---
+> ;exten => 1742,1,Dial(SIP/1742&SIP/Cisco-Gateway/5989177522273,40,tm(dk))
+> exten => 1742,1,macro(mobile,1742,BeelineFMC/3107)
+971c974
+< exten => 2365,n,MP3Player(/var/lib/asterisk/sounds/1/exeed_avtootvet.mp3)
+---
+> exten => 2365,n,MP3Player(/var/lib/asterisk/sounds/exeed_alfa_2023.mp3)

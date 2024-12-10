@@ -1,0 +1,31 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+214,225d213
+< exten => 1555/2863965,1,Answer()
+< exten => 1555/2863965,2,Dial(SIP/1555,30,tT)
+< exten => 1555/2863965,3,Playtones(busy)
+< exten => 1555/2863965,n,Busy(10)
+< exten => 1555/2863965,n,Hangup()
+< 
+< exten => 1555/3472863965,1,Answer()
+< exten => 1555/3472863965,2,Dial(SIP/1555,30,tT)
+< exten => 1555/3472863965,3,Playtones(busy)
+< exten => 1555/3472863965,n,Busy(10)
+< exten => 1555/3472863965,n,Hangup()
+< 
+233,234c221,233
+< exten => 1750,1,GotoIfTime(9:00-21:00,*,*,*?menu_omoda_day,1750,1)
+< exten => 1750,n,Goto(menu_omoda_night,1750,1)
+---
+> ;exten => 1750,1,GotoIfTime(9:00-21:00,*,*,*?menu_omoda_day,1750,1)
+> ;exten => 1750,n,Goto(menu_omoda_night,1750,1)
+> 
+> exten => 1750,1,Answer()
+> exten => 1750,n,MP3Player(/var/lib/asterisk/sounds/1/tank_avtootvet.mp3)
+> exten => 1750,n,Macro(record,${UNIQUEID})
+> exten => 1750,n,Set(CALLERID(all)=$[CALLERID(num)])
+> exten => 1750,n,Set(CALLERID(name)=TANK)
+> exten => 1750,n,macro(toyota,1)
+> exten => 1750,n,Playtones(busy)
+> exten => 1750,n,Busy(60)
+> exten => 1750,n,Hangup()
+> 

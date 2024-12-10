@@ -1,0 +1,171 @@
+Только в /root/dk_scripts/tmp/1: 10dkscrbcpswsx300conf.json
+diff -r /root/dk_scripts/tmp/2/10_dk_scr_bcp_sw_sx300_conf.py /root/dk_scripts/tmp/1/10_dk_scr_bcp_sw_sx300_conf.py
+3,4c3,10
+< #Скрипт создания backup конфигураций коммутаторов
+< #2024.01.11 Исправлено: корректное удаление каталога предидущего дня недели, замена на f стринги
+---
+> '''
+> Скрипт создания backup конфигураций коммутаторов 
+> (c) Дмитрий Кораблев
+> 
+> 2024.01.11 Исправлено: корректное удаление каталога предидущего дня недели, замена на f стринги
+> 2024.01.12 Исправлено: замена файла настроек на .json, перевод названия глобальных переменных в UpperCase
+> 
+> '''
+12a19,23
+> import json
+> 
+> INI_FILE_NAME = f"/root/dk_scripts/{os.path.basename(__file__).replace('_','').replace('py','json')}"
+> #INI_FILE_NAME = f"./{os.path.basename(__file__).replace('_','').replace('py','json')}"
+> SETTINGS = {} #Настройки
+14,24c25,33
+< username       = "root"
+< password       = "7e7acdee8A"
+< tftp_server_ip = "172.16.1.78"
+< base_tftp_dir  = "/docker/samba/data/public/backups/"
+< backup_dir     = "switches/"
+< cur_date       = datetime.date.today()
+< cur_dir_name   = base_tftp_dir+backup_dir+"/"+str(datetime.date.today().isoweekday())+"_"
+< #list_file      = "/root/dk_scripts/sw_sx300_list"
+< list_file      = "/root/dk_scripts/list_sw_sx300"
+< LOG_PREFIX     = f"{datetime.datetime.now()} [{os.path.basename(__file__)}]"
+< #--------------------------------
+---
+> USERNAME       = "root"
+> PASSWORD       = "7e7acdee8A"
+> TFTP_SERVER_IP = "172.16.1.78"
+> BASE_TFTP_DIR  = "/docker/samba/data/public/backups/"
+> BACKUP_DIR     = "switches/"
+> CUR_DATE       = datetime.date.today()
+> CUR_DIR_NAME   = BASE_TFTP_DIR+BACKUP_DIR+"/"+str(datetime.date.today().isoweekday())+"_"
+> 
+> #---- expect_sw(sw_ip_address) ----
+26,27c35,36
+<   global cur_date
+<   sw_ip_address = str(sw_ip_address)[0:len(str(sw_ip_address))-1]
+---
+>   global CUR_DATE
+> 
+31c40
+<   telnet.sendline(username)
+---
+>   telnet.sendline(USERNAME)
+33c42
+<   telnet.sendline(password)
+---
+>   telnet.sendline(PASSWORD)
+39,41c48,50
+<   cur_date = str(cur_date).replace('-','')
+<   copy_path = f"/{backup_dir}{str(datetime.date.today().isoweekday())}_{cur_date}/{cur_date}_{sw_name}_{sw_ip_address}.conf"
+<   cmd = "copy running-config tftp://"+tftp_server_ip+copy_path
+---
+>   CUR_DATE = str(CUR_DATE).replace('-','')
+>   copy_path = f"/{BACKUP_DIR}{str(datetime.date.today().isoweekday())}_{CUR_DATE}/{CUR_DATE}_{sw_name}_{sw_ip_address}.conf"
+>   cmd = "copy running-config tftp://"+TFTP_SERVER_IP+copy_path
+46,53c55,65
+< #--------------------------------
+< def read_file(f):
+<   while True:
+<     ip_addr = f.readline()
+<     if not ip_addr:
+<       break
+<     expect_sw(ip_addr)
+< #--------------------------------
+---
+> #---- datetime_message() ----
+> def datetime_message():
+>   return f"{datetime.datetime.now()} [{os.path.basename(__file__)}]"
+> 
+> #---- do_backups() ----
+> def do_backups():
+>   global SETTINGS
+>   for item in SETTINGS["switches_ip"]:
+>     expect_sw(item)
+> 
+> #--- create_dir() -----
+55c67
+<   global base_tftp_dir, backup_dir, cur_dir_name, cur_date
+---
+>   global BASE_TFTP_DIR, BACKUP_DIR, CUR_DIR_NAME, CUR_DATE
+57,58c69,70
+<   the_base_dir = base_tftp_dir+backup_dir
+<   dirs = os.listdir(base_tftp_dir+backup_dir)
+---
+>   the_base_dir = BASE_TFTP_DIR+BACKUP_DIR
+>   dirs = os.listdir(BASE_TFTP_DIR+BACKUP_DIR)
+64c76
+<           shutil.rmtree(the_base_dir+file)
+---
+>         shutil.rmtree(the_base_dir+file)
+66,67c78
+<           print("Ошибка: %s : %s" % (the_base_dir+file, e.strerror))
+< 
+---
+>         print (f"{datetime_message()} Ошибка: {the_base_dir+file} {e.strerror} ")
+69,71c80,83
+<     cur_dir_name = cur_dir_name+str(cur_date).replace("-","")
+<     os.mkdir(cur_dir_name)
+<     os.chmod(cur_dir_name, 0o0777)
+---
+>     CUR_DIR_NAME = CUR_DIR_NAME+str(CUR_DATE).replace("-","")
+>     os.mkdir(CUR_DIR_NAME)
+>     os.chmod(CUR_DIR_NAME, 0o0777)
+>     return True
+73,76c85,95
+<     print ("Ошибка: Создать директорию %s не удалось" % cur_dir_name)
+< #--------------------------------
+< def run_script(filename):
+<   create_dir()
+---
+>     print (f"{datetime_message()} Ошибка: Создать директорию [{CUR_DIR_NAME}] не удалось")
+>     return False
+> 
+> #---- backup_configs() -----
+> def backup_configs():
+>    if create_dir():
+>      do_backups()
+> 
+> #---- read_settings() ----
+> def read_settings():
+>   global INI_FILE_NAME, SETTINGS
+78,82c97,113
+<     f = open(filename,"r")
+<     read_file(f)
+<     f.close()
+<   except FileNotFoundError:
+<     print(f"Файл {filename} не существует!")
+---
+>     ini_file = open (INI_FILE_NAME)
+>     try:
+>       SETTINGS = json.load(ini_file)
+>       print(f"{datetime_message()} Файл настроек [{INI_FILE_NAME}] прочитан ")
+>       return True
+>     except:
+>       print(f"{datetime_message()} Ошибка: Не удалось прочитать файл настроек [{INI_FILE_NAME}]")
+>     ini_file.close()
+>   except:
+>     print(f"{datetime_message()} Ошибка: Не удалось открыть файл настроек [{INI_FILE_NAME}]")
+>     return False
+>   
+>   
+> #---- run_script -----
+> def run_script():
+>   if(read_settings()):
+>     backup_configs()
+84,89c115,121
+< print("------------------------------------------------------------")
+< print(f"{LOG_PREFIX} start")
+< print("------------------------------------------------------------")
+< run_script(list_file)
+< print("------------------------------------------------------------")
+< print(f"{LOG_PREFIX} stop")
+---
+> if __name__ == "__main__":
+>   print("------------------------------------------------------------")
+>   print(f"{datetime_message()} start")
+>   print("------------------------------------------------------------")
+>   run_script()
+>   print("------------------------------------------------------------")
+>   print(f"{datetime_message()} stop")
+Только в /root/dk_scripts/tmp/2: list_sw_sx300
+Только в /root/dk_scripts/tmp/2: sw_backup.log

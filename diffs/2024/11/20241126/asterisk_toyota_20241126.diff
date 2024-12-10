@@ -1,0 +1,24 @@
+Только в /root/dk_scripts/tmp/2: 6_postgres_backup_20241123.tar
+Только в /root/dk_scripts/tmp/2: 7_postgres_backup_20241124.tar
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+308,311d307
+< ;exten => 2403,n,MP3Player(/var/lib/asterisk/sounds/1/gac-est.mp3)
+< ;exten => 2403,n,macro(record,${UNIQUEID},${CALLERID(num)},${EXTEN})
+< ;exten => 2403,n,Dial(SIP/1401,24,tT) 
+< ;exten => 2403,n,Dial(SIP/1400,24,tT) 
+1158c1154,1155
+< exten => 2365,n,MP3Player(/etc/asterisk/mp3/gac-alfa2024.mp3)
+---
+> ;exten => 2365,n,MP3Player(/etc/asterisk/mp3/gac-alfa2024.mp3)
+> exten => 2365,n,MP3Player(/etc/asterisk/mp3/SEVER_GAC_IVR_201124.mp3)
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+387,388c387
+< exten => 1800,n,MP3Player(/var/lib/asterisk/sounds/1/sever2021.mp3)
+< ;exten => 1800,n,MP3Player(/etc/asterisk/mp3/gac-alfa2024.mp3)
+---
+> exten => 1800,n,MP3Player(/etc/asterisk/mp3/SEVER_TOYOTA_IVR_201124.mp3)
+Только в /root/dk_scripts/tmp/1/mp3: SEVER_GAC_IVR_201124.mp3
+Только в /root/dk_scripts/tmp/1/mp3: SEVER_TOYOTA_IVR_201124.mp3
+diff -r /root/dk_scripts/tmp/2/queues.conf /root/dk_scripts/tmp/1/queues.conf
+153d152
+< member => SIP/1454,1

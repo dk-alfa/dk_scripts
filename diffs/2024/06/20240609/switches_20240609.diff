@@ -1,0 +1,7 @@
+diff -r /root/dk_scripts/tmp/2/TCS0-SW2-08_192.168.22.76.conf /root/dk_scripts/tmp/1/TCS0-SW2-08_192.168.22.76.conf
+58,62d57
+< interface fastethernet7
+< switchport mode access 
+< switchport access vlan 66 
+< switchport general pvid 66 
+< exit

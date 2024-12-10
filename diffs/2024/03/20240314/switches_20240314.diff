@@ -1,0 +1,6 @@
+diff -r /root/dk_scripts/tmp/2/sw-sever-1-1_10.9.1.4.conf /root/dk_scripts/tmp/1/sw-sever-1-1_10.9.1.4.conf
+62d61
+< no passwords complexity enable 
+diff -r /root/dk_scripts/tmp/2/sw-sever-1-4_10.9.1.5.conf /root/dk_scripts/tmp/1/sw-sever-1-4_10.9.1.5.conf
+69a70
+> username dkorablev password encrypted 9409f783c329f0b3be307fa13401eedb6cfda279 privilege 15 

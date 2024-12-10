@@ -1,0 +1,8 @@
+diff -r /root/dk_scripts/tmp/2/32_dk_scr_check_dif.py /root/dk_scripts/tmp/1/32_dk_scr_check_dif.py
+57c57
+<   print(date_stamp)
+---
+> #  print(date_stamp)
+diff -r /root/dk_scripts/tmp/2/phones.ignore /root/dk_scripts/tmp/1/phones.ignore
+10a11
+> 1691

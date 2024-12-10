@@ -1,0 +1,206 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+273a274,275
+> ;Все звонки из Уфы  на Восточные короткие номера льем в контекст [local-est]
+> ;exten => _14XX,1,GoTo(local-est,${EXTEN},1)
+572c574,575
+< exten => 1742,1,macro(mobile,1742,1742,9177522273)
+---
+> ;exten => 1742,1,macro(mobile,1742,1742,9177522273)
+> exten => 1742,1,Dial(SIP/1742&SIP/Cisco-Gateway/5989177522273,40,tm(dk))
+873a877,879
+> 
+> ;При переводе на центральный астер, закомментировать
+> ;От сих
+879a886
+> ;до сих
+diff -r /root/dk_scripts/tmp/2/musiconhold.conf /root/dk_scripts/tmp/1/musiconhold.conf
+43a44,47
+> [dk]
+> mode=files
+> directory=/etc/asterisk/sounds/musichold/dk
+> 
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+1341c1341
+< #include /etc/asterisk/sip_users_est.conf  ;Телефоны Восточного офиса [Зубово]
+---
+> ;#include /etc/asterisk/sip_users_est.conf  ;Телефоны Восточного офиса [Зубово]
+diff -r /root/dk_scripts/tmp/2/sip_users_est.conf /root/dk_scripts/tmp/1/sip_users_est.conf
+16c16
+< 
+---
+> ;Тестовый телефон 1
+21a22
+> ;Тестовый телефон 2
+28,29d28
+< ;--
+< 
+55,64d53
+< [1462](phone-est)
+< secret=hyu@1462
+< callerid=1462
+< call-limit=2
+< 
+< [1461](phone-est)
+< secret=hyu@1461
+< callerid=1461
+< call-limit=2
+< 
+157,181d145
+< ;[1431](phone-est)
+< ;secret=1431
+< ;callerid=1431
+< ;call-limit=2
+< 
+< ;[1432](phone-est)
+< ;secret=1432
+< ;callerid=1432
+< ;call-limit=2
+< 
+< ;[1433](phone-est)
+< ;secret=1433
+< ;callerid=1433
+< ;call-limit=2
+< 
+< ;[1434](phone-est)
+< ;secret=1434
+< ;callerid=1434
+< ;call-limit=2
+< 
+< ;[1435](phone-est)
+< ;secret=1435
+< ;callerid=1435
+< ;call-limit=2
+< 
+187,217d150
+< [1481](phone-est)
+< secret=1481
+< callerid=1481
+< call-limit=2
+< 
+< [1482](phone-est)
+< secret=1482
+< callerid=1482
+< call-limit=2
+< 
+< [1483](phone-est)
+< secret=1483
+< callerid=1483
+< call-limit=2
+< 
+< [1484](phone-est)
+< secret=1484
+< callerid=1484
+< call-limit=2
+< 
+< [1487](phone-est)
+< secret=1487
+< callerid=1487
+< call-limit=2
+< 
+< [1488](phone-est)
+< secret=1488
+< callerid=1488
+< call-limit=2
+< 
+< 
+234,238d166
+< ;[1444](phone-est)
+< ;secret=hyu@1444
+< ;callerid=1444
+< ;call-limit=4
+< 
+264,273d191
+< ;[1450](phone-est)
+< ;secret=hyu@1450
+< ;callerid=1450
+< ;call-limit=2
+< 
+< ;[1451](phone-est)
+< ;secret=hyu@1451
+< ;callerid=1451
+< ;call-limit=2
+< 
+329a248,262
+> [1471](phone-est)
+> secret=1471
+> callerid=1471
+> call-limit=2
+> 
+> [1472](phone-est)
+> secret=1472
+> callerid=1472
+> call-limit=2
+> 
+> [1473](phone-est)
+> secret=1473
+> callerid=1473
+> call-limit=2
+> 
+335,339d267
+< [1499](phone-est)
+< secret=hyu@1499
+< callerid=1499
+< call-limit=2
+< 
+345,348c273,276
+< ;[1469](phone-est)
+< ;secret=1469
+< ;callerid=1469
+< ;call-limit=2
+---
+> [1481](phone-est)
+> secret=1481
+> callerid=1481
+> call-limit=2
+350,352c278,280
+< [1471](phone-est)
+< secret=1471
+< callerid=1471
+---
+> [1482](phone-est)
+> secret=1482
+> callerid=1482
+355,357c283,285
+< [1472](phone-est)
+< secret=1472
+< callerid=1472
+---
+> [1483](phone-est)
+> secret=1483
+> callerid=1483
+360,362c288,300
+< [1473](phone-est)
+< secret=1473
+< callerid=1473
+---
+> [1484](phone-est)
+> secret=1484
+> callerid=1484
+> call-limit=2
+> 
+> [1487](phone-est)
+> secret=1487
+> callerid=1487
+> call-limit=2
+> 
+> [1488](phone-est)
+> secret=1488
+> callerid=1488
+370,374c308,311
+< ;[1590](phone-est)
+< ;secret=1590
+< ;callerid=1590
+< ;call-limit=2
+< 
+---
+> [1499](phone-est)
+> secret=hyu@1499
+> callerid=1499
+> call-limit=2
+380c317,318
+< --;
+\ В конце файла нет новой строки
+---
+> 
+> 
+Только в /root/dk_scripts/tmp/1/sounds/musichold: dk

@@ -1,0 +1,27 @@
+diff -r /root/dk_scripts/tmp/2/sw-east-1-1_192.168.200.240.conf /root/dk_scripts/tmp/1/sw-east-1-1_192.168.200.240.conf
+179d178
+<  switchport trunk allowed vlan add 33,237 
+diff -r /root/dk_scripts/tmp/2/sw-east-1-3_192.168.200.243.conf /root/dk_scripts/tmp/1/sw-east-1-3_192.168.200.243.conf
+19c19
+< vlan 1-2,30,33,952 
+---
+> vlan 1-2,30,33,237,952 
+56a57,59
+> interface vlan 237
+>  name fre_wifi_ufanet 
+> !
+189c192
+<  switchport access vlan 30 
+---
+>  switchport access vlan 237 
+203c206
+<  switchport access vlan 30 
+---
+>  switchport access vlan 237 
+217a221,222
+>  switchport general allowed vlan add 237 untagged 
+>  switchport default-vlan tagged 
+258c263
+<  switchport general allowed vlan add 2,30,952 tagged 
+---
+>  switchport general allowed vlan add 2,30,237,952 tagged 

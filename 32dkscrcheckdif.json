@@ -1,0 +1,7 @@
+{
+  "dif_paths":[
+     "/docker/samba/data/public/backups/asterisk_toyota",
+     "/docker/samba/data/public/backups/switches",
+     "/docker/samba/data/public/backups/dk_scripts"
+   ]
+}

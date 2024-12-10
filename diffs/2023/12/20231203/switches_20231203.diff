@@ -1,0 +1,15 @@
+diff -r /root/dk_scripts/tmp/2/LBR31-SW4-48_192.168.22.203.conf /root/dk_scripts/tmp/1/LBR31-SW4-48_192.168.22.203.conf
+19c19
+< interface range fa2,fa14,fa35,fa41,gi1
+---
+> interface range fa2,fa14,fa35,fa41,gi1-2
+96c96
+< macro description "no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch"
+---
+> macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch"
+254a255,259
+> !next command is internal.
+> macro auto smartport dynamic_type switch 
+> switchport trunk allowed vlan add 2,33,66,79,95,100,497-498 
+> exit
+> interface gigabitethernet2

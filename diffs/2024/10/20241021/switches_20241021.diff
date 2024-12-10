@@ -1,0 +1,48 @@
+diff -r /root/dk_scripts/tmp/2/sw-sever-1-1_10.9.1.4.conf /root/dk_scripts/tmp/1/sw-sever-1-1_10.9.1.4.conf
+112c112
+< macro description switch
+---
+> macro description "switch | no_switch | switch"
+diff -r /root/dk_scripts/tmp/2/sw-sever-1-4_10.9.1.5.conf /root/dk_scripts/tmp/1/sw-sever-1-4_10.9.1.5.conf
+1c1
+< interface range gi1,gi4,gi14,gi21
+---
+> interface range gi1,gi4,gi14,gi21,gi26
+27a28,33
+> interface gigabitethernet26
+> storm-control broadcast level 10 
+> exit
+> interface gigabitethernet26
+> storm-control include-multicast 
+> exit
+29c35
+< interface range gi1,gi4,gi10,gi14,gi21
+---
+> interface range gi1,gi4,gi10,gi14,gi21,gi26
+40c46
+< interface range gi1,gi4,gi10,gi14,gi21
+---
+> interface range gi1,gi4,gi10,gi14,gi21,gi26
+43c49
+< interface range gi1,gi4,gi10,gi14,gi21
+---
+> interface range gi1,gi4,gi10,gi14,gi21,gi26
+46c52
+< interface range gi1,gi4,gi10,gi14,gi21
+---
+> interface range gi1,gi4,gi10,gi14,gi21,gi26
+112a119,121
+> interface gigabitethernet26
+> macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+> exit
+235c244,246
+< switchport trunk allowed vlan add 2-4,66,100 
+---
+> !next command is internal.
+> macro auto smartport dynamic_type ip_phone_desktop 
+> switchport trunk allowed vlan add 2,66,100 
+diff -r /root/dk_scripts/tmp/2/sw-sever-2-1_10.9.1.8.conf /root/dk_scripts/tmp/1/sw-sever-2-1_10.9.1.8.conf
+368a369
+>  switchport trunk allowed vlan add 2-4,66 
+369a371
+>  switchport default-vlan tagged 

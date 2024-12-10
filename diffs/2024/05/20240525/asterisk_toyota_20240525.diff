@@ -1,0 +1,63 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+94c94
+< exten => MV9eWGnrJp4PJ1V0,1,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2365,1)
+---
+> exten => MV9eWGnrJp4PJ1V0,1,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2465,1)
+249c249
+< exten => 1553,1,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2365,1)
+---
+> exten => 1553,1,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2465,1)
+252c252
+< exten => 2365,1,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2365,1)
+---
+> exten => 2365,1,GotoIfTime(9:00-21:00,*,*,*?menu_gac_ufa_day,2365,1)
+1006,1017c1006,1017
+< exten => 2365,1,Answer()
+< exten => 2365,2,Set(__CID=${CALLERID(number)})
+< exten => 2365,3,Set(__CITY=1)
+< exten => 2365,4,Set(CALLERID(all)=$[CALLERID(num)])
+< exten => 2365,5,Set(CALLERID(name)=EXEED)
+< exten => 2365,n,GotoIf(${BLACKLIST()}?blacklisted)
+< exten => 2365,n,MP3Player(/var/lib/asterisk/sounds/2024/ALFA_EXEED_2024.mp3)
+< exten => 2365,n,Macro(record,${UNIQUEID})
+< exten => 2365,n,macro(toyota,1)
+< exten => 2365,n,Playtones(busy)
+< exten => 2365,n,Busy(60)
+< exten => 2365,n,Hangup()
+---
+> exten => 2465,1,Answer()
+> exten => 2465,2,Set(__CID=${CALLERID(number)})
+> exten => 2465,3,Set(__CITY=1)
+> exten => 2465,4,Set(CALLERID(all)=$[CALLERID(num)])
+> exten => 2465,5,Set(CALLERID(name)=EXEED)
+> exten => 2465,n,GotoIf(${BLACKLIST()}?blacklisted)
+> exten => 2465,n,MP3Player(/var/lib/asterisk/sounds/2024/ALFA_EXEED_2024.mp3)
+> exten => 2465,n,Macro(record,${UNIQUEID})
+> exten => 2465,n,macro(toyota,1)
+> exten => 2465,n,Playtones(busy)
+> exten => 2465,n,Busy(60)
+> exten => 2465,n,Hangup()
+1066a1067,1076
+> [menu_gac_ufa_day]
+> exten => 2365,1,Answer();
+> exten => 2365,n,MP3Player(/etc/asterisk/mp3/gac-alfa2024.mp3)
+> exten => 2365,n,Macro(record,${UNIQUEID})
+> exten => 2365,n,Set(CALLERID(all)=$[CALLERID(num)])
+> exten => 2365,n,Queue(call_toyota_sever,tT)
+> exten => 2365,n,Playtones(busy)
+> exten => 2365,n,Busy(60)
+> exten => 2365,n,Hangup()
+> 
+1082a1093,1094
+> 
+> 
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+375,379c375,376
+< ;exten => 1800,n,MP3Player(/var/lib/asterisk/sounds/1/sever2021.mp3)
+< ;exten => 1800,n,MP3Player(/var/lib/asterisk/sounds/gudok.mp3)
+< ;exten => 1800,n,MP3Player(/etc/asterisk/mp3/gudok.mp3)
+< exten => 1800,n,MP3Player(/etc/asterisk/mp3/gac-alfa2024.mp3)
+< ;;;;;;;;;;;;;;;;;;;;;
+---
+> exten => 1800,n,MP3Player(/var/lib/asterisk/sounds/1/sever2021.mp3)
+> ;exten => 1800,n,MP3Player(/etc/asterisk/mp3/gac-alfa2024.mp3)

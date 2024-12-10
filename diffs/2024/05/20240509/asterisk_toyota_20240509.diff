@@ -1,0 +1,26 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+600c600
+< ;exten => 1710,1,macro(mobile,1710,1710)
+---
+> exten => 1710,1,macro(fmc,1710)
+603c603
+< exten => 1717,1,macro(mobile,1717,1717,9270865550)
+---
+> exten => 1717,1,macro(fmc,1717)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+1074,1076c1074,1076
+< [1710](phone)
+< secret=1710
+< callerid=1710
+---
+> ;[1710](phone)
+> ;secret=1710
+> ;callerid=1710
+1102,1104c1102,1104
+< [1717](phone)
+< secret=1717
+< callerid=1717
+---
+> ;[1717](phone)
+> ;secret=1717
+> ;callerid=1717

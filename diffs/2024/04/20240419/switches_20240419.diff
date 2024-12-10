@@ -1,0 +1,8 @@
+diff -r /root/dk_scripts/tmp/2/sw-east-1-3_192.168.200.243.conf /root/dk_scripts/tmp/1/sw-east-1-3_192.168.200.243.conf
+192d191
+<  switchport access vlan 30 
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+56a57,59
+> interface fastethernet36
+> power inline priority high 
+> exit

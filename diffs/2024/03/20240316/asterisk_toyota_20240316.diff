@@ -1,0 +1,14 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+717a718
+> exten => 2307,1,macro(mobile,2307,2307)
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+80c80
+< exten => 1414,1,macro(mobile-est,1414)
+---
+> exten => 1414,1,macro(mobile-est,1464)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+1363a1364,1367
+> [2307](phone)
+> secret=2307
+> callerid=2307
+> 

@@ -1,0 +1,25 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+91a92,94
+> 
+> exten => s,1,Noop(=== fromsitnetexeed ===)
+> 
+268a272
+> exten => 2402,n,Dial(SIP/1400,24,tT) 
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+49a50
+> 
+50a52
+> 
+86a89
+> 
+90,91d92
+< ;username=MV9eWGnrJp4PJ1V0
+< ;secret=z0zaI2qtbpo6Zs46FEi
+98c99
+< canreinvite=no
+---
+> canreinvite=yes
+104a106,108
+> ;qualify=no
+> nat=auto_comedia
+> 

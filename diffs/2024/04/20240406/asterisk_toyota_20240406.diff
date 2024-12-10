@@ -1,0 +1,40 @@
+Только в /root/dk_scripts/tmp/1: 0x7f
+Только в /root/dk_scripts/tmp/1: 0x7f041c019390
+Только в /root/dk_scripts/tmp/1: 0x7f0450024220
+Только в /root/dk_scripts/tmp/1: 0x7f0464036700
+Только в /root/dk_scripts/tmp/1: 0x7f047c010aa0
+Только в /root/dk_scripts/tmp/1: 0x7f04800ccd70
+Только в /root/dk_scripts/tmp/1: 0x7f04800fa520
+Только в /root/dk_scripts/tmp/1: 0x7f0480151360
+Только в /root/dk_scripts/tmp/1: 0x7f0480158f30
+Только в /root/dk_scripts/tmp/1: 0x7f048020e9e0
+Только в /root/dk_scripts/tmp/1: 0x7f048801
+Только в /root/dk_scripts/tmp/1: 0x7f048801e0f0
+Только в /root/dk_scripts/tmp/1: 0x7f049800dd70
+Только в /root/dk_scripts/tmp/1: 0x7f04a0020080
+Только в /root/dk_scripts/tmp/1: 0x7f04b802b6b0
+Только в /root/dk_scripts/tmp/1: 0x7f04bc00c250
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+96,100c96,100
+< exten => _1[4567]XX,1,Answer()
+< exten => _1[4567]XX,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3 )
+< exten => _1[4567]XX,n,Dial(SIP/toyota/${EXTEN},120,smtThH)
+< exten => _1[4567]XX,n,Busy(10)
+< exten => _1[4567]XX,n,Hangup()
+---
+> exten => _1[34567]XX,1,Answer()
+> exten => _1[34567]XX,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3 )
+> exten => _1[34567]XX,n,Dial(SIP/toyota/${EXTEN},120,smtThH)
+> exten => _1[34567]XX,n,Busy(10)
+> exten => _1[34567]XX,n,Hangup()
+341c341,343
+< exten => _1[4567]XX,1,GoTo(fromlocal,${EXTEN},1)
+---
+> ;exten => _1[4567]XX,1,GoTo(fromlocal,${EXTEN},1)
+> exten => _1[34567]XX,1,GoTo(fromlocal,${EXTEN},1) 	;Центральный офис, Зубово
+> exten => _2[0123]XX,1,GoTo(fromlocal,${EXTEN},1) 	;Центральный офис, EXEED
+diff -r /root/dk_scripts/tmp/2/sip_users_str.conf /root/dk_scripts/tmp/1/sip_users_str.conf
+221c221
+< callerid="STR Security" <739>
+---
+> callerid="STR OPPA" <739>

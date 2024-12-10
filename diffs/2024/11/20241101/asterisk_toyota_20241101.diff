@@ -1,0 +1,36 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+107c107,113
+< ;exten => verra_uf_haval,n,Dial(SIP/1742,14,t)
+---
+> [fromsitnetgeely]
+> include => fromcity
+> 
+> exten => 9ZtaT1B8YP81JjWu,1,Answer();
+> exten => 9ZtaT1B8YP81JjWu,n,NoOp(==== Calltouch GEELY ====);
+> ;exten => 9ZtaT1B8YP81JjWu,n,Playback(tt-monkeysintro)
+> exten => 9ZtaT1B8YP81JjWu,n,Dial(SIP/1742,14,t)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+50a51
+> register =>9ZtaT1B8YP81JjWu:pohjofIume8QtES@sip1904.sitnet.ru/9ZtaT1B8YP81JjWu		;CallTouch для GEELY
+158a160,180
+> transport=udp
+> call-limit=3
+> insecure=port,invite
+> canreinvite=no
+> disallow=all
+> allow=alaw
+> allow=ulaw
+> defaultexpirey=120
+> maxexpirey=120
+> ;nat=yes
+> ;directmedia=yes
+> ;dtmfmode=rfc2833
+> qualify=yes
+> 
+> 
+> [sitnet-geely]
+> type=peer
+> host=sip1904.sitnet.ru
+> username=9ZtaT1B8YP81JjWu
+> secret=pohjofIume8QtES
+> context=fromsitnetgeely

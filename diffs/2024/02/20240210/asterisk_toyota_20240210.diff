@@ -1,0 +1,9 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+256c256
+< exten => 2465,n,Dial(SIP/2300,60)
+---
+> exten => 2465,n,macro(toyota,1)
+1010c1010
+< exten => 2365,n,Dial(SIP/2300,,tT)
+---
+> exten => 2365,n,macro(toyota,1)

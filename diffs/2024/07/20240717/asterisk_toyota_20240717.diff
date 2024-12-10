@@ -1,0 +1,19 @@
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+66a67,83
+> 
+> [lidogenerator-exeed]
+> type=peer
+> host=65.108.145.7
+> context=fromsitnetexeed
+> transport=udp
+> call-limit=3
+> insecure=port,invite
+> canreinvite=no
+> disallow=all
+> allow=alaw
+> allow=ulaw
+> defaultexpirey=120
+> maxexpirey=120
+> qualify=yes
+> 
+> 

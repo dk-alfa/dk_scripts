@@ -1,0 +1,16 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+493,494c493,494
+< ;exten => 1553,1,macro(mobile,1553,1653)
+< exten => 1553,1,macro(mobile,1611,1611)
+---
+> exten => 1553,1,macro(mobile,1553,1653)
+> ;exten => 1553,1,macro(mobile,1611,1611)
+561,562c561,562
+< ;exten => 1653,1,macro(mobile,1653,1653)
+< exten => 1653,1,macro(mobile,1611,1611)
+---
+> exten => 1653,1,macro(mobile,1653,1653)
+> ;exten => 1653,1,macro(mobile,1611,1611)
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+103a104
+> exten => 1450,1,macro(fmc,1450)

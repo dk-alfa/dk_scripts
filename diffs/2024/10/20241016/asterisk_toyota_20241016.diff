@@ -1,0 +1,18 @@
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+229a230
+> exten => _X.,n,NoOp(=========== Bis1-Str ==================)
+233a235,243
+> 
+> [Bis2-Str]
+> exten => _X.,1,Answer
+> exten => _X.,n,NoOp(=========== Bis2-Str ==================)
+> 
+> [Bis3-Str]
+> exten => _X.,1,Answer
+> exten => _X.,n,NoOp(=========== Bis3-Str ==================)
+> 
+diff -r /root/dk_scripts/tmp/2/sip_trunks_str.conf /root/dk_scripts/tmp/1/sip_trunks_str.conf
+31a32
+> ;context=Bis2-Str
+49a51
+> ;context=Bis3-Str

@@ -1,0 +1,9 @@
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+147a148,154
+> exten => _38XXXXXXXXXX,1,Answer()
+> exten => _38XXXXXXXXXX,n,Set(foo=${SIPPEER(${EXTEN},curcalls)})
+> exten => _38XXXXXXXXXX,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+> exten => _38XXXXXXXXXX,n,Dial(SIP/Cisco-Gateway/39${EXTEN:1},30,NtT)
+> exten => _38XXXXXXXXXX,n,Hangup()
+> 
+> 

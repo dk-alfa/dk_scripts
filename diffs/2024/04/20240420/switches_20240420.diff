@@ -1,0 +1,66 @@
+diff -r /root/dk_scripts/tmp/2/LBR31-SW2-48_192.168.22.201.conf /root/dk_scripts/tmp/1/LBR31-SW2-48_192.168.22.201.conf
+234d233
+< snmp-server community notpubliccommunity ro view Default 
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+82c82
+<  switchport trunk native vlan 66 
+---
+>  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+96d95
+<  spanning-tree link-type point-to-point 
+98,100c97
+<  macro description switch
+<  !next command is internal.
+<  macro auto smartport dynamic_type unknown 
+---
+>  switchport access vlan 66 
+103d99
+<  spanning-tree link-type point-to-point 
+105,107d100
+<  macro description switch
+<  !next command is internal.
+<  macro auto smartport dynamic_type unknown 
+125,130d117
+<  macro description switch
+<  !next command is internal.
+<  macro auto smartport dynamic_type switch 
+< !
+< interface fastethernet10
+<  spanning-tree link-type point-to-point 
+164a152
+>  switchport trunk allowed vlan add 2 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+172c172
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop"
+---
+> macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto"
+190c190
+< macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+diff -r /root/dk_scripts/tmp/2/TCS1-SW3-48_192.168.22.75.conf /root/dk_scripts/tmp/1/TCS1-SW3-48_192.168.22.75.conf
+80c80
+<  macro description "switch | ip_phone_desktop | no_switch                            | ip_phone_desktop"
+---
+>  macro description "switch | ip_phone_desktop | no_switch                               | ip_phone_desktop"
+240c240,242
+<  switchport trunk native vlan 66 
+---
+>  switchport mode general 
+>  switchport general allowed vlan add 66 untagged 
+>  switchport general pvid 66 
+271d272
+<  switchport trunk allowed vlan add 2 
+299d299
+<  switchport trunk allowed vlan add 2 
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+57,59d56
+< interface fastethernet36
+< power inline priority high 
+< exit
+117d113
+< switchport general pvid 66 
+174d169
+< switchport general pvid 66 
+211d205
+< switchport general pvid 66 

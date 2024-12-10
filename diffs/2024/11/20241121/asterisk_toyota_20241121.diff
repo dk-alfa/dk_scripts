@@ -1,0 +1,6 @@
+Только в /root/dk_scripts/tmp/1: 3_postgres_backup_20241120.tar
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+120c120
+< exten => 1470,1,macro(mobile-est,1470,1470,89279545683)
+---
+> exten => 1470,1,macro(fmc,1470)

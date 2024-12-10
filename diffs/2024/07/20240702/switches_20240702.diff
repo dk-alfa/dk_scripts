@@ -1,0 +1,9 @@
+diff -r /root/dk_scripts/tmp/2/TCS0-SW7-24_192.168.22.87.conf /root/dk_scripts/tmp/1/TCS0-SW7-24_192.168.22.87.conf
+32a33
+> snmp-server community notpubliccommunity ro view Default 
+diff -r /root/dk_scripts/tmp/2/TCS5-SW1-48_192.168.22.86.conf /root/dk_scripts/tmp/1/TCS5-SW1-48_192.168.22.86.conf
+154a155,158
+> interface fastethernet25
+>  switchport mode access 
+>  switchport access vlan 100 
+> !

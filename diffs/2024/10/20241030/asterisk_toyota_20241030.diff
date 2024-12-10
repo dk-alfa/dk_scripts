@@ -1,0 +1,6 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+247a248,251
+> exten => 1754,1,Answer()
+> exten => 1754,2,macro(mobile,1754,1754)
+> exten => 1754,n,HangUp()
+> 

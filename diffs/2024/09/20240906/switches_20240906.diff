@@ -1,0 +1,23 @@
+diff -r /root/dk_scripts/tmp/2/LBR31-SW3-24_192.168.22.202.conf /root/dk_scripts/tmp/1/LBR31-SW3-24_192.168.22.202.conf
+160,172d159
+< interface fastethernet20
+<  storm-control broadcast enable 
+<  storm-control broadcast level 10 
+<  storm-control include-multicast 
+<  port security max 10 
+<  port security mode max-addresses 
+<  port security discard trap 60 
+<  spanning-tree portfast 
+<  switchport trunk allowed vlan add 2 
+<  macro description ip_phone_desktop
+<  !next command is internal.
+<  macro auto smartport dynamic_type ip_phone_desktop 
+< !
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+38c38
+< power inline priority critical 
+---
+> power inline priority high 
+diff -r /root/dk_scripts/tmp/2/TCS3-SW1-24_192.168.22.81.conf /root/dk_scripts/tmp/1/TCS3-SW1-24_192.168.22.81.conf
+131a132
+>  switchport trunk native vlan 66 

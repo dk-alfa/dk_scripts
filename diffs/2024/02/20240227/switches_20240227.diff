@@ -1,0 +1,26 @@
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+13c13
+< interface range fa24,gi2
+---
+> interface range gi2-3
+86c86
+< macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch"
+---
+> macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch"
+98c98
+< macro description "no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch"
+---
+> macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch"
+163,167d162
+< interface fastethernet24
+< !next command is internal.
+< macro auto smartport dynamic_type switch 
+< switchport trunk allowed vlan add 2,33,66,95,100,498 
+< exit
+230a226,231
+> exit
+> interface gigabitethernet3
+> !next command is internal.
+> macro auto smartport dynamic_type unknown 
+> switchport mode general 
+> switchport general allowed vlan add 33,66,95,100,498 tagged 

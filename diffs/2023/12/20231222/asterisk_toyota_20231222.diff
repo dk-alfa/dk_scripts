@@ -1,0 +1,37 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+94,101c94,104
+< exten => MV9eWGnrJp4PJ1V0,1,Answer();
+< exten => MV9eWGnrJp4PJ1V0,n,NoOp(==== Calltouch EXID ====);
+< exten => MV9eWGnrJp4PJ1V0,n,Macro(record,${UNIQUEID})
+< exten => MV9eWGnrJp4PJ1V0,n,Set(CALLERID(all)=$[CALLERID(num)])
+< exten => MV9eWGnrJp4PJ1V0,n,Dial(SIP/2300,30,tT)
+< exten => MV9eWGnrJp4PJ1V0,n,Playtones(busy)
+< exten => MV9eWGnrJp4PJ1V0,n,Busy(60)
+< exten => MV9eWGnrJp4PJ1V0,n,Hangup()
+---
+> exten => MV9eWGnrJp4PJ1V0,1,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2365,1)
+> exten => MV9eWGnrJp4PJ1V0,n,Busy(10)
+> 
+> ;exten => MV9eWGnrJp4PJ1V0,1,Answer();
+> ;exten => MV9eWGnrJp4PJ1V0,n,NoOp(==== Calltouch EXID ====);
+> ;exten => MV9eWGnrJp4PJ1V0,n,Macro(record,${UNIQUEID})
+> ;exten => MV9eWGnrJp4PJ1V0,n,Set(CALLERID(all)=$[CALLERID(num)])
+> ;exten => MV9eWGnrJp4PJ1V0,n,Dial(SIP/2300,30,tT)
+> ;exten => MV9eWGnrJp4PJ1V0,n,Playtones(busy)
+> ;exten => MV9eWGnrJp4PJ1V0,n,Busy(60)
+> ;exten => MV9eWGnrJp4PJ1V0,n,Hangup()
+246a250,263
+> 
+> exten => 2365,1,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2365,1)
+> exten => 2365,n,Busy(10)
+> 
+> exten => 2465,1,Answer()
+> exten => 2465,n,macro(fmc,1604)
+> exten => 2465,n,Busy(10)
+> 
+> 
+> exten => 1556,1,Answer()
+> exten => 1556,n,Dial(SIP/2301,10)
+> exten => 1556,n,Busy(60)
+> exten => 1556,n,Hangup()
+> 

@@ -1,0 +1,5 @@
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+178c178
+< macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"

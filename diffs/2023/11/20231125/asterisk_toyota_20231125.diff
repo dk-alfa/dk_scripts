@@ -1,0 +1,60 @@
+diff -r /root/dk_scripts/tmp/2/sip_users_nrt.conf /root/dk_scripts/tmp/1/sip_users_nrt.conf
+15,17d14
+< [1804](phone-nrt)
+< secret=1804
+< callerid=1804
+19,21d15
+< [1807](phone-nrt)
+< secret=1807
+< callerid=1807
+42,49c36,44
+< ;--
+< ;[1804](phone-nrt)
+< ;secret=1804
+< ;callerid=1804
+< --;
+< [1805](phone-nrt)
+< secret=1805
+< callerid=1805
+---
+> 
+> [1804](phone-nrt)
+> secret=1804
+> callerid=1804
+> 
+> 
+> ;[1805](phone-nrt)
+> ;secret=1805
+> ;callerid=1805
+54a50,53
+> [1807](phone-nrt)
+> secret=1807
+> callerid=1807
+> 
+91c90
+< ;--
+---
+> 
+95a95
+> ;--
+137,139c137,139
+< [1828](phone-nrt)
+< secret=1828
+< callerid=1828
+---
+> ;[1828](phone-nrt)
+> ;secret=1828
+> ;callerid=1828
+147a148,151
+> 
+> [1835](phone-nrt)
+> secret=1835
+> callerid=1835
+155c159
+< --;
+---
+> 
+159c163
+< 
+---
+> --;

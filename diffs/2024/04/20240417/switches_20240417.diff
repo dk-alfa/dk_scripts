@@ -1,0 +1,152 @@
+Только в /root/dk_scripts/tmp/1: 2-Aug-2016131029LINK-W-Downfa38KTCS1-SW3-48_192.168.22.75.conf
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+1c1
+< interface range fa4,fa7-9,fa12,fa19,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+22,33d21
+< interface fastethernet9
+< storm-control broadcast level 10 
+< exit
+< interface fastethernet9
+< storm-control include-multicast 
+< exit
+< interface fastethernet12
+< storm-control broadcast level 10 
+< exit
+< interface fastethernet12
+< storm-control include-multicast 
+< exit
+65c53
+< interface range fa4,fa7-9,fa12,fa19,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+80c68
+< interface range fa4,fa7-9,fa12,fa19,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+83c71
+< interface range fa4,fa7-9,fa12,fa19,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+86c74
+< interface range fa4,fa7-9,fa12,fa19,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+175c163
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+184c172
+< macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop"
+---
+> macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop"
+309,318d296
+< !next command is internal.
+< macro auto smartport dynamic_type ip_phone_desktop 
+< switchport trunk allowed vlan add 2 
+< exit
+< interface fastethernet9
+< !next command is internal.
+< macro auto smartport dynamic_type ip_phone_desktop 
+< switchport trunk allowed vlan add 2 
+< exit
+< interface fastethernet12
+Только в /root/dk_scripts/tmp/2: TCS1-SW3-48_192.168.22.75.conf
+diff -r /root/dk_scripts/tmp/2/TCS3-SW1-24_192.168.22.81.conf /root/dk_scripts/tmp/1/TCS3-SW1-24_192.168.22.81.conf
+67a68,83
+> interface fastethernet1
+>  switchport trunk allowed vlan add 2 
+> !
+> interface fastethernet2
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+>  switchport trunk allowed vlan add 2 
+>  macro description ip_phone_desktop
+>  !next command is internal.
+>  macro auto smartport dynamic_type ip_phone_desktop 
+> !
+69a86,89
+>  switchport trunk allowed vlan add 2 
+> !
+> interface fastethernet4
+>  switchport trunk allowed vlan add 2 
+109a130,135
+> interface fastethernet8
+>  switchport trunk allowed vlan add 2 
+> !
+> interface fastethernet9
+>  switchport trunk allowed vlan add 2 
+> !
+137a164,176
+> interface fastethernet13
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+>  switchport trunk allowed vlan add 2 
+>  macro description ip_phone_desktop
+>  !next command is internal.
+>  macro auto smartport dynamic_type ip_phone_desktop 
+> !
+151a191,197
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+152a199,201
+>  macro description ip_phone_desktop
+>  !next command is internal.
+>  macro auto smartport dynamic_type ip_phone_desktop 
+154a204,210
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+155a212,214
+>  macro description ip_phone_desktop
+>  !next command is internal.
+>  macro auto smartport dynamic_type ip_phone_desktop 
+157a217,223
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+158a225,227
+>  macro description ip_phone_desktop
+>  !next command is internal.
+>  macro auto smartport dynamic_type ip_phone_desktop 
+178a248,253
+> interface fastethernet21
+>  switchport trunk allowed vlan add 2 
+> !
+> interface fastethernet22
+>  switchport trunk allowed vlan add 2 
+> !
+186a262
+>  switchport trunk allowed vlan add 2 
+200,206d275
+<  spanning-tree link-type point-to-point 
+<  switchport trunk allowed vlan add 2,33,66,95,100,498 
+<  macro description switch
+<  !next command is internal.
+<  macro auto smartport dynamic_type switch 
+< !
+< interface gigabitethernet4

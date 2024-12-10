@@ -1,0 +1,13 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+248,251c248,253
+< exten => 1754,1,Answer()
+< exten => 1754,2,macro(mobile,1754,1754)
+< exten => 1754,n,HangUp()
+< 
+---
+> exten => 1734,1,Answer()
+> exten => 1734,n,Macro(record,${UNIQUEID})
+> exten => 1734,n,Queue(trade_in,tT)
+> exten => 1734,n,Playtones(busy)
+> exten => 1734,n,Busy(60)
+> exten => 1734,n,Hangup()

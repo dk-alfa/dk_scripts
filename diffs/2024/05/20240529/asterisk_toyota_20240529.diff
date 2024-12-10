@@ -1,0 +1,11 @@
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+75a76,84
+> 
+> ;Звонок на всех продавцов Chery в Зубово [1325] - групповой номер
+> exten => 1325,1,Answer()
+> exten => 1325,n,Macro(record,${UNIQUEID})
+> exten => 1325,n,Dial(SIP/BeelineFMC/1311&SIP/BeelineFMC/1312&SIP/BeelineFMC/1313&SIP/BeelineFMC/1314&SIP/BeelineFMC/1316&SIP/BeelineFMC/1320,30,NtT)
+> exten => 1325,n,Playtones(busy)
+> exten => 1325,n,Busy(360)
+> exten => 1325,n,Hangup()
+> 

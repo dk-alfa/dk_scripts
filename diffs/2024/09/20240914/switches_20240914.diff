@@ -1,0 +1,43 @@
+diff -r /root/dk_scripts/tmp/2/TBR21-SW3-52_192.168.22.80.conf /root/dk_scripts/tmp/1/TBR21-SW3-52_192.168.22.80.conf
+344c344
+<  switchport trunk native vlan 66 
+---
+>  switchport trunk allowed vlan add 2 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+1c1
+< interface range fa4,fa7-8,fa19,fa29,fa35,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+34,39d33
+< interface fastethernet35
+< storm-control broadcast level 10 
+< exit
+< interface fastethernet35
+< storm-control include-multicast 
+< exit
+59c53
+< interface range fa4,fa7-8,fa19,fa29,fa35,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+74c68
+< interface range fa4,fa7-8,fa19,fa29,fa35,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+77c71
+< interface range fa4,fa7-8,fa19,fa29,fa35,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+80c74
+< interface range fa4,fa7-8,fa19,fa29,fa35,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+241c235
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+334,338d327
+< exit
+< interface fastethernet35
+< !next command is internal.
+< macro auto smartport dynamic_type ip_phone_desktop 
+< switchport trunk allowed vlan add 2 

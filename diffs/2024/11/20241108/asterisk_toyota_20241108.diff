@@ -1,0 +1,9 @@
+Только в /root/dk_scripts/tmp/1: 4_asterisk_toyota_backup_20241107.tar
+Только в /root/dk_scripts/tmp/1: 4_dk_scripts_backup_20241107.tar
+Только в /root/dk_scripts/tmp/1: 4_postgres_backup_20241107.tar
+Только в /root/dk_scripts/tmp/1: 4_switches_backup_20241107.tar
+Только в /root/dk_scripts/tmp/1: 4_tftp_backup_20241107.tar
+Только в /root/dk_scripts/tmp/1: 4_wiki_backup_20241107.tar
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+721a722
+> exten => 2432,1,macro(fmc,2432,2432)

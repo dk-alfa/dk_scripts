@@ -1,0 +1,20 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+603c603
+< exten => 1729,1,macro(mobile,1729,1729)
+---
+> 
+607a608,611
+> 
+> ;Резервные номера
+> exten => 1998,1,macro(mobile,1998,1998)
+> exten => 1999,1,macro(mobile,1999,1999)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+1342a1343,1350
+> [1999](phone)
+> secret=1999
+> callerid=1999
+> 
+> [1998](phone)
+> secret=1998
+> callerid=1998
+> 

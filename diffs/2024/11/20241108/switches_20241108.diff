@@ -1,0 +1,5 @@
+diff -r /root/dk_scripts/tmp/2/sw-sever-1-1_10.9.1.4.conf /root/dk_scripts/tmp/1/sw-sever-1-1_10.9.1.4.conf
+112c112
+< macro description "switch | no_switch | switch"
+---
+> macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch"

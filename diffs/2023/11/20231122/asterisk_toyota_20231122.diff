@@ -1,0 +1,9 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+651a652
+> exten => 1933,1,macro(fmc,1933)
+663c664
+< exten => 911,1,Dial(SIP/BeelineFMC/1745,16,rt)
+---
+> ;exten => 911,1,Dial(SIP/BeelineFMC/1745,16,rt)
+665a667
+> exten => 911,1,Dial(SIP/BeelineFMC/1745,16,rt)

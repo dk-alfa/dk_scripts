@@ -1,0 +1,22 @@
+Только в /root/dk_scripts/tmp/2: 0x7f
+Только в /root/dk_scripts/tmp/2: 0x7f041c019390
+Только в /root/dk_scripts/tmp/2: 0x7f0450024220
+Только в /root/dk_scripts/tmp/2: 0x7f0464036700
+Только в /root/dk_scripts/tmp/2: 0x7f047c010aa0
+Только в /root/dk_scripts/tmp/2: 0x7f04800ccd70
+Только в /root/dk_scripts/tmp/2: 0x7f04800fa520
+Только в /root/dk_scripts/tmp/2: 0x7f0480151360
+Только в /root/dk_scripts/tmp/2: 0x7f0480158f30
+Только в /root/dk_scripts/tmp/2: 0x7f048020e9e0
+Только в /root/dk_scripts/tmp/2: 0x7f048801
+Только в /root/dk_scripts/tmp/2: 0x7f048801e0f0
+Только в /root/dk_scripts/tmp/2: 0x7f049800dd70
+Только в /root/dk_scripts/tmp/2: 0x7f04a0020080
+Только в /root/dk_scripts/tmp/2: 0x7f04b802b6b0
+Только в /root/dk_scripts/tmp/2: 0x7f04bc00c250
+diff -r /root/dk_scripts/tmp/2/logger.conf /root/dk_scripts/tmp/1/logger.conf
+137c137
+< messages => notice,warning,error
+---
+> ;messages => notice,warning,error
+Только в /root/dk_scripts/tmp/2: OC

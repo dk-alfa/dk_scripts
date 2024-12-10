@@ -1,0 +1,25 @@
+diff -r /root/dk_scripts/tmp/2/29dkscrbcpcopy.json /root/dk_scripts/tmp/1/29dkscrbcpcopy.json
+51,73d50
+<      ["/docker/samba/data/public/backups/docker/tftp",
+<       "/mnt/tmp",
+<       "rfs",
+<       "//172.16.0.231/backup/172.16.1.78/docker/tftp /mnt/tmp -o username=dkorablev,password=7522273Dk69,rw,iocharset=utf8,file_mode=0777,dir_mode=0777"],
+<      ["/docker/samba/data/public/backups/docker/wiki",
+<       "/mnt/tmp",
+<       "rfs",
+<       "//172.16.0.231/backup/172.16.1.78/docker/wiki /mnt/tmp -o username=dkorablev,password=7522273Dk69,rw,iocharset=utf8,file_mode=0777,dir_mode=0777"],
+<      ["/docker/samba/data/public/backups/switches",
+<       "/mnt/tmp",
+<       "rfs",
+<       "//172.16.0.231/backup/172.16.1.78/switches/toyota /mnt/tmp -o username=dkorablev,password=7522273Dk69,rw,iocharset=utf8,file_mode=0777,dir_mode=0777"],
+<      ["/docker/samba/data/public/backups/dk_scripts",
+<       "/mnt/tmp",
+<       "rfs",
+<       "//172.16.0.231/backup/172.16.1.78/dk_scripts /mnt/tmp -o username=dkorablev,password=7522273Dk69,rw,iocharset=utf8,file_mode=0777,dir_mode=0777"],
+<      ["/docker/samba/data/public/backups/asterisk_toyota",
+<       "/mnt/tmp",
+<       "rfs",
+<       "//172.16.0.231/backup/172.16.1.78/asterisk/toyota /mnt/tmp -o username=dkorablev,password=7522273Dk69,rw,iocharset=utf8,file_mode=0777,dir_mode=0777"],
+< 
+< 
+< 

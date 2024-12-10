@@ -1,0 +1,4 @@
+Только в /root/dk_scripts/tmp/2: TCS1-SW3-48_192.168.22.75.conf
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+53a54
+> username bot password encrypted 631c5f3002f64bf88db2b7800a6d620df321de25 privilege 15 

@@ -1,0 +1,7 @@
+diff -r /root/dk_scripts/tmp/2/32_dk_scr_check_dif.py /root/dk_scripts/tmp/1/32_dk_scr_check_dif.py
+13,14c13,14
+< #INI_FILE_NAME = f"/root/dk_scripts/{os.path.basename(__file__).replace('_','').replace('.py','.json')}"
+< INI_FILE_NAME = f"./{os.path.basename(__file__).replace('_','').replace('.py','.json')}"
+---
+> INI_FILE_NAME = f"/root/dk_scripts/{os.path.basename(__file__).replace('_','').replace('.py','.json')}"
+> #INI_FILE_NAME = f"./{os.path.basename(__file__).replace('_','').replace('.py','.json')}"

@@ -1,0 +1,104 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+576c576
+< exten => 1716,1,macro(fmc,1716,1716)
+---
+> 
+583d582
+< exten => 1751,1,macro(fmc,1751)
+603a603
+> exten => 1716,1,macro(fmc,1716,1716)
+606d605
+< 
+612d610
+< 
+616a615,653
+> exten => 1740,1,macro(mobile,1740,1740)
+> exten => 1741,1,macro(fmc,1741)
+> exten => 1743,1,macro(fmc,1743)
+> exten => 1744,1,macro(mobile,1744,1744)
+> exten => 1745,1,macro(fmc,1745)
+> exten => 1746,1,macro(mobile,1746)
+> exten => 1747,1,macro(mobile,1747,1747)
+> exten => 1751,1,macro(fmc,1751)
+> exten => 1752,1,macro(fmc,1752)
+> exten => 1753,1,macro(fmc,1753)
+> exten => 1754,1,macro(fmc,1754)
+> exten => 1756,1,macro(fmc,1756)
+> ;exten => 1757,1,macro(mobile,1757,1757,9279288870)
+> exten => 1758,1,macro(mobile,1758,1758)
+> exten => 1760,1,macro(mobile,1760,1760)
+> exten => 1761,1,macro(mobile,1761,1761)
+> exten => 1762,1,macro(mobile,1762,1762)
+> exten => 1763,1,macro(mobile,1763,1763)
+> exten => 1764,1,macro(mobile,1764,1764)
+> exten => 1765,1,macro(mobile,1765,1765)
+> 
+> exten => 1766,1,Dial(SIP/BeelineFMC/1766,10,rt)
+> exten => 1766,n,Dial(SIP/BeelineFMC/1683,30,rt)
+> exten => 1766,n,Busy(50)
+> exten => 1766,n,Hangup()
+> 
+> exten => 1767,1,macro(mobile,1767,1767)
+> exten => 1769,1,macro(mobile,1769,1769)
+> exten => 1770,1,macro(fmc,1770)
+> exten => 1772,1,macro(fmc,1772)
+> exten => 1773,1,macro(fmc,1773)
+> exten => 1775,1,macro(fmc,1775)
+> exten => 1776,1,macro(fmc,1776)
+> exten => 1779,1,macro(fmc,1779,1779)
+> exten => 1780,1,macro(fmc,1780)
+> exten => 1781,1,macro(fmc,1781)
+> exten => 1782,1,macro(fmc,1782)
+> exten => 1785,1,macro(mobile,1785,1785)
+> exten => 1798,1,macro(fmc,1798)
+629,631c666
+< exten => 1752,1,macro(fmc,1752)
+< exten => 1753,1,macro(fmc,1753)
+< exten => 1756,1,macro(fmc,1756)
+---
+> 
+668,672d702
+< exten => 1741,1,macro(fmc,1741)
+< exten => 1743,1,macro(fmc,1743)
+< exten => 1744,1,macro(mobile,1744,1744)
+< exten => 1745,1,macro(fmc,1745)
+< exten => 1746,1,macro(mobile,1746)
+674,684d703
+< exten => 1747,1,macro(mobile,1747,1747)
+< 
+< exten => 1754,1,macro(fmc,1754)
+< ;exten => 1757,1,macro(mobile,1757,1757,9279288870)
+< exten => 1758,1,macro(mobile,1758,1758)
+< exten => 1760,1,macro(mobile,1760,1760)
+< exten => 1761,1,macro(mobile,1761,1761)
+< exten => 1762,1,macro(mobile,1762,1762)
+< exten => 1763,1,macro(mobile,1763,1763)
+< exten => 1764,1,macro(mobile,1764,1764)
+< exten => 1765,1,macro(mobile,1765,1765)
+686,688d704
+< exten => 1766,1,Dial(SIP/BeelineFMC/1766,10,rt)
+< exten => 1766,n,Dial(SIP/BeelineFMC/1683,30,rt)
+< exten => 1766,n,Busy(50)
+690d705
+< exten => 1766,n,Hangup()
+692,698d706
+< exten => 1767,1,macro(mobile,1767,1767)
+< exten => 1769,1,macro(mobile,1769,1769)
+< exten => 1770,1,macro(fmc,1770)
+< exten => 1772,1,macro(fmc,1772)
+< exten => 1773,1,macro(fmc,1773)
+< exten => 1775,1,macro(fmc,1775)
+< exten => 1776,1,macro(fmc,1776)
+700,705d707
+< exten => 1779,1,macro(fmc,1779,1779)
+< exten => 1780,1,macro(fmc,1780)
+< exten => 1781,1,macro(fmc,1781)
+< exten => 1782,1,macro(fmc,1782)
+< exten => 1785,1,macro(mobile,1785,1785)
+< exten => 1798,1,macro(fmc,1798)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+1189a1190,1193
+> [1740](phone)
+> secret=1740
+> callerid=1740
+> 

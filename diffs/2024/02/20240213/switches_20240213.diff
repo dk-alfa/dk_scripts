@@ -1,0 +1,3 @@
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+100d99
+<  switchport access vlan 66 

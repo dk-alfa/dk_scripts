@@ -1,0 +1,55 @@
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+99c99
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+diff -r /root/dk_scripts/tmp/2/TCS5-SW1-48_192.168.22.86.conf /root/dk_scripts/tmp/1/TCS5-SW1-48_192.168.22.86.conf
+16c16
+< vlan 2,33,66,95,100,498 
+---
+> vlan 2,33,66,95,100,239,241 
+68,69c68,72
+< interface vlan 498
+<  name WiFi_Beeline 
+---
+> interface vlan 239
+>  name FreeWiFi_Geely 
+> !
+> interface vlan 241
+>  name FreeWiFi_Exeed 
+102,110c105,107
+<  storm-control broadcast enable 
+<  storm-control broadcast level 10 
+<  storm-control include-multicast 
+<  port security max 10 
+<  port security mode max-addresses 
+<  port security discard trap 60 
+<  spanning-tree portfast 
+<  switchport trunk allowed vlan add 2 
+<  macro description ip_phone_desktop
+---
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,33,66,95,100 
+>  macro description switch
+112c109
+<  macro auto smartport dynamic_type ip_phone_desktop 
+---
+>  macro auto smartport dynamic_type switch 
+174c171
+<  switchport general allowed vlan add 2,33,95,100,498 tagged 
+---
+>  switchport general allowed vlan add 2,33,95,100 tagged 
+192c189
+<  switchport trunk allowed vlan add 2,33,66,95,100,498 
+---
+>  switchport trunk allowed vlan add 2,33,66,95,100,239,241 
+197a195
+>  description WiFi_AP_EXEED
+199c197
+<  switchport trunk allowed vlan add 2,33,66,95,100,498 
+---
+>  switchport trunk allowed vlan add 95,239,241 
+206c204
+<  switchport trunk allowed vlan add 2,33,66,95,100,498 
+---
+>  switchport trunk allowed vlan add 2,33,66,95,100 

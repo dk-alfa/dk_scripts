@@ -1,0 +1,7 @@
+diff -r /root/dk_scripts/tmp/2/30_dk_scr_test_megashare.py /root/dk_scripts/tmp/1/30_dk_scr_test_megashare.py
+39,40c39,40
+< #INI_FILE_NAME           = f"/root/dk_scripts/{os.path.basename(__file__).replace('_','').replace('py','json')}"
+< INI_FILE_NAME           = f"./{os.path.basename(__file__).replace('_','').replace('py','json')}"
+---
+> INI_FILE_NAME           = f"/root/dk_scripts/{os.path.basename(__file__).replace('_','').replace('py','json')}"
+> #INI_FILE_NAME           = f"./{os.path.basename(__file__).replace('_','').replace('py','json')}"

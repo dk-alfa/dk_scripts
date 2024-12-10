@@ -1,0 +1,6 @@
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+79a80
+> exten => 1414,1,macro(mobile-est,1414)
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+111a112
+> ;exten => s,n,Gosub(call-record-str,s,1)

@@ -1,0 +1,3 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+723a724
+> exten => 2303,1,macro(fmc,2303,2303)

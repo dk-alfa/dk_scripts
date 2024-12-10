@@ -1,0 +1,8 @@
+diff -r /root/dk_scripts/tmp/2/dk_main_backup.py /root/dk_scripts/tmp/1/dk_main_backup.py
+33,34d32
+< 
+< '''
+44c42
+< '''
+---
+> 

@@ -1,0 +1,6 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+396a397
+> exten => 1448,1,macro(mobile,1448)
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+97a98
+> exten => 1448,1,macro(mobile-est,1448,1448)

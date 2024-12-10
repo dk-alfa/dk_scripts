@@ -1,0 +1,100 @@
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+16c16
+< vlan 2,33,66,77,95,100,497-498 
+---
+> vlan 2,66,95,100,238-241 
+53,55d52
+< interface vlan 33
+<  name FreeWifi 
+< !
+59,61d55
+< interface vlan 77
+<  name mgmt 
+< !
+68,69c62,69
+< interface vlan 497
+<  name WiFi_Beeline_lexus 
+---
+> interface vlan 238
+>  name Haval_FreeWiFi 
+> !
+> interface vlan 239
+>  name Geely_FreeWiFi 
+> !
+> interface vlan 240
+>  name Tank_FreeWiFi 
+71,72c71,72
+< interface vlan 498
+<  name Wifi_Beeline 
+---
+> interface vlan 241
+>  name Exeed_FreeWiFi 
+76c76
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+83c83
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+108c108
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+115c115
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+122c122
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+129c129
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+139c139
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+146c146
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+166c166
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+172c172
+<  switchport trunk allowed vlan add 33,95,498 
+---
+>  switchport trunk allowed vlan add 95 
+176c176
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+183c183
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+199c199
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100,238-241 
+206c206
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+214c214
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+221c221
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,100 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW3-48_192.168.22.75.conf /root/dk_scripts/tmp/1/TCS1-SW3-48_192.168.22.75.conf
+223,225d222
+< interface fastethernet20
+<  switchport trunk native vlan 66 
+< !

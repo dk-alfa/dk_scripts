@@ -1,0 +1,14 @@
+diff -r /root/dk_scripts/tmp/2/TBR21-SW3-52_192.168.22.80.conf /root/dk_scripts/tmp/1/TBR21-SW3-52_192.168.22.80.conf
+168c168
+<  switchport trunk native vlan 66 
+---
+>  switchport trunk allowed vlan add 66 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW3-48_192.168.22.75.conf /root/dk_scripts/tmp/1/TCS1-SW3-48_192.168.22.75.conf
+249c249
+<  switchport trunk allowed vlan add 2 
+---
+>  switchport trunk native vlan 66 
+252a253,255
+> !
+> interface fastethernet27
+>  switchport trunk native vlan 66 

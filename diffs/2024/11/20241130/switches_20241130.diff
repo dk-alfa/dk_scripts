@@ -1,0 +1,8 @@
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+99c99
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+diff -r /root/dk_scripts/tmp/2/TCS5-SW1-48_192.168.22.86.conf /root/dk_scripts/tmp/1/TCS5-SW1-48_192.168.22.86.conf
+216a217
+> mac address-table static 00:13:d1:90:bb:d3 vlan 1 interface fastethernet1 

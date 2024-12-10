@@ -1,0 +1,14 @@
+diff -r /root/dk_scripts/tmp/2/15_dk_scr_test_megashare.py /root/dk_scripts/tmp/1/15_dk_scr_test_megashare.py
+84a85
+> 
+116c117
+<     print(f"{phone_num} [e] ")
+---
+>     print(f"{phone_num} [задержка {div_day} дней] ")
+diff -r /root/dk_scripts/tmp/2/phonebook_file_name /root/dk_scripts/tmp/1/phonebook_file_name
+1c1
+< Телефонный справочник на 15.01.2024.pdf
+\ В конце файла нет новой строки
+---
+> Телефонный справочник на 25.01.2024.pdf
+\ В конце файла нет новой строки

@@ -1,0 +1,6 @@
+Только в /root/dk_scripts/tmp/2: 0-Apr-2014185456LINK-I-Upfa27KTCS4-SW1-48_192.168.22.71.conf
+diff -r /root/dk_scripts/tmp/2/sw-east-1-1_192.168.200.240.conf /root/dk_scripts/tmp/1/sw-east-1-1_192.168.200.240.conf
+217a218
+>  switchport access vlan 30 
+Только в /root/dk_scripts/tmp/1: TBR21-SW3-52_192.168.22.80.conf
+Только в /root/dk_scripts/tmp/1: TCS4-SW1-48_192.168.22.71.conf

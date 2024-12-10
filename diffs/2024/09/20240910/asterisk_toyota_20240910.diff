@@ -1,0 +1,34 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+382c382,389
+< exten => 1320,1,macro(fmc,1320)
+---
+> 
+> ;2024.09.09
+> ;exten => 1316,1,macro(fmc,1316)
+> ;exten => 1317,1,macro(fmc,1317)
+> ;exten => 1318,1,macro(fmc,1318)
+> ;exten => 1319,1,macro(fmc,1319)
+> ;exten => 1320,1,macro(fmc,1320)
+> 
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+91c91,92
+< exten => _8347XXXXXXX,n,Dial(SIP/sipnetstr/${EXTEN},40)
+---
+> ;exten => _8347XXXXXXX,n,Dial(SIP/sipnetstr/${EXTEN},40) ;Отвалился sipnetstr пустил через Bis1-str 2024.09.09
+> exten => _8347XXXXXXX,n,Dial(SIP/Bis1-Str/${EXTEN},40)
+97c98,99
+< exten => _8XXXXXXXXXX,n,Dial(SIP/sipnetstr/7${EXTEN:1},40)
+---
+> ;exten => _8XXXXXXXXXX,n,Dial(SIP/sipnetstr/7${EXTEN:1},40) ;Отвалился sipnetstr пустил через Bis1-str 2024.09.09
+> exten => _8XXXXXXXXXX,n,Dial(SIP/Bis1-Str/${EXTEN},40)
+358c360,361
+< exten => _X.,5,Dial(SIP/sipnetstr/${EXTEN},40)
+---
+> ;exten => _X.,5,Dial(SIP/sipnetstr/${EXTEN},40) ;Отвалился sipnetstr пустил через Bis1-str 2024.09.09
+> exten => _X.,n,Dial(SIP/Bis1-Str/${EXTEN},40)
+diff -r /root/dk_scripts/tmp/2/queues.conf /root/dk_scripts/tmp/1/queues.conf
+165a166
+> 
+diff -r /root/dk_scripts/tmp/2/sip_users_est.conf /root/dk_scripts/tmp/1/sip_users_est.conf
+32d31
+< 

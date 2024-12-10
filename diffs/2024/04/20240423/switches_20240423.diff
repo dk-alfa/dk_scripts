@@ -1,0 +1,18 @@
+Только в /root/dk_scripts/tmp/1: 4-Oct-2013072517LINK-W-Downfa3KTCS4-SW1-48_192.168.22.71.conf
+diff -r /root/dk_scripts/tmp/2/TBR21-SW1-48_192.168.22.70.conf /root/dk_scripts/tmp/1/TBR21-SW1-48_192.168.22.70.conf
+369,370d368
+<  switchport trunk allowed vlan add 66 
+<  switchport trunk native vlan 2 
+diff -r /root/dk_scripts/tmp/2/TBR21-SW3-52_192.168.22.80.conf /root/dk_scripts/tmp/1/TBR21-SW3-52_192.168.22.80.conf
+317a318,324
+> interface gigabitethernet43
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,30,33,66,95,496,498 
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type switch 
+> !
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+97d96
+<  switchport access vlan 66 
+Только в /root/dk_scripts/tmp/2: TCS4-SW1-48_192.168.22.71.conf

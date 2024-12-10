@@ -1,0 +1,54 @@
+Только в /root/dk_scripts/tmp/1: 7-Apr-2014185455LINK-I-Upfa21KTCS4-SW1-48_192.168.22.71.conf
+diff -r /root/dk_scripts/tmp/2/LBR31-SW2-48_192.168.22.201.conf /root/dk_scripts/tmp/1/LBR31-SW2-48_192.168.22.201.conf
+233a234
+> snmp-server community notpubliccommunity ro view Default 
+diff -r /root/dk_scripts/tmp/2/TBR21-SW3-52_192.168.22.80.conf /root/dk_scripts/tmp/1/TBR21-SW3-52_192.168.22.80.conf
+16c16
+< vlan 2,30,33,66,95,496 
+---
+> vlan 2,30,33,66,95,496,498 
+34a35
+> snmp-server community notpubliccommunity ro view Default 
+58a60,62
+> interface vlan 498
+>  name Toyota_Freewifi 
+> !
+155c159
+<  switchport trunk allowed vlan add 2,30,33,66,95,496 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,496,498 
+363c367
+<  switchport trunk allowed vlan add 2,30,33,66,95,496 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,496,498 
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+37d36
+< snmp-server community publicsnmp ro view Default 
+39a39
+> snmp-server community notpubliccommunity ro view Default 
+98a99
+>  spanning-tree link-type point-to-point 
+99a101,103
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type unknown 
+116a121,127
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type switch 
+> !
+> interface fastethernet10
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+140c140
+< snmp-server community notpubliccommunity ro 192.168.1.243 view Default 
+---
+> snmp-server community notpubliccommunity ro view Default 
+Только в /root/dk_scripts/tmp/2: TCS1-SW3-48_192.168.22.75.conf
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+62c62
+< snmp-server community notpubliccommunity ro 192.168.1.243 view Default 
+---
+> snmp-server community notpubliccommunity ro view Default 
+Только в /root/dk_scripts/tmp/2: TCS4-SW1-48_192.168.22.71.conf

@@ -1,0 +1,36 @@
+diff -r /root/dk_scripts/tmp/2/TCS1-SW3-48_192.168.22.75.conf /root/dk_scripts/tmp/1/TCS1-SW3-48_192.168.22.75.conf
+77,85c77,79
+<  storm-control broadcast enable 
+<  storm-control broadcast level 10 
+<  storm-control include-multicast 
+<  port security max 10 
+<  port security mode max-addresses 
+<  port security discard trap 60 
+<  spanning-tree portfast 
+<  switchport trunk allowed vlan add 2 
+<  macro description "switch | ip_phone_desktop | no_switch                                     | ip_phone_desktop"
+---
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,30,33,66,95,100,238,498,3920 
+>  macro description "switch | ip_phone_desktop | no_switch                                      | switch"
+87c81
+<  macro auto smartport dynamic_type ip_phone_desktop 
+---
+>  macro auto smartport dynamic_type switch 
+173,175d166
+<  storm-control broadcast enable 
+<  storm-control broadcast level 10 
+<  storm-control include-multicast 
+181c172
+<  switchport trunk allowed vlan add 2,30,33,66,95,100,238,498,3920 
+---
+>  switchport trunk allowed vlan add 30,33,95 
+241,243d231
+<  storm-control broadcast enable 
+<  storm-control broadcast level 10 
+<  storm-control include-multicast 
+diff -r /root/dk_scripts/tmp/2/TCS4-SW1-48_192.168.22.71.conf /root/dk_scripts/tmp/1/TCS4-SW1-48_192.168.22.71.conf
+56,58d55
+< interface fastethernet1
+<  switchport trunk native vlan 66 
+< !

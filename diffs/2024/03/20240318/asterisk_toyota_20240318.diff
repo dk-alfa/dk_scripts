@@ -1,0 +1,9 @@
+diff -r /root/dk_scripts/tmp/2/sip_users_est.conf /root/dk_scripts/tmp/1/sip_users_est.conf
+8c8
+< dtmfmode=auto
+---
+> dtmfmode=inband
+12a13,15
+> disallow=all
+> allow=ulaw
+> allow=alaw

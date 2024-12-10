@@ -1,0 +1,7 @@
+diff -r /root/dk_scripts/tmp/2/40_dk_scr_send_phone_to_email.py /root/dk_scripts/tmp/1/40_dk_scr_send_phone_to_email.py
+28d27
+< recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru"]
+29a29,30
+> #recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru"]
+> recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru","vbezrukov@toyota-ufa.ru"]
+Только в /root/dk_scripts/tmp/1: ssh

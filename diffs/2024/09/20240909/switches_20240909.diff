@@ -1,0 +1,9 @@
+Только в /root/dk_scripts/tmp/2: sw-east-1-1_192.168.200.240.conf
+Только в /root/dk_scripts/tmp/2: sw-east-1-3_192.168.200.243.conf
+Только в /root/dk_scripts/tmp/2: sw-east-1-4_192.168.200.244.conf
+Только в /root/dk_scripts/tmp/2: sw-east-1-6_192.168.200.246.conf
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+190c190
+< macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"

@@ -1,0 +1,362 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+160a161
+> exten => 2625500,n,Set(CHANNEL(musicclass)=priz_chery-est)
+234,235c235,236
+< exten => 1568,1,GotoIfTime(9:00-21:00,*,*,*?menu_day,1565,1)
+< exten => 1568,n,Goto(menu_night,1565,1)
+---
+> ;exten => 1714,1,GotoIfTime(9:00-21:00,*,*,*?menu_day,1565,1)
+> ;exten => 1714,n,Goto(menu_night,1565,1)
+257c258,263
+< exten => 2401,1,Dial(SIP/1742,24,tT)
+---
+> exten => 2401,1,Answer()
+> exten => 2401,2,MP3Player(/var/lib/asterisk/sounds/1/haval-pro.mp3)
+> exten => 2401,n,macro(record,${UNIQUEID},${CALLERID(num)},${EXTEN})
+> exten => 2401,n,macro(toyota,1)
+> exten => 2401,n,Busy(10)
+> 
+260c266,267
+< exten => 2402,n,MP3Player(/var/lib/asterisk/sounds/1/gac-est.mp3)
+---
+> exten => 2402,2,MP3Player(/var/lib/asterisk/sounds/1/gac-est.mp3)
+> exten => 2402,n,Set(CHANNEL(musicclass)=priz_gac-est)
+321,326c328,333
+< exten => 1970,1,Answer()
+< exten => 1970,2,Set(CALLERID(num)=3472466565)
+< exten => 1970,3,macro(record,${UNIQUEID},${CALLERID(num)},${EXTEN})
+< exten => 1970,4,Dial(SIP/BeelineVoice/89178029497,30,NtT)
+< exten => 1970,n,Busy(360)
+< exten => 1970,n,Hangup()
+---
+> ;exten => 1970,1,Answer()
+> ;exten => 1970,2,Set(CALLERID(num)=3472466565)
+> ;exten => 1970,3,macro(record,${UNIQUEID},${CALLERID(num)},${EXTEN})
+> ;exten => 1970,4,Dial(SIP/BeelineVoice/89178029497,30,NtT)
+> ;exten => 1970,n,Busy(360)
+> ;exten => 1970,n,Hangup()
+335,340c342,347
+< exten => 1568,1,Answer()
+< exten => 1568,n,Macro(record,${UNIQUEID})
+< exten => 1568,n,Queue(trade_in,tT)
+< exten => 1568,n,Playtones(busy)
+< exten => 1568,n,Busy(60)
+< exten => 1568,n,Hangup()
+---
+> exten => 1734,1,Answer()
+> exten => 1734,n,Macro(record,${UNIQUEID})
+> exten => 1734,n,Queue(trade_in,tT)
+> exten => 1734,n,Playtones(busy)
+> exten => 1734,n,Busy(60)
+> exten => 1734,n,Hangup()
+523c530
+< exten => 1568,1,macro(fmc,1568,1568)
+---
+> ;exten => 1568,1,macro(fmc,1568,1568)
+530c537
+< exten => 1575,1,macro(mobile,1575,1575)
+---
+> exten => 1575,1,macro(fmc,1575)
+623a631
+> ;exten => 1714,1,macro(fmc,1714)
+643,644c651,653
+< exten => 1751,1,macro(fmc,1751)
+< exten => 1752,1,macro(fmc,1752)
+---
+> exten => 1749,1,macro(mobile,1749,1749)
+> exten => 1751,1,macro(mobile,1751,1751)
+> exten => 1752,1,macro(mobile,1752,1752)
+646c655
+< exten => 1754,1,macro(fmc,1754)
+---
+> exten => 1754,1,macro(mobile,1754,1754)
+665c674
+< exten => 1772,1,macro(fmc,1772)
+---
+> exten => 1772,1,macro(mobile,1772,1772)
+674a684
+> exten => 2321,1,macro(mobile,2321,2321)
+740a751,752
+> exten => 1942,1,macro(fmc,1942)
+> exten => 1970,1,macro(fmc,1970)
+1114,1121c1126,1133
+< [menu_tradein]
+< exten => 1568,1,Answer()
+< exten => 1568,n,Macro(record,${UNIQUEID})
+< exten => 1568,n,Set(CDR(filename)=${UNIQUEID}.mp3)
+< exten => 1568,n,Queue(trade_in,tT)
+< exten => 1568,n,Playtones(busy)
+< exten => 1568,n,Busy(60)
+< exten => 1568,n,Hangup()
+---
+> ;[menu_tradein]
+> ;exten => 1734,1,Answer()
+> ;exten => 1734,n,Macro(record,${UNIQUEID})
+> ;exten => 1734,n,Set(CDR(filename)=${UNIQUEID}.mp3)
+> ;exten => 1734,n,Queue(trade_in,tT)
+> ;exten => 1734,n,Playtones(busy)
+> ;exten => 1734,n,Busy(60)
+> ;exten => 1734,n,Hangup()
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+75c75
+< exten => 1325,n,Dial(SIP/BeelineFMC/1316&SIP/BeelineFMC/1320&SIP/BeelineFMC/1315&SIP/BeelineFMC/1314&SIP/BeelineFMC/1317&SIP/BeelineFMC/1318,30,NtT)
+---
+> exten => 1325,n,Dial(SIP/BeelineFMC/1316&SIP/BeelineFMC/1320&SIP/BeelineFMC/1315&SIP/BeelineFMC/1314&SIP/BeelineFMC/1317&SIP/BeelineFMC/1318&SIP/BeelineFMC/1319,30,NtT)
+106a107
+> exten => 1453,1,macro(mobile-est,1453,1453)
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+91,92c91,92
+< ;exten => _8347XXXXXXX,n,Dial(SIP/sipnetstr/${EXTEN},40) ;Отвалился sipnetstr пустил через Bis1-str 2024.09.09
+< exten => _8347XXXXXXX,n,Dial(SIP/Bis1-Str/${EXTEN},40)
+---
+> exten => _8347XXXXXXX,n,Dial(SIP/sipnetstr/${EXTEN},40) 
+> ;exten => _8347XXXXXXX,n,Dial(SIP/Bis1-Str/${EXTEN},40) ;Отвалился sipnetstr пустил через Bis1-str 2024.09.09
+102,103c102,103
+< ;exten => _8XXXXXXXXXX,n,Dial(SIP/sipnetstr/7${EXTEN:1},40) ;Отвалился sipnetstr пустил через Bis1-str 2024.09.09
+< exten => _8XXXXXXXXXX,n,Dial(SIP/Bis1-Str/${EXTEN},40)
+---
+> exten => _8XXXXXXXXXX,n,Dial(SIP/sipnetstr/7${EXTEN:1},40) 
+> ;exten => _8XXXXXXXXXX,n,Dial(SIP/Bis1-Str/${EXTEN},40) ;Отвалился sipnetstr пустил через Bis1-str 2024.09.09
+205a206,208
+> ;01.10.24_semelev
+> exten => s,2,PlayBack(/etc/asterisk/mp3/chery_str)
+> ;01.10.24_semelev
+242c245
+< exten => _700,n,PlayBack(into1)
+---
+> exten => _700,n,PlayBack(into2)
+253c256,257
+< exten => _700,n,PlayBack(into1)
+---
+> ;exten => _700,n,PlayBack(into1)
+> exten => _700,n,PlayBack(/etc/asterisk/mp3/chery_str)
+364,365c368,369
+< ;exten => _X.,5,Dial(SIP/sipnetstr/${EXTEN},40) ;Отвалился sipnetstr пустил через Bis1-str 2024.09.09
+< exten => _X.,n,Dial(SIP/Bis1-Str/${EXTEN},40)
+---
+> exten => _X.,5,Dial(SIP/sipnetstr/${EXTEN},40) 
+> ;exten => _X.,n,Dial(SIP/Bis1-Str/${EXTEN},40) ;Отвалился sipnetstr пустил через Bis1-str 2024.09.09
+diff -r /root/dk_scripts/tmp/2/musiconhold.conf /root/dk_scripts/tmp/1/musiconhold.conf
+47a48,55
+> [priz_chery-est]
+> mode=files
+> directory=/etc/asterisk/sounds/musichold/priz/chery-est
+> 
+> [priz_gac-est]
+> mode=files
+> directory=/etc/asterisk/sounds/musichold/priz/gac-est
+> 
+55,75d62
+< 
+< ;[native-alphabetical]
+< ;mode=files
+< ;directory=moh
+< ;sort=alpha     ; Sort the files in alphabetical order.  If this option is
+< ;               ; not specified, the sort order is undefined.
+< 
+< ;[manual]
+< ;mode=custom
+< ;directory=/var/lib/asterisk/mohmp3
+< ;application=/usr/bin/mpg123 -q -r 8000 -f 8192 -b 2048 --mono -s
+< 
+< ;[ulawstream]
+< ;mode=custom
+< ;application=/usr/bin/streamplayer 192.168.100.52 888
+< ;format=ulaw
+< 
+< ;[solaris]
+< ;mode=custom
+< ;directory=/var/lib/asterisk/mohmp3
+< ;application=/site/sw/bin/madplay -Q -o raw:- --mono -R 8000 -a -12
+diff -r /root/dk_scripts/tmp/2/queues.conf /root/dk_scripts/tmp/1/queues.conf
+109c109
+< timeout =30
+---
+> timeout =8
+111,118c111,117
+< ;member => SIP/1720,1
+< member => SIP/1761,1
+< member => SIP/1762,1
+< member => SIP/1763,1
+< member => SIP/1764,1
+< member => SIP/1765,1
+< member => SIP/1767,1
+< member => SIP/1714,1
+---
+> member => SIP/1749,1
+> member => SIP/1751,1
+> member => SIP/1752,1
+> member => SIP/1754,1
+> member => SIP/1772,1
+> ;member => SIP/1767,1
+> ;member => SIP/1714,1
+165c164
+< 
+---
+> member => SIP/1462,1
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+304,315c304,315
+< [Hyundai]
+< type=friend
+< qualify=yes
+< dtmfmode=auto
+< host=192.168.200.8
+< insecure=port,invite
+< context=fromlocal
+< disallow=all
+< allow=ulaw
+< allow=alaw
+< transport=udp
+< canreinvite=no
+---
+> ;[Hyundai]
+> ;type=friend
+> ;qualify=yes
+> ;dtmfmode=auto
+> ;host=192.168.200.8
+> ;insecure=port,invite
+> ;context=fromlocal
+> ;disallow=all
+> ;allow=ulaw
+> ;allow=alaw
+> ;transport=udp
+> ;canreinvite=no
+317,328c317,328
+< [ster]
+< type=peer
+< qualify=200
+< dtmfmode=auto
+< host=192.168.12.9
+< insecure=port,invite
+< context=fromlocal
+< disallow=all
+< allow=ulaw
+< allow=alaw
+< transport=udp
+< canreinvite=no
+---
+> ;[ster]
+> ;type=peer
+> ;qualify=200
+> ;dtmfmode=auto
+> ;host=192.168.12.9
+> ;insecure=port,invite
+> ;context=fromlocal
+> ;disallow=all
+> ;allow=ulaw
+> ;allow=alaw
+> ;transport=udp
+> ;canreinvite=no
+331,342c331,342
+< [sever]
+< type=peer
+< qualify=200
+< dtmfmode=auto
+< host=192.168.100.9
+< insecure=port,invite
+< context=fromlocal
+< disallow=all
+< allow=ulaw
+< allow=alaw
+< transport=udp
+< canreinvite=no
+---
+> ;[sever]
+> ;type=peer
+> ;qualify=200
+> ;dtmfmode=auto
+> ;host=192.168.100.9
+> ;insecure=port,invite
+> ;context=fromlocal
+> ;disallow=all
+> ;allow=ulaw
+> ;allow=alaw
+> ;transport=udp
+> ;canreinvite=no
+698,700c698,700
+< [1575](phone)   
+< secret=1575 
+< callerid=1575
+---
+> ;[1575](phone)   
+> ;secret=1575 
+> ;callerid=1575
+1121,1123c1121,1123
+< [1714](phone)
+< secret=1714
+< callerid=1714
+---
+> ;[1714](phone)
+> ;secret=1714
+> ;callerid=1714
+1188a1189,1192
+> [1734](phone)
+> secret=1734
+> callerid=1734
+> 
+1230a1235,1238
+> [1749](phone)
+> secret=1749
+> callerid=1749
+> 
+1235,1241c1243,1253
+< ;[1751](phone)
+< ;secret=1751
+< ;callerid=1751
+< 
+< ;[1754](phone)
+< ;secret=1754
+< ;callerid=1754
+---
+> [1751](phone)
+> secret=1751
+> callerid=1751
+> 
+> [1752](phone)
+> secret=1752
+> callerid=1752
+> 
+> [1754](phone)
+> secret=1754
+> callerid=1754
+1303,1305c1315,1317
+< ;[1772](phone)
+< ;secret=1772
+< ;callerid=1772
+---
+> [1772](phone)
+> secret=1772
+> callerid=1772
+1410a1423,1425
+> [2321](phone)
+> secret=2321
+> callerid=2321
+diff -r /root/dk_scripts/tmp/2/sip_trunks_nrt.conf /root/dk_scripts/tmp/1/sip_trunks_nrt.conf
+1,7c1,7
+< [Cisco-GW-nrt]
+< type=peer
+< host=192.168.8.50
+< insecure=port,invite
+< canreinvite=yes
+< context=gateway
+< qualify=yes
+---
+> ;[Cisco-GW-nrt]
+> ;type=peer
+> ;host=192.168.8.50
+> ;insecure=port,invite
+> ;canreinvite=yes
+> ;context=gateway
+> ;qualify=yes
+diff -r /root/dk_scripts/tmp/2/sip_users_est.conf /root/dk_scripts/tmp/1/sip_users_est.conf
+201c201
+< secret=1453@hyu
+---
+> secret=hyu@1453
+238a239,243
+> call-limit=2
+> 
+> [1462](phone-est)
+> secret=hyu@1462
+> callerid=1462
+Только в /root/dk_scripts/tmp/1/sounds/musichold: priz

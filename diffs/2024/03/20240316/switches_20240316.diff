@@ -1,0 +1,5 @@
+diff -r /root/dk_scripts/tmp/2/TCS5-SW1-48_192.168.22.86.conf /root/dk_scripts/tmp/1/TCS5-SW1-48_192.168.22.86.conf
+137,139d136
+< interface fastethernet24
+<  switchport trunk allowed vlan add 33,95,498 
+< !

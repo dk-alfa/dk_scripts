@@ -1,0 +1,50 @@
+diff -r /root/dk_scripts/tmp/2/LBR31-SW3-24_192.168.22.202.conf /root/dk_scripts/tmp/1/LBR31-SW3-24_192.168.22.202.conf
+159a160,172
+> interface fastethernet20
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+>  switchport trunk allowed vlan add 2 
+>  macro description ip_phone_desktop
+>  !next command is internal.
+>  macro auto smartport dynamic_type ip_phone_desktop 
+> !
+diff -r /root/dk_scripts/tmp/2/LBR31-SW4-48_192.168.22.203.conf /root/dk_scripts/tmp/1/LBR31-SW4-48_192.168.22.203.conf
+1c1
+< interface range fa15,fa37
+---
+> interface range fa15,fa27,fa37
+9a10,15
+> interface fastethernet27
+> storm-control broadcast level 10 
+> exit
+> interface fastethernet27
+> storm-control include-multicast 
+> exit
+16c22
+< interface range fa15,fa37
+---
+> interface range fa15,fa27,fa37
+25c31
+< interface range fa15,fa37
+---
+> interface range fa15,fa27,fa37
+28c34
+< interface range fa15,fa37
+---
+> interface range fa15,fa27,fa37
+31c37
+< interface range fa15,fa37
+---
+> interface range fa15,fa27,fa37
+82a89,91
+> interface fastethernet27
+> macro description ip_phone_desktop
+> exit
+186a196,197
+> !next command is internal.
+> macro auto smartport dynamic_type unknown 

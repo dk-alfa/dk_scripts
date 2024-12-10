@@ -1,0 +1,38 @@
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+1c1
+< interface range fa19,fa21
+---
+> interface  fa21
+4,9d3
+< interface fastethernet19
+< storm-control broadcast level 10 
+< exit
+< interface fastethernet19
+< storm-control include-multicast 
+< exit
+16c10
+< interface range fa19,fa21
+---
+> interface  fa21
+28c22
+< interface range fa19,fa21
+---
+> interface  fa21
+31c25
+< interface range fa19,fa21
+---
+> interface  fa21
+34c28
+< interface range fa19,fa21
+---
+> interface  fa21
+83c77
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+159,163d152
+< exit
+< interface fastethernet19
+< !next command is internal.
+< macro auto smartport dynamic_type ip_phone_desktop 
+< switchport trunk allowed vlan add 2 

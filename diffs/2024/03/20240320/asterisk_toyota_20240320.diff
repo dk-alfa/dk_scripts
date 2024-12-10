@@ -1,0 +1,38 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+818,826d817
+< ;--
+< exten => _89XXXXXXXXX/1315,1,Answer()
+< exten => _89XXXXXXXXX/1315,n,Set(CALLERID(name)=2625500)
+< exten => _89XXXXXXXXX/1315,n,Macro(record,${UNIQUEID})
+< exten => _89XXXXXXXXX/1315,n,Dial(SIP/Megafon-Chery/${EXTEN},,NtT) 
+< exten => _89XXXXXXXXX/1315,n,Busy(60)
+< exten => _89XXXXXXXXX/1315,n,Hangup()
+< --;
+< 
+833,838d823
+< 
+< 
+< ;exten => _3./1742,1,Answer()
+< ;exten => _3./1742,n,NoOp(Chery)
+< ;exten => _3./1742,n,Set(CALLERID(name)=2625500)
+< ;exten => _3./1742,n,Dial(SIP/Megafon/89177522273,,NtT)
+849,856d833
+< 
+< exten => _880025XXXXX,1,Answer()
+< exten => _880025XXXXX,n,Set(CALLERID(num)=73472466565)
+< exten => _880025XXXXX,n,Macro(record,${UNIQUEID})
+< exten => _880025XXXXX,n,Dial(SIP/ufanet77-est/${EXTEN},,NtT)
+< exten => _880025XXXXX,n,Busy(60)
+< exten => _880025XXXXX,n,Hangup()
+< 
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+112c112
+< ;exten => s,n,Gosub(call-record-str,s,1)
+---
+> exten => s,n,Gosub(call-record-str,s,1)
+diff -r /root/dk_scripts/tmp/2/logger.conf /root/dk_scripts/tmp/1/logger.conf
+134c134,135
+< console => notice,warning,error,dtmf
+---
+> console => notice,warning,error
+> ;console => notice,warning,error,dtmf

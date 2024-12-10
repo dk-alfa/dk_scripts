@@ -1,0 +1,17 @@
+diff -r /root/dk_scripts/tmp/2/sw-sever-1-1_10.9.1.4.conf /root/dk_scripts/tmp/1/sw-sever-1-1_10.9.1.4.conf
+14c14
+< interface range gi25,gi28
+---
+> interface range gi25-26
+110a111,113
+> interface gigabitethernet26
+> macro description switch
+> exit
+115c118
+< macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch"
+---
+> macro description "no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch"
+235,237d237
+< switchport trunk allowed vlan add 2-4,66,100 
+< exit
+< interface gigabitethernet28

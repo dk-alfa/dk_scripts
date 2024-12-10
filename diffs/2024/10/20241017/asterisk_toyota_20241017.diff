@@ -1,0 +1,52 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+666c666
+< exten => 1745,1,macro(fmc,1745)
+---
+> ;exten => 1745,1,macro(fmc,1745)
+789,793c789,792
+< exten => 911,1,Dial(SIP/BeelineFMC/1745,25,rt)
+< exten => 911,n,Dial(SIP/BeelineFMC/1741,25,rt)
+< exten => 911,n,Dial(SIP/BeelineFMC/1675,25,rt)
+< exten => 911,n,macro(mobile,1742,1742)
+< exten => 911,n,Busy(50)
+---
+> 
+> exten => 911,1,Answer()
+> exten => 911,n,Macro(record,${UNIQUEID})
+> exten => 911,n,Dial(SIP/911)
+796a796,805
+> exten => 912,1,Dial(SIP/912)
+> 
+> ;exten => 911,1,Dial(SIP/BeelineFMC/1745,25,rt)
+> ;exten => 911,n,Dial(SIP/BeelineFMC/1741,25,rt)
+> ;exten => 911,n,Dial(SIP/BeelineFMC/1675,25,rt)
+> ;exten => 911,n,macro(mobile,1742,1742)
+> ;exten => 911,n,Busy(50)
+> ;exten => 911,n,Hangup()
+> 
+> 
+1023,1027c1032,1038
+< exten => 911,1,Answer()
+< exten => 911,n,MixMonitor(/srv/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/srv/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+< exten => 911,n,Dial(SIP/BeelineFMC/1745,,NtT)
+< exten => 911,n,Busy(60)
+< exten => 911,n,Hangup()
+---
+> 
+> exten => 911,n,macro(mobile,911,911)
+> ;exten => 911,1,Answer()
+> ;exten => 911,n,MixMonitor(/srv/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/srv/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+> ;exten => 911,n,Dial(SIP/BeelineFMC/1745,,NtT)
+> ;exten => 911,n,Busy(60)
+> ;exten => 911,n,Hangup()
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+1231a1232,1240
+> [911](phone)
+> secret=911
+> callerid=911
+> 
+> 
+> [912](phone)
+> secret=912
+> callerid=912
+> 

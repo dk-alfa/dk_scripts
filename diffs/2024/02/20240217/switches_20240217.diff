@@ -1,0 +1,16 @@
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+113c113,114
+< switchport trunk native vlan 66 
+---
+> switchport mode access 
+> switchport general pvid 66 
+174c175,176
+< switchport trunk native vlan 66 
+---
+> switchport mode access 
+> switchport general pvid 66 
+210c212,213
+< switchport trunk native vlan 66 
+---
+> switchport mode access 
+> switchport general pvid 66 

@@ -1,0 +1,445 @@
+------------------------------------------------------------
+2023-11-28 02:00:03.042996 [10_dk_scr_bcp_sw_sx300_conf.py] start
+------------------------------------------------------------
+Ошибка: /docker/samba/data/public/backups/switches/2_switches_backup_20231121.tar : Not a directory
+/docker/samba/data/public/backups/switches//2_20231128
+Trying 192.168.22.62...
+Connected to 192.168.22.62.
+Escape character is '^]'.
+
+
+Toyota IT Отдел
+
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TCS0-SW1-24#
+
+[KTCS0-SW1-24#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_TCS0-SW1-24_192.168.22.62.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/202311TCS0-SW1-24#[K$-config tftp://172.16.1.78/switches/2_20231128/20231128_TCS0-Sexit
+Trying 192.168.22.76...
+Connected to 192.168.22.76.
+Escape character is '^]'.
+
+
+Приемка страховки
+Toyota ShowRoom 
+под вторым слева столом
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TCS0-SW2-08#
+
+[KTCS0-SW2-08#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_TCS0-SW2-08_192.168.22.76.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/202311TCS0-SW2-08#[K$-config tftp://172.16.1.78/switches/2_202311exit
+Trying 192.168.22.87...
+Connected to 192.168.22.87.
+Escape character is '^]'.
+
+
+
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TCS0-SW7-24#
+
+[KTCS0-SW7-24#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_TCS0-SW7-24_192.168.22.87.conf
+04-Jan-2016 03:31:06 %LINK-W-Down:  fa14
+copy running-config tftp://172.16.1.78/switches/2_20231128/202311TCS0-SW7-24#[K$-config tftp://172.16.1.78/switches/2_20231128/20231128_TCS0-SWTCS0-SW7-24#[K$tp://172.16.1.78/switches/2_20231128/20231128_TCS0-SW7-24_192.1TCS0-SW7-24#[K$6.1.78/switches/2_20231128/20231128_TCS0-SW7-24_192.168.22.87.cTCS0-SW7-24#[K$tches/2_20231128/20231128_TCS0-SW7-24_192.168.22.87.conf
+04-Jan-2016 03:31:06 %COPY-I-FILECPY: Files Copy - source URL running-config destination URL tftp://172.16.1.78/switches/2_20231128/20231128_TCS0-SW7-24_192.168.22.87.conf
+exit
+Trying 192.168.22.68...
+Connected to 192.168.22.68.
+Escape character is '^]'.
+
+
+Серверный коммутатор2
+
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+Servers Switch2
+
+TBR12-SW2-20#
+
+[KTBR12-SW2-20#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_TBR12-SW2-20_192.168.22.68.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/20231TBR12-SW2-20#[K$-config texit
+Trying 192.168.22.70...
+Connected to 192.168.22.70.
+Escape character is '^]'.
+
+
+Toyota Коммутатор1
+
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TBR21-SW1-48#
+07-Aug-2016 02:14:49 %STP-W-PORTSTATUS: fa46: STP status Forwarding
+
+[KTBR21-SW1-48#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_7-Aug-2016021449STP-W-PORTSTATUSfa46STPstatusForwardingKTBR21-SW1-48_192.168.22.70.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/20231TBR21-SW1-48#[K$-config tftp://172.16.1.78/switches/2_202exit
+Trying 192.168.22.80...
+Connected to 192.168.22.80.
+Escape character is '^]'.
+
+
+Toyota Коммутатор2
+
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TBR21-SW3-52#
+
+[KTBR21-SW3-52#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_TBR21-SW3-52_192.168.22.80.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/20231TBR21-SW3-52#[K$-config tftp://172.16.1.78/switches/2_20231128/20231128_TBR21-TBR21-SW3-52#[K$tp://172.16.1.78/switches/2_20231128/20231128_TBR21-SW3-52_192TBR21-SW3-52#[K$6.1.78/switches/2_20231128/20231128_TBR21-SW3-52_192.168.22.80TBR21-SW3-52#[K$tches/2_20231128/20231128_TBR21-SW3-52_192.168.22.80.conf
+17-Aug-2021 18:47:39 %COPY-I-FILECPY: Files Copy - source URL running-config destination URL tftp://172.16.1.78/switches/2_20231128/20231128_TBR21-SW3-52_192.168.22.80.conf
+exit
+Trying 192.168.22.63...
+Connected to 192.168.22.63.
+Escape character is '^]'.
+
+
+ЮрОтдел коммутатор2
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TCS1-SW2-48#
+
+[KTCS1-SW2-48#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_TCS1-SW2-48_192.168.22.63.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/202311TCS1-SW2-48#[K$-config tftp://172.16.1.78/switcheexit
+Trying 192.168.22.75...
+Connected to 192.168.22.75.
+Escape character is '^]'.
+
+
+ЮрОтдел коммутатор3
+
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+Legal department 3
+
+TCS1-SW3-48#
+
+[KTCS1-SW3-48#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_TCS1-SW3-48_192.168.22.75.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/202311TCS1-SW3-48#[K$-config tftp://172.16.1.78/switcexit
+Trying 192.168.22.84...
+Connected to 192.168.22.84.
+Escape character is '^]'.
+
+
+Отдел кадров
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TCS2-SW1-48#
+
+[KTCS2-SW1-48#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_TCS2-SW1-48_192.168.22.84.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/202311TCS2-SW1-48#[K$-config tftp://172.16.1.78/switchesexit
+Trying 192.168.22.81...
+Connected to 192.168.22.81.
+Escape character is '^]'.
+
+
+CallCenter
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TCS3-SW1-24#
+
+[KTCS3-SW1-24#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_TCS3-SW1-24_192.168.22.81.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/202311TCS3-SW1-24#[K$-config tftp://172.16.1.78/switches/2_20231128/20231128_TCS3-SWTCS3-SW1-24#[K$tp://172.16.1.78/switches/2_20231128/20231128_TCS3-SW1-24_192.1TCS3-SW1-24#[K$6.1.78/switches/2_20231128/20231128_TCS3-SW1-24_192.168.22.81.cTCS3-SW1-24#[K$tches/2_20231128/20231128_TCS3-SW1-24_192.168.22.81.conf
+28-Nov-2023 02:00:27 %COPY-I-FILECPY: Files Copy - source URL running-config destination URL tftp://172.16.1.78/switches/2_20231128/20231128_TCS3-SW1-24_192.168.22.81.conf
+exit
+Trying 192.168.22.71...
+Connected to 192.168.22.71.
+Escape character is '^]'.
+
+
+Toyota АХЧ
+
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TCS4-SW1-48#
+12-Jan-2014 18:55:07 %LINK-I-Up:  fa26
+
+[KTCS4-SW1-48#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_2-Jan-2014185507LINK-I-Upfa26KTCS4-SW1-48_192.168.22.71.conf
+12-Jan-2014 18:55:07 %LINK-W-Down:  fa21
+copy running-config tftp://172.16.1.78/switches/2_20231128/202311TCS4-SW1-48#[K$-config tftp://172.16.1.78/switches/2_20231128/20231128_2-Jan-2TCS4-SW1-48#[K$tp://172.16.1.78/switches/2_20231128/20231128_2-Jan-2014185507LTCS4-SW1-48#[K$6.1.78/switches/2_20231128/20231128_2-Jan-2014185507LINK-I-UpfaTCS4-SW1-48#[K$tches/2_20231128/20231128_2-Jan-2014185507LINK-I-Upfa26KTCS4-SWTCS4-SW1-48#[K$231128/20231128_2-Jan-2014185507LINK-I-Upfa26KTCS4-SW1-48_192.1TCS4-SW1-48#[K$31128_2-Jan-2014185507LINK-I-Upfa26KTCS4-SW1-48_192.168.22.71.cTCS4-SW1-48#[K$n-20141855exit
+Trying 192.168.22.201...
+Connected to 192.168.22.201.
+Escape character is '^]'.
+
+
+Lexus камеры 1
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+LBR31-SW2-48#
+
+[KLBR31-SW2-48#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_LBR31-SW2-48_192.168.22.201.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/20231LBR31-SW2-48#[K$-config tftp://172.16.1.78/switches/2exit
+Trying 192.168.22.202...
+Connected to 192.168.22.202.
+Escape character is '^]'.
+
+
+Lexus камеры 2
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+LBR31-SW3-24#
+
+[KLBR31-SW3-24#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_LBR31-SW3-24_192.168.22.202.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/20231LBR31-SW3-24#[K$-config tftp://172.16.1.78/switches/2_20231128/202exit
+Trying 192.168.22.203...
+Connected to 192.168.22.203.
+Escape character is '^]'.
+
+
+Lexus пользователи
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+LBR31-SW4-48#
+
+[KLBR31-SW4-48#copy running-config tftp://172.16.1.78/switches/2_20231128/20231128_LBR31-SW4-48_192.168.22.203.conf
+copy running-config tftp://172.16.1.78/switches/2_20231128/20231LBR31-SW4-48#[K$-config tftp://172.16.1.78/switches/2_20231128/20231128_LBR31-LBR31-SW4-48#[K$tp://172.16.1.78/switches/2_20231128/20231128_LBR31-SW4-48_192LBR31-SW4-48#[K$6.1.78/switches/2_20231128/20231128_LBR31-SW4-48_192.168.22.20LBR31-SW4-48#[K$tches/2_20231128/20231128_LBR31-SW4-48_192.168.22.203.conf
+21-Jan-2012 00:17:02 %COPY-I-FILECPY: Files Copy - source URL running-config destination URL tftp://172.16.1.78/switches/2_20231128/20231128_LBR31-SW4-48_192.168.22.203.conf
+exit
+------------------------------------------------------------
+2023-11-28 02:00:03.042996 [10_dk_scr_bcp_sw_sx300_conf.py] stop
+[1m[32m2023-11-28 02:00:13.052911 Start script [backup_docker], writen by Dmitry Korablev 2022.03.28[0m
+dst_path_cur = /docker/samba/data/public/backups/docker/wiki
+2023-11-28 02:00:13.052911 Удаляем файл: /docker/samba/data/public/backups/docker/wiki/2_wiki_backup_20231121.tar
+2023-11-28 02:00:13.052911 Старт архивации 
+2023-11-28 02:00:13.052911 Конец архивации 
+dst_path_cur = /docker/samba/data/public/backups/docker/postgres
+2023-11-28 02:00:13.052911 Удаляем файл: /docker/samba/data/public/backups/docker/postgres/2_postgres_backup_20231121.tar
+2023-11-28 02:00:13.052911 Старт архивации 
+2023-11-28 02:00:13.052911 Конец архивации 
+dst_path_cur = /docker/samba/data/public/backups/docker/tftp
+2023-11-28 02:00:13.052911 Удаляем файл: /docker/samba/data/public/backups/docker/tftp/2_tftp_backup_20231121.tar
+2023-11-28 02:00:13.052911 Старт архивации 
+2023-11-28 02:00:13.052911 Конец архивации 
+Ok
+[1m[32m2023-11-28 02:00:13.052911 End script [backup_docker], writen by Dmitry Korablev 2022.03.28[0m
+------------------------------------------------------------
+start 2023-11-28 02:04:09.220581 [27_dk_scr_bcp_archiving.py]
+------------------------------------------------------------
+start 2023-11-28 02:04:09.221081 [27_dk_scr_bcp_archiving.py] Прочитан файл настроек
+start 2023-11-28 02:04:09.221520 [27_dk_scr_bcp_archiving.py] Удален файл: [/docker/samba/data/public/backups/dk_scripts/2_dk_scripts_backup_20231121.tar]
+start 2023-11-28 02:04:09.221630 [27_dk_scr_bcp_archiving.py] Создан архивный файл: [/docker/samba/data/public/backups/dk_scripts/2_dk_scripts_backup_20231128.tar]
+start 2023-11-28 02:04:11.692348 [27_dk_scr_bcp_archiving.py] Удален файл: [/docker/samba/data/public/backups/switches/2_switches_backup_20231121.tar]
+start 2023-11-28 02:04:11.692438 [27_dk_scr_bcp_archiving.py] Создан архивный файл: [/docker/samba/data/public/backups/switches/2_switches_backup_20231128.tar]
+start 2023-11-28 02:04:12.702479 [27_dk_scr_bcp_archiving.py] Удален файл: [/docker/samba/data/public/backups/asterisk_toyota/2_asterisk_toyota_backup_20231121.tar]
+start 2023-11-28 02:04:12.704113 [27_dk_scr_bcp_archiving.py] Создан архивный файл: [/docker/samba/data/public/backups/asterisk_toyota/2_asterisk_toyota_backup_20231128.tar]
+------------------------------------------------------------
+stop  2023-11-28 02:04:12.704198 [27_dk_scr_bcp_archiving.py]
+
+Upload finished: /backup/172.16.1.78/docker/postgres/2_postgres_backup_20231128.tar
+Logging out...
+
+Upload finished: /backup/172.16.1.78/docker/tftp/2_tftp_backup_20231128.tar
+Logging out...
+
+Upload finished: /backup/172.16.1.78/docker/wiki/2_wiki_backup_20231128.tar
+Logging out...
+
+Upload finished: /backup/172.16.1.78/switches/toyota/2_switches_backup_20231128.tar
+Logging out...
+
+Upload finished: /backup/172.16.1.78/dk_scripts/2_dk_scripts_backup_20231128.tar
+Logging out...
+
+Upload finished: /backup/172.16.1.78/asterisk/toyota/2_asterisk_toyota_backup_20231128.tar
+Logging out...
+-----------------------------------------------------------
+2023-11-28 02:04:12.755380 [29_dk_scr_bcp_copy.py] start
+2023-11-28 02:04:12.756844 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/docker/postgres/2_postgres_backup_20231121.tar]
+2023-11-28 02:04:12.764494 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/docker/postgres/2_postgres_backup_20231128.tar /docker/samba/data/public/backups_1/docker/postgres/]
+2023-11-28 02:04:13.300198 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/docker/tftp/2_tftp_backup_20231121.tar]
+2023-11-28 02:04:13.300312 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/docker/tftp/2_tftp_backup_20231128.tar /docker/samba/data/public/backups_1/docker/tftp/]
+2023-11-28 02:04:13.301563 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/docker/wiki/2_wiki_backup_20231121.tar]
+2023-11-28 02:04:13.588533 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/docker/wiki/2_wiki_backup_20231128.tar /docker/samba/data/public/backups_1/docker/wiki/]
+2023-11-28 02:04:24.582247 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/switches/toyota/2_switches_backup_20231121.tar]
+2023-11-28 02:04:24.582366 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/switches/2_switches_backup_20231128.tar /docker/samba/data/public/backups_1/switches/toyota/]
+2023-11-28 02:04:24.621834 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/dk_scripts/2_dk_scripts_backup_20231121.tar]
+2023-11-28 02:04:24.684097 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/dk_scripts/2_dk_scripts_backup_20231128.tar /docker/samba/data/public/backups_1/dk_scripts/]
+2023-11-28 02:04:24.754687 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/asterisk/toyota/2_asterisk_toyota_backup_20231121.tar]
+2023-11-28 02:04:24.754805 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/asterisk_toyota/2_asterisk_toyota_backup_20231128.tar /docker/samba/data/public/backups_1/asterisk/toyota/]
+2023-11-28 02:04:29.077187 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_postgres_backup_20231121.tar]
+2023-11-28 02:04:29.078385 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/docker/postgres/2_postgres_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:04:30.412490 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_tftp_backup_20231121.tar]
+2023-11-28 02:04:30.413557 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/docker/tftp/2_tftp_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:04:30.468638 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_wiki_backup_20231121.tar]
+2023-11-28 02:04:30.469855 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/docker/wiki/2_wiki_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:05:23.731201 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_switches_backup_20231121.tar]
+2023-11-28 02:05:23.755804 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/switches/2_switches_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:05:23.820811 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_dk_scripts_backup_20231121.tar]
+2023-11-28 02:05:23.821846 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/dk_scripts/2_dk_scripts_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:05:24.124958 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_asterisk_toyota_backup_20231121.tar]
+2023-11-28 02:05:24.127027 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/asterisk_toyota/2_asterisk_toyota_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:05:24.904894 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_postgres_backup_20231121.tar]
+2023-11-28 02:05:25.121730 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/docker/postgres/2_postgres_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:05:37.005613 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_tftp_backup_20231121.tar]
+2023-11-28 02:05:37.048052 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/docker/tftp/2_tftp_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:05:37.198870 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_wiki_backup_20231121.tar]
+2023-11-28 02:05:38.416778 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/docker/wiki/2_wiki_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:09:18.030735 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_switches_backup_20231121.tar]
+2023-11-28 02:09:18.077133 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/switches/2_switches_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:09:18.267753 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_dk_scripts_backup_20231121.tar]
+2023-11-28 02:09:18.313811 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/dk_scripts/2_dk_scripts_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:09:22.795086 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/2_asterisk_toyota_backup_20231121.tar]
+2023-11-28 02:09:23.095546 [29_dk_scr_bcp_copy.py] Копируется: [/docker/samba/data/public/backups/asterisk_toyota/2_asterisk_toyota_backup_20231128.tar /mnt/tmp/]
+2023-11-28 02:13:29.086235 [29_dk_scr_bcp_copy.py] stop
+[1m[32mstart 30_dk_scr_test_megashare.py[0m
+[1m[32mstop 30_dk_scr_test_megashare.py[0m
+2023-11-28 02:13:42.218790 [32_dk_scr_check_dif.py] start
+2023-11-28 02:13:44.926034 [32_dk_scr_check_dif.py] stop
+[1m[32mstart 40_dk_scr_send_phone_to_email.py[0m
+[1m[32mstop 40_dk_scr_send_phone_to_email.py[0m
+[1m[32mstart 50_dk_scr_test_phonebook.py[0m
+[1m[32mstop 50_dk_scr_test_phonebook.py[0m
+[1m[32mstart 10_dk_rep_backup_sw_sx_300_conf.py[0m
+[1m[32mstop 10_dk_rep_backup_sw_sx_300_conf.py[0m
+backup/172.16.1.78/docker/postgres/2_postgres_backup_20231128.tar
+Logging out...
+backup/172.16.1.78/docker/tftp/2_tftp_backup_20231128.tar
+Logging out...
+backup/172.16.1.78/docker/wiki/2_wiki_backup_20231128.tar
+Logging out...
+backup/172.16.1.78/asterisk/toyota/2_asterisk_toyota_backup_20231128.tar
+Logging out...
+backup/172.16.1.78/dk_scripts/2_dk_scripts_backup_20231128.tar
+Logging out...
+backup/172.16.1.78/switches/toyota/2_switches_backup_20231128.tar
+Logging out...
+------------------------------------------------------------
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] start 
+------------------------------------------------------------
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] прочитан файл настрек 
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/docker/postgres/2_postgres_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/docker/tftp/2_tftp_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/docker/wiki/2_wiki_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/asterisk_toyota/2_asterisk_toyota_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/dk_scripts/2_dk_scripts_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/switches/2_switches_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/docker/postgres/2_postgres_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/docker/tftp/2_tftp_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/docker/wiki/2_wiki_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/asterisk/toyota/2_asterisk_toyota_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/dk_scripts/2_dk_scripts_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/switches/toyota/2_switches_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/docker/postgres/2_postgres_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/docker/tftp/2_tftp_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/docker/wiki/2_wiki_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/asterisk/toyota/2_asterisk_toyota_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/dk_scripts/2_dk_scripts_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/switches/toyota/2_switches_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/docker/postgres/2_postgres_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/docker/tftp/2_tftp_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/docker/wiki/2_wiki_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/asterisk/toyota/2_asterisk_toyota_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/dk_scripts/2_dk_scripts_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/switches/toyota/2_switches_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/docker/postgres/2_postgres_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/docker/tftp/2_tftp_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/docker/wiki/2_wiki_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/asterisk/toyota/2_asterisk_toyota_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/dk_scripts/2_dk_scripts_backup_20231128.tar найден [PASS]
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/switches/toyota/2_switches_backup_20231128.tar найден [PASS]
+------------------------------------------------------------
+2023-11-28 02:13:45.988625 [20_dk_rep_copy_backup_files.py] end
+[1m[32mstart 30_dk_rep_test_megashare.py[0m
+[1m[32mstop 30_dk_rep_test_megashare.py[0m
+[1m[32mstart 50_dk_rep_test_phonebook.py[0m
+/root/dk_scripts/phonebook_file_name
+ Match
+[1m[32mstop 50_dk_rep_test_phonebook.py[0m
+------------------------------------------------------------
+2023-11-28 02:13:45.781998 [99_dk_scr_send_mi_a_report.py] start
+------------------------------------------------------------
+2023-11-28 02:13:45.781998 [99_dk_scr_send_mi_a_report.py] Выполняется скрипт: /root/dk_scripts/reports_scripts/10_dk_rep_backup_sw_sx_300_conf.py /root/dk_scripts/reports/2023-11-28/
+2023-11-28 02:13:45.781998 [99_dk_scr_send_mi_a_report.py] Выполняется скрипт: /root/dk_scripts/reports_scripts/20_dk_rep_copy_backup_files.py /root/dk_scripts/reports/2023-11-28/
+2023-11-28 02:13:45.781998 [99_dk_scr_send_mi_a_report.py] Выполняется скрипт: /root/dk_scripts/reports_scripts/30_dk_rep_test_megashare.py /root/dk_scripts/reports/2023-11-28/
+2023-11-28 02:13:45.781998 [99_dk_scr_send_mi_a_report.py] Выполняется скрипт: /root/dk_scripts/reports_scripts/50_dk_rep_test_phonebook.py /root/dk_scripts/reports/2023-11-28/
+------------------------------------------------------------
+2023-11-28 02:13:45.781998 [99_dk_scr_send_mi_a_report.py] stop
+------------------------------------------------------------
+2023-11-28 02:00:02.351896 [dk_main_backup.py] start
+2023-11-28 02:00:02.352103 [dk_main_backup.py] запуск скрипта /root/dk_scripts/10_dk_scr_bcp_sw_sx300_conf.py
+============================================================================================================================
+2023-11-28 02:00:12.754003 [dk_main_backup.py] запуск скрипта /root/dk_scripts/20_dk_scr_bcp_docker.py
+============================================================================================================================
+2023-11-28 02:04:09.160111 [dk_main_backup.py] запуск скрипта /root/dk_scripts/27_dk_scr_bcp_archiving.py
+============================================================================================================================
+2023-11-28 02:04:12.711305 [dk_main_backup.py] запуск скрипта /root/dk_scripts/29_dk_scr_bcp_copy.py
+============================================================================================================================
+2023-11-28 02:13:29.091254 [dk_main_backup.py] запуск скрипта /root/dk_scripts/30_dk_scr_test_megashare.py
+============================================================================================================================
+2023-11-28 02:13:42.188318 [dk_main_backup.py] запуск скрипта /root/dk_scripts/32_dk_scr_check_dif.py
+============================================================================================================================
+2023-11-28 02:13:44.930244 [dk_main_backup.py] запуск скрипта /root/dk_scripts/40_dk_scr_send_phone_to_email.py
+============================================================================================================================
+2023-11-28 02:13:45.671757 [dk_main_backup.py] запуск скрипта /root/dk_scripts/50_dk_scr_test_phonebook.py
+============================================================================================================================
+2023-11-28 02:13:45.698118 [dk_main_backup.py] запуск скрипта /root/dk_scripts/99_dk_scr_send_mi_a_report.py
+============================================================================================================================
+2023-11-28 02:14:39.446814 [dk_main_backup.py] stop

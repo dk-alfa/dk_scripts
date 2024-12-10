@@ -1,0 +1,115 @@
+Только в /root/dk_scripts/tmp/1: dump2.pcap
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+0a1,5
+> [default]
+> exten=>_[0-9a-zA-Z].,1,NoOp()
+> same => n,Busy()
+> same => n,HangUp()
+> 
+93,94d97
+< exten => s,1,Noop(=== fromsitnetexeed ===)
+< 
+97,107c100,114
+< exten => MV9eWGnrJp4PJ1V0,1,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2465,1)
+< exten => MV9eWGnrJp4PJ1V0,n,Busy(10)
+< 
+< ;exten => MV9eWGnrJp4PJ1V0,1,Answer();
+< ;exten => MV9eWGnrJp4PJ1V0,n,NoOp(==== Calltouch EXID ====);
+< ;exten => MV9eWGnrJp4PJ1V0,n,Macro(record,${UNIQUEID})
+< ;exten => MV9eWGnrJp4PJ1V0,n,Set(CALLERID(all)=$[CALLERID(num)])
+< ;exten => MV9eWGnrJp4PJ1V0,n,Dial(SIP/2300,30,tT)
+< ;exten => MV9eWGnrJp4PJ1V0,n,Playtones(busy)
+< ;exten => MV9eWGnrJp4PJ1V0,n,Busy(60)
+< ;exten => MV9eWGnrJp4PJ1V0,n,Hangup()
+---
+> exten => Zgz2JmDME,1,Noop(=== fromsitnetexeed ===)
+> exten => Zgz2JmDME,n,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2465,1)
+> exten => Zgz2JmDME,n,Busy(10)
+> 
+> ;exten => MV9eWGnrJp4PJ1V0,1,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2465,1)
+> ;exten => MV9eWGnrJp4PJ1V0,n,Busy(10)
+> 
+> ;;exten => MV9eWGnrJp4PJ1V0,1,Answer();
+> ;;exten => MV9eWGnrJp4PJ1V0,n,NoOp(==== Calltouch EXID ====);
+> ;;exten => MV9eWGnrJp4PJ1V0,n,Macro(record,${UNIQUEID})
+> ;;exten => MV9eWGnrJp4PJ1V0,n,Set(CALLERID(all)=$[CALLERID(num)])
+> ;;exten => MV9eWGnrJp4PJ1V0,n,Dial(SIP/2300,30,tT)
+> ;;exten => MV9eWGnrJp4PJ1V0,n,Playtones(busy)
+> ;;exten => MV9eWGnrJp4PJ1V0,n,Busy(60)
+> ;;exten => MV9eWGnrJp4PJ1V0,n,Hangup()
+270c277
+< ;exten => 2402,n,MP3Player(/var/lib/asterisk/sounds/1/gac-est.wav)
+---
+> exten => 2402,n,MP3Player(/var/lib/asterisk/sounds/1/gac-est.mp3)
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+360c360
+< exten => _X.,1,NoOp(-- calltouch-str --)
+---
+> exten => _X.,1,NoOp(+++ calltouch-str +++)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+51c51
+< register =>Zgz2JmDME:QAtKzNnJ8@sip9468.sitnet.ru/Zgz2JmDME				;CallTouch для EXEED Zgz2JmDME    QAtKzNnJ8
+---
+> ;register =>Zgz2JmDME:QAtKzNnJ8@sip9468.sitnet.ru/Zgz2JmDME				;CallTouch для EXEED Zgz2JmDME    QAtKzNnJ8
+57c57
+< register =>73473203620:hfRqB0PWMFZ@sip9088.sitnet.ru/73473203620			;CallTouch для Стерлитамака (Chery)
+---
+> ;register =>73473203620:hfRqB0PWMFZ@sip9088.sitnet.ru/73473203620			;CallTouch для Стерлитамака (Chery)
+93,94c93,94
+< username=Zgz2JmDME      ;Zgz2JmDME
+< secret=QAtKzNnJ8	;QAtKzNnJ8
+---
+> ;username=Zgz2JmDME      ;Zgz2JmDME
+> ;secret=QAtKzNnJ8	;QAtKzNnJ8
+99c99,100
+< canreinvite=yes
+---
+> ;canreinvite=yes
+> canreinvite=no
+107c108
+< nat=auto_comedia
+---
+> ;nat=auto_comedia
+diff -r /root/dk_scripts/tmp/2/sip_users_str.conf /root/dk_scripts/tmp/1/sip_users_str.conf
+23,42c23,42
+< [Calltouch-str-chery]
+< type=peer
+< host=sip9088.sitnet.ru
+< username=73473203620
+< secret=hfRqB0PWMFZ
+< ;fromuser=alfa-tank
+< context=calltouch-str
+< transport=udp
+< call-limit=3
+< insecure=port,invite
+< canreinvite=no
+< disallow=all
+< allow=alaw
+< allow=ulaw
+< defaultexpirey=120
+< maxexpirey=120
+< ;nat=yes
+< ;directmedia=yes
+< ;dtmfmode=rfc2833
+< qualify=yes
+---
+> ;[Calltouch-str-chery]
+> ;type=peer
+> ;host=sip9088.sitnet.ru
+> ;username=73473203620
+> ;secret=hfRqB0PWMFZ
+> ;;fromuser=alfa-tank
+> ;context=calltouch-str
+> ;transport=udp
+> ;call-limit=3
+> ;insecure=port,invite
+> ;canreinvite=no
+> ;disallow=all
+> ;allow=alaw
+> ;allow=ulaw
+> ;defaultexpirey=120
+> ;maxexpirey=120
+> ;;nat=yes
+> ;;directmedia=yes
+> ;;dtmfmode=rfc2833
+> ;qualify=yes

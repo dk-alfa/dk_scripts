@@ -1,0 +1,15 @@
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+13c13
+< interface  gi2
+---
+> interface range fa24,gi2
+86c86
+< macro description "switch | no_switch | switch | no_switch | switch | no_switch"
+---
+> macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch"
+160a161,165
+> exit
+> interface fastethernet24
+> !next command is internal.
+> macro auto smartport dynamic_type switch 
+> switchport trunk allowed vlan add 2,33,66,95,100,498 

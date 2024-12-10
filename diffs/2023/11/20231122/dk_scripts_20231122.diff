@@ -1,0 +1,43 @@
+Только в /root/dk_scripts/tmp/1: 32dkscrcheckdif.json
+Только в /root/dk_scripts/tmp/1: 32_dk_scr_check_dif.py
+diff -r /root/dk_scripts/tmp/2/40_dk_scr_send_phone_to_email.py /root/dk_scripts/tmp/1/40_dk_scr_send_phone_to_email.py
+28c28
+< recipients_emails = ["dkorablev@toyota-ufa.ru"]
+---
+> recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru"]
+diff -r /root/dk_scripts/tmp/2/dk_main_backup.py /root/dk_scripts/tmp/1/dk_main_backup.py
+5a6,7
+>  2023.11.22 1. refactoring: Изменена функция получения списка скриптов
+>             2. добавлена функция datetime_message()
+12a15,17
+> #---- datetime_message() ----
+> def datetime_message():
+>   return f"{datetime.datetime.now()} [{os.path.basename(__file__)}]"
+16c21
+< #--------------------------------
+---
+> #---- run_script() ----
+18a24,32
+>   files = os.listdir(WORK_DIR)
+>   for filename in files:
+>     if MATCH_STR in filename:
+>       scripts_list.append(filename)
+>   scripts_list.sort(key = file_number)
+>   for i in range(len(scripts_list)):
+>     print(f"{datetime_message()} запуск скрипта {WORK_DIR+scripts_list[i]}")
+>     print(f"============================================================================================================================")
+>     os.system(WORK_DIR+scripts_list[i])
+19a34
+> '''
+29c44
+< 
+---
+> '''
+32c47
+< print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] start")
+---
+> print(f"{datetime_message()} start")
+34c49
+< print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] stop")
+---
+> print(f"{datetime_message()} stop")

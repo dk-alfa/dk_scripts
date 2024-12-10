@@ -1,0 +1,21 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+738,740c738,740
+< exten => 911,1,Dial(SIP/BeelineFMC/1745,25,rt)
+< exten => 911,n,Dial(SIP/BeelineFMC/1741,25,rt)
+< ;exten => 911,n,Dial(SIP/BeelineFMC/1675,25,rt)
+---
+> ;exten => 911,1,Dial(SIP/BeelineFMC/1745,25,rt)
+> ;exten => 911,n,Dial(SIP/BeelineFMC/1741,25,rt)
+> exten => 911,n,Dial(SIP/BeelineFMC/1675,25,rt)
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+270,273c270,274
+< exten => _700,n,Set(__CALLED=${CALLERID(name)})
+< exten => _700,n,Set(CIDN=in${UNIQUEID}-${CALLED})
+< exten => _700,n,GotoIfTime(${WORKTIME}|${WORKDAYS}|*|*?work-time-str,s,1) 
+< exten => _700,n,GotoIfTime(*|${WORKDAYS}|*|*?non-work-time-str,s,1)
+---
+> exten => _700,n,Goto(850,1)
+> exten => _850,1,Set(__CALLED=${CALLERID(name)})
+> exten => _850,n,Set(CIDN=in${UNIQUEID}-${CALLED})
+> exten => _850,n,GotoIfTime(${WORKTIME}|${WORKDAYS}|*|*?work-time-str,s,1) 
+> exten => _850,n,GotoIfTime(*|${WORKDAYS}|*|*?non-work-time-str,s,1)

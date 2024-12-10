@@ -1,0 +1,7 @@
+diff -r /root/dk_scripts/tmp/2/40_dk_scr_send_phone_to_email.py /root/dk_scripts/tmp/1/40_dk_scr_send_phone_to_email.py
+28c28
+< recipients_emails = ["dkorablev@toyota-ufa.ru"]
+---
+> #recipients_emails = ["dkorablev@toyota-ufa.ru"]
+30a31
+> recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru","vbezrukov@toyota-ufa.ru","aasadullin@toyota-ufa.ru"]

@@ -1,0 +1,1165 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+1001a1002
+> #include /etc/asterisk/extensions_est.conf ;Диалплан Восточного офиса
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+2,3c2,3
+< ;--
+< [macro-mobile];
+---
+> 
+> [macro-mobile-est];
+11c11
+< exten =>s,8,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/var/mp3/${UNIQUEID}.mp3" && chmod 777 /var/mp3/${UNIQUEID}.mp3)
+---
+> exten =>s,8,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+14c14
+< exten =>s,n,Dial(SIP/ufanet/${ARG3},30,NtT)
+---
+> exten =>s,n,Dial(SIP/ufanet77-est/${ARG3},30,NtT)
+20c20
+< [macro-reception]
+---
+> [macro-reception-est]
+41c41
+< [macro-fmc]
+---
+> [macro-fmc-est]
+48,52c48,54
+< [local]
+< ;include => que
+< include => bases
+< 
+< [bases]
+---
+> ;[local]
+> ;;include => que
+> ;include => bases
+> 
+> ;[bases]
+> [local-est]
+> ;include => fromlocal
+55c57
+< exten => 1430,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/var/mp3/${UNIQUEID}.mp3" && chmod 777 /var/mp3/${UNIQUEID}.mp3)
+---
+> exten => 1430,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+59c61
+< ;exten => 1430,n,Dial(SIP/ufanet/89871300220,30,NtT)
+---
+> ;exten => 1430,n,Dial(SIP/ufanet77-est/89871300220,30,NtT)
+66c68
+< exten => 1440,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/var/mp3/${UNIQUEID}.mp3" && chmod 777 /var/mp3/${UNIQUEID}.mp3)
+---
+> exten => 1440,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+74,80c76,82
+< exten => 1404,1,macro(mobile,1404)
+< exten => 1405,1,macro(mobile,1405,1405)
+< exten => 1406,1,macro(mobile,1406,1406)
+< exten => 1410,1,macro(mobile,1410,1410,89173540013)
+< exten => 1415,1,macro(mobile,1415)
+< exten => 1416,1,macro(mobile,1416,1416)
+< exten => 1425,1,macro(mobile,1425,1425,89603870320)
+---
+> exten => 1404,1,macro(mobile-est,1404)
+> exten => 1405,1,macro(mobile-est,1405,1405)
+> exten => 1406,1,macro(mobile-est,1406,1406)
+> exten => 1410,1,macro(mobile-est,1410,1410,89173540013)
+> exten => 1415,1,macro(mobile-est,1415)
+> exten => 1416,1,macro(mobile-est,1416,1416)
+> exten => 1425,1,macro(mobile-est,1425,1425,89603870320)
+87c89
+< exten => 1437,1,macro(mobile,1437)
+---
+> exten => 1437,1,macro(mobile-est,1437)
+90,92c92,94
+< exten => 1441,1,macro(mobile,1441,1441)
+< exten => 1442,1,macro(mobile,1442,1442,89196016544)
+< exten => 1443,1,macro(mobile,1443,1443)
+---
+> exten => 1441,1,macro(mobile-est,1441,1441)
+> exten => 1442,1,macro(mobile-est,1442,1442,89196016544)
+> exten => 1443,1,macro(mobile-est,1443,1443)
+94,95c96,97
+< exten => 1446,1,macro(mobile,1446,1446)
+< exten => 1449,1,macro(mobile,1449,1449,89649646747)
+---
+> exten => 1446,1,macro(mobile-est,1446,1446)
+> exten => 1449,1,macro(mobile-est,1449,1449,89649646747)
+98,100c100,102
+< exten => 1452,1,macro(mobile,1452,1452)
+< exten => 1457,1,macro(mobile,1457,1457)
+< exten => 1458,1,macro(mobile,1458,1458)
+---
+> exten => 1452,1,macro(mobile-est,1452,1452)
+> exten => 1457,1,macro(mobile-est,1457,1457)
+> exten => 1458,1,macro(mobile-est,1458,1458)
+102,104c104,106
+< exten => 1461,1,macro(mobile,1461)
+< exten => 1462,1,macro(mobile,1462)
+< exten => 1464,1,macro(mobile,1464,1464,)
+---
+> exten => 1461,1,macro(mobile-est,1461)
+> exten => 1462,1,macro(mobile-est,1462)
+> exten => 1464,1,macro(mobile-est,1464,1464,)
+110,115c112,117
+< exten => 1470,1,macro(mobile,1470,1470,89174307189)
+< exten => 1471,1,macro(mobile,1471,1471)
+< exten => 1472,1,macro(mobile,1472,1472)
+< exten => 1473,1,macro(mobile,1473,1473)
+< exten => 1487,1,macro(mobile,1487)
+< exten => 1488,1,macro(mobile,1488)
+---
+> exten => 1470,1,macro(mobile-est,1470,1470,89174307189)
+> exten => 1471,1,macro(mobile-est,1471,1471)
+> exten => 1472,1,macro(mobile-est,1472,1472)
+> exten => 1473,1,macro(mobile-est,1473,1473)
+> exten => 1487,1,macro(mobile-est,1487)
+> exten => 1488,1,macro(mobile-est,1488)
+122,124c124
+< exten => 1300,1,macro(mobile,1300)
+< 
+< 
+---
+> exten => 1300,1,macro(mobile-est,1300)
+127c127
+< exten => _14XX,n,MixMonitor(/var/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/var/wav/${UNIQUEID}.wav" "/var/mp3/${UNIQUEID}.mp3" && chmod 777 /var/mp3/${UNIQUEID}.mp3)
+---
+> exten => _14XX,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+131c131
+< exten => 6666,1,macro(mobile,6666)
+---
+> exten => 6666,1,macro(mobile-est,6666)
+135c135
+< exten => _2XXXXXX,n,MixMonitor(/var/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/var/wav/${UNIQUEID}.wav" "/var/mp3/${UNIQUEID}.mp3" && chmod 777 /var/mp3/${UNIQUEID}.mp3)
+---
+> exten => _2XXXXXX,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+137c137
+< exten => _2XXXXXX,n,Dial(SIP/ufanet/${EXTEN},30)
+---
+> exten => _2XXXXXX,n,Dial(SIP/ufanet77-est/${EXTEN},30)
+142c142
+< exten => _89XXXXXXXXX,n,MixMonitor(/var/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/var/wav/${UNIQUEID}.wav" "/var/mp3/${UNIQUEID}.mp3" && chmod 777 /var/mp3/${UNIQUEID}.mp3)
+---
+> exten => _89XXXXXXXXX,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+144c144
+< exten => _89XXXXXXXXX,n,Dial(SIP/ufanet/${EXTEN},30,NtT)
+---
+> exten => _89XXXXXXXXX,n,Dial(SIP/ufanet77-est/${EXTEN},30,NtT)
+149c149
+< exten => _8XXXXXXXXXX,n,MixMonitor(/var/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/var/wav/${UNIQUEID}.wav" "/var/mp3/${UNIQUEID}.mp3" && chmod 777 /var/mp3/${UNIQUEID}.mp3)
+---
+> exten => _8XXXXXXXXXX,n,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+151c151
+< exten => _8XXXXXXXXXX,n,Dial(SIP/ufanet/${EXTEN},30,NtT)
+---
+> exten => _8XXXXXXXXXX,n,Dial(SIP/ufanet77-est/${EXTEN},30,NtT)
+161,173c161,165
+< exten => _1[35678]XX,1,Answer()
+< exten => _1[35678]XX,n,Set(foo=${SIPPEER(${EXTEN},curcalls)})
+< exten => _1[35678]XX,n,Dial(SIP/toyota/${EXTEN},20,NtT)
+< exten => _1[35678]XX,n,Playtones(busy)
+< exten => _1[35678]XX,n,Busy(360)
+< exten => _1[35678]XX,n,Hangup()
+< 
+< exten => _7XX,1,Answer()
+< exten => _7XX,n,Set(foo=${SIPPEER(${EXTEN},curcalls)})
+< exten => _7XX,n,Dial(SIP/toyota/${EXTEN},20,NtT)
+< exten => _7XX,n,Playtones(busy)
+< exten => _7XX,n,Busy(360)
+< exten => _7XX,n,Hangup()
+---
+> exten => _1[35678]XX,1,GoTo(fromlocal,${EXTEN},1) 	;Центральный офис, Север
+> exten => _7XX,1,GoTo(fromlocal,${EXTEN},1)		;Стерлитамак
+> 
+> ;exten => _7XX,1,GoTo(local-users-str,${EXTEN},1)
+> 
+174a167,180
+> ;exten => _1[35678]XX,1,Answer()
+> ;exten => _1[35678]XX,n,Set(foo=${SIPPEER(${EXTEN},curcalls)})
+> ;exten => _1[35678]XX,n,Dial(SIP/toyota/${EXTEN},20,NtT)
+> ;exten => _1[35678]XX,n,Playtones(busy)
+> ;exten => _1[35678]XX,n,Busy(360)
+> ;exten => _1[35678]XX,n,Hangup()
+> 
+> ;exten => _7XX,1,GoTo(local-str,${EXTEN},1)
+> ;exten => _7XX,1,Answer()
+> ;exten => _7XX,n,Set(foo=${SIPPEER(${EXTEN},curcalls)})
+> ;exten => _7XX,n,Dial(SIP/toyota/${EXTEN},20,NtT)
+> ;exten => _7XX,n,Playtones(busy)
+> ;exten => _7XX,n,Busy(360)
+> ;exten => _7XX,n,Hangup()
+176c182
+< [menu_day]
+---
+> [menu_day_est]
+180,181c186,188
+< ;exten => 1499,n,MP3Player(/var/lib/asterisk/sounds/start.mp3)
+< exten => 1499,n,MP3Player(/var/lib/asterisk/sounds/hyundai_new_year.mp3)
+---
+> ;;exten => 1499,n,MP3Player(/var/lib/asterisk/sounds/start.mp3)
+> ;exten => 1499,n,MP3Player(/var/lib/asterisk/sounds/hyundai_new_year.mp3)
+> exten => 1499,n,MP3Player(/etc/asterisk/mp3/hyundai_new_year.mp3)
+188c195
+< [menu_night]
+---
+> [menu_night_est]
+191c198
+< exten => 1499,n,Background(/var/lib/asterisk/sounds/start_night.mp3)
+---
+> exten => 1499,n,Background(/etc/asterisk/mp3/start.mp3)
+196c203
+< [ufanet]
+---
+> [ufanet_est]
+198,201c205,208
+< ;exten => 2867777,2,Playback(hyundai)
+< exten => 2867777,2,Playback(base_0321)
+< exten => 2867777,3,MixMonitor(/var/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/var/wav/${UNIQUEID}.wav" "/var/mp3/${UNIQUEID}.mp3" && chmod 777 /var/mp3/${UNIQUEID}.mp3)
+< exten => 2867777,n,macro(reception,1)
+---
+> ;exten => 2867777,2,Playback(/etc/asterisk/mp3/hyundai.mp3)
+> exten => 2867777,2,Playback(/etc/asterisk/mp3/base_0321.mp3)
+> exten => 2867777,3,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+> exten => 2867777,n,macro(reception-est,1)
+205,207c212,214
+< exten => 2867776,2,Playback(genesis)
+< exten => 2867776,2,MixMonitor(/var/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/var/wav/${UNIQUEID}.wav" "/var/mp3/${UNIQUEID}.mp3" && chmod 777 /var/mp3/${UNIQUEID}.mp3)
+< exten => 2867776,n,macro(reception,1)
+---
+> exten => 2867776,2,Playback(/etc/asterisk/mp3/genesis.mp3)
+> exten => 2867776,3,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+> exten => 2867776,n,macro(reception-est,1)
+209d215
+< --;
+\ В конце файла нет новой строки
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+344c344
+< ;exten => _X.,n,GoSub(call-record-str,${EXTEN},1)
+---
+> exten => _X.,n,PlayBack(/etc/asterisk/mp3/chery_str)
+346,348d345
+< ;exten => _X.,n,PlayBack(into2)
+< 
+< 
+Только в /root/dk_scripts/tmp/1/mp3: base_0321.mp3
+Только в /root/dk_scripts/tmp/1/mp3: genesis.mp3
+Только в /root/dk_scripts/tmp/1/mp3: hyundai.mp3
+Только в /root/dk_scripts/tmp/1/mp3: hyundai_new_year.mp3
+Только в /root/dk_scripts/tmp/1/mp3: start.mp3
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+1341,1342c1341,1342
+< ;#include /etc/asterisk/sip_users_est.conf  ;Телефоны Восточного офиса [Зубово]
+< ;#include /etc/asterisk/sip_trunks_est.conf ;Транки   Восточного офиса [Зубово]
+---
+> #include /etc/asterisk/sip_users_est.conf  ;Телефоны Восточного офиса [Зубово]
+> #include /etc/asterisk/sip_trunks_est.conf ;Транки   Восточного офиса [Зубово]
+diff -r /root/dk_scripts/tmp/2/sip_trunks_est.conf /root/dk_scripts/tmp/1/sip_trunks_est.conf
+2,66c2
+< [general]
+< ;videosupport=yes
+< localnet = 192.168.200.0/255.255.255.0
+< ;externip=31.173.179.131
+< prematuremedia=yes
+< context=local
+< allowtransfer=yes
+< srvlookup=yes
+< allow=alaw
+< allow=ulaw
+< ;allow=gsm
+< defaultexpirey=1800
+< ;maxexpirey=60
+< allowsubscribe=yes
+< notifyringing=yes
+< notifyhold=yes
+< musiconhold=default
+< useclientcode=yes
+< canreinvite=no
+< callcounter=yes
+< subscribecontext=status
+< limitonpeers=yes
+< progressinband=never
+< dtmfmode=auto
+< alwaysauthreject=yes
+< allowguest=yes
+< ;udpbindaddr=0.0.0.0
+< ;tcpenable=yes
+< ;tcpbindaddr=0.0.0.0
+< nat=force_rport,comedia
+< directmedia=no
+< 
+< ;--------
+< ;jbenable = yes
+< ;jbforce = no
+< ;jbimpl = fixed
+< ;jbmaxsize = 400
+< ;--------
+< 
+< register =>2867777:UGu40F41HW@92.50.152.146:5401/2867777
+< register =>2867776:HNLshtf6HQ@92.50.152.146:5401/2867776
+< ;register =>2870785:nDWK30wfgT@92.50.152.146:5401/2870785
+< ;register =>2462384:48SLy75jcq@92.50.152.146:5401/2462384
+< 
+< ;[ufanet87]
+< ;type=peer
+< ;tcpenable=yes
+< ;host=92.50.152.146
+< ;port=5401
+< ;fromuser=2870785
+< ;fromdomain=92.50.152.146
+< ;defaultuser=2870785
+< ;secret=nDWK30wfgT
+< ;defaultexpiry=3600
+< ;context=ufanet
+< ;disallow=all
+< ;allow=alaw:20
+< ;dtmfmode=inband
+< ;qualify=3600
+< ;keepalive=3600
+< ;insecure=invite
+< ;;nat=force_rport,comedia
+< ;;directmedia=no
+< 
+< [ufanet]
+---
+> [ufanet77-est]
+75c11
+< context=ufanet
+---
+> context=ufanet_est
+85c21
+< [ufanet76]
+---
+> [ufanet76-est]
+95c31,32
+< context=ufanet76
+---
+> ;context=ufanet76
+> context=ufanet_est
+118,507d54
+< 
+< [toyota]
+< type=peer
+< host=192.168.1.9
+< context=local
+< disallow=all
+< allow=alaw
+< qualify=300
+< qualify=yes
+< insecure=port,invite
+< 
+< 
+< ;[FMTN]
+< ;type=peer
+< ;host=192.168.1.9
+< ;context=local
+< ;disallow=all
+< ;allow=alaw
+< ;qualify=300
+< ;qualify=yes
+< ;insecure=port,invite
+< 
+< 
+< [phone](!)
+< language=ru
+< type=friend
+< qualify=200
+< port=5060
+< nat=no
+< host=dynamic
+< dtmfmode=auto
+< context=bases
+< canreinvite=no
+< call-limit=5
+< allowsubscribe=yes
+< ;transport=tcp
+< ;tcpenable=yes
+< 
+< 
+< [1400](phone)
+< secret=hyu@1400
+< callerid=1400
+< ;call-limit=1
+< 
+< [1401](phone)
+< secret=hyu@1401
+< callerid=1401
+< ;call-limit=1
+< 
+< [1402](phone)
+< secret=hyu@1402
+< callerid=1402
+< call-limit=2
+< 
+< [1403](phone)
+< secret=hyu@1403
+< callerid=1403
+< call-limit=2
+< 
+< [1404](phone)
+< secret=hyu@1404
+< callerid=1404
+< call-limit=2
+< 
+< [1462](phone)
+< secret=hyu@1462
+< callerid=1462
+< call-limit=2
+< 
+< [1461](phone)
+< secret=hyu@1461
+< callerid=1461
+< call-limit=2
+< 
+< [1405](phone)
+< secret=hyu@1405
+< callerid=1405
+< call-limit=2
+< 
+< [1406](phone)
+< secret=hyu@1406
+< callerid=1406
+< call-limit=2
+< 
+< [1407](phone)
+< secret=hyu@1407
+< callerid=1407
+< call-limit=2
+< 
+< [1408](phone)
+< secret=hyu@1408
+< callerid=1408
+< call-limit=2
+< 
+< [1409](phone)
+< secret=hyu@1409
+< callerid=1409
+< call-limit=2
+< 
+< [1410](phone)
+< secret=hyu@1410
+< callerid=1410
+< call-limit=2
+< 
+< [1411](phone)
+< secret=hyu@1411
+< callerid=1411
+< call-limit=2
+< 
+< [1412](phone)
+< secret=1412
+< callerid=1412
+< call-limit=2
+< 
+< [1413](phone)
+< secret=hyu@1413
+< callerid=1413
+< call-limit=2
+< 
+< [1414](phone)
+< secret=hyu@1414
+< callerid=1414
+< call-limit=2
+< 
+< [1415](phone)
+< secret=hyu@1415
+< callerid=1415
+< call-limit=2
+< 
+< [1416](phone)
+< secret=1416
+< callerid=1416
+< call-limit=2
+< 
+< [1420](phone)
+< secret=hyu@1420
+< callerid=1420
+< call-limit=2
+< 
+< [1421](phone)
+< secret=hyu@1421
+< callerid=1421
+< call-limit=2
+< 
+< [1422](phone)
+< secret=hyu@1422
+< callerid=1422
+< call-limit=2
+< 
+< [1423](phone)
+< secret=hyu@1423
+< callerid=1423
+< call-limit=2
+< 
+< 
+< [1425](phone)
+< secret=1425
+< callerid=1425
+< call-limit=2
+< 
+< 
+< [1430](phone)
+< secret=1430
+< callerid=1430
+< call-limit=2
+< 
+< ;[1431](phone)
+< ;secret=1431
+< ;callerid=1431
+< ;call-limit=2
+< 
+< ;[1432](phone)
+< ;secret=1432
+< ;callerid=1432
+< ;call-limit=2
+< 
+< ;[1433](phone)
+< ;secret=1433
+< ;callerid=1433
+< ;call-limit=2
+< 
+< ;[1434](phone)
+< ;secret=1434
+< ;callerid=1434
+< ;call-limit=2
+< 
+< ;[1435](phone)
+< ;secret=1435
+< ;callerid=1435
+< ;call-limit=2
+< 
+< [1437](phone)
+< secret=1437
+< callerid=1437
+< call-limit=2
+< 
+< [1481](phone)
+< secret=1481
+< callerid=1481
+< call-limit=2
+< 
+< [1482](phone)
+< secret=1482
+< callerid=1482
+< call-limit=2
+< 
+< [1483](phone)
+< secret=1483
+< callerid=1483
+< call-limit=2
+< 
+< [1484](phone)
+< secret=1484
+< callerid=1484
+< call-limit=2
+< 
+< [1487](phone)
+< secret=1487
+< callerid=1487
+< call-limit=2
+< 
+< [1488](phone)
+< secret=1488
+< callerid=1488
+< call-limit=2
+< 
+< 
+< [1441](phone)
+< secret=1441
+< callerid=1441
+< call-limit=2
+< 
+< [1442](phone)
+< secret=1442
+< callerid=1442
+< call-limit=2
+< 
+< 
+< [1443](phone)
+< secret=1443
+< callerid=1443
+< call-limit=2
+< 
+< ;[1444](phone)
+< ;secret=hyu@1444
+< ;callerid=1444
+< ;call-limit=4
+< 
+< [1445](phone)
+< secret=hyu@1445
+< callerid=1445
+< call-limit=2
+< 
+< [1446](phone)
+< secret=hyu@1446
+< callerid=1446
+< call-limit=2
+< 
+< [1447](phone)
+< secret=hyu@1447
+< callerid=1447
+< call-limit=2
+< 
+< [1448](phone)
+< secret=hyu@1448
+< callerid=1448
+< call-limit=2
+< 
+< [1449](phone)
+< secret=1449
+< callerid=1449
+< call-limit=2
+< 
+< ;[1450](phone)
+< ;secret=hyu@1450
+< ;callerid=1450
+< ;call-limit=2
+< 
+< ;[1451](phone)
+< ;secret=hyu@1451
+< ;callerid=1451
+< ;call-limit=2
+< 
+< [1452](phone)
+< secret=hyu@1452
+< callerid=1452
+< call-limit=2
+< 
+< [1453](phone)
+< secret=1453@hyu
+< callerid=1453
+< call-limit=2
+< 
+< [1454](phone)
+< secret=1454@hyu
+< callerid=1454
+< call-limit=2
+< 
+< [1455](phone)
+< secret=1455@hyu
+< callerid=1455
+< call-limit=2
+< 
+< [1456](phone)
+< secret=1456@hyu
+< callerid=1456
+< call-limit=2
+< 
+< [1457](phone)
+< secret=1457
+< callerid=1457
+< call-limit=2
+< 
+< [1458](phone)
+< secret=1458
+< callerid=1458
+< call-limit=2
+< 
+< 
+< [1459](phone)
+< secret=1459
+< callerid=1459
+< call-limit=2
+< 
+< [1461](phone)
+< secret=hyu@1461
+< callerid=1461
+< call-limit=2
+< 
+< [1464](phone)
+< secret=hyu@1464
+< callerid=1464
+< call-limit=2
+< 
+< [1470](phone)
+< secret=hyu@1470
+< callerid=1470
+< call-limit=2
+< 
+< [1477](phone)
+< secret=hyu@1477
+< callerid=1477
+< call-limit=2
+< 
+< [1499](phone)
+< secret=hyu@1499
+< callerid=1499
+< call-limit=2
+< 
+< [1480](phone)
+< secret=1480
+< callerid=1480
+< call-limit=2
+< 
+< ;[1469](phone)
+< ;secret=1469
+< ;callerid=1469
+< ;call-limit=2
+< 
+< [1471](phone)
+< secret=1471
+< callerid=1471
+< call-limit=2
+< 
+< [1472](phone)
+< secret=1472
+< callerid=1472
+< call-limit=2
+< 
+< [1473](phone)
+< secret=1473
+< callerid=1473
+< call-limit=2
+< 
+< [1490](phone)
+< secret=1490
+< callerid=1401
+< call-limit=2
+< 
+< ;[1590](phone)
+< ;secret=1590
+< ;callerid=1590
+< ;call-limit=2
+< 
+< 
+< [6666](phone)
+< secret=6666
+< callerid=6666
+< call-limit=2
+< 
+diff -r /root/dk_scripts/tmp/2/sip_users_est.conf /root/dk_scripts/tmp/1/sip_users_est.conf
+1,141c1
+< ;--
+< [general]
+< ;videosupport=yes
+< localnet = 192.168.200.0/255.255.255.0
+< ;externip=31.173.179.131
+< prematuremedia=yes
+< context=local
+< allowtransfer=yes
+< srvlookup=yes
+< allow=alaw
+< allow=ulaw
+< ;allow=gsm
+< defaultexpirey=1800
+< ;maxexpirey=60
+< allowsubscribe=yes
+< notifyringing=yes
+< notifyhold=yes
+< musiconhold=default
+< useclientcode=yes
+< canreinvite=no
+< callcounter=yes
+< subscribecontext=status
+< limitonpeers=yes
+< progressinband=never
+< dtmfmode=auto
+< alwaysauthreject=yes
+< allowguest=yes
+< ;udpbindaddr=0.0.0.0
+< ;tcpenable=yes
+< ;tcpbindaddr=0.0.0.0
+< nat=force_rport,comedia
+< directmedia=no
+< 
+< ;--------
+< ;jbenable = yes
+< ;jbforce = no
+< ;jbimpl = fixed
+< ;jbmaxsize = 400
+< ;--------
+< 
+< register =>2867777:UGu40F41HW@92.50.152.146:5401/2867777
+< register =>2867776:HNLshtf6HQ@92.50.152.146:5401/2867776
+< ;register =>2870785:nDWK30wfgT@92.50.152.146:5401/2870785
+< ;register =>2462384:48SLy75jcq@92.50.152.146:5401/2462384
+< 
+< ;[ufanet87]
+< ;type=peer
+< ;tcpenable=yes
+< ;host=92.50.152.146
+< ;port=5401
+< ;fromuser=2870785
+< ;fromdomain=92.50.152.146
+< ;defaultuser=2870785
+< ;secret=nDWK30wfgT
+< ;defaultexpiry=3600
+< ;context=ufanet
+< ;disallow=all
+< ;allow=alaw:20
+< ;dtmfmode=inband
+< ;qualify=3600
+< ;keepalive=3600
+< ;insecure=invite
+< ;;nat=force_rport,comedia
+< ;;directmedia=no
+< 
+< [ufanet]
+< type=peer
+< tcpenable=yes
+< host=92.50.152.146
+< port=5401
+< fromuser=2867777
+< fromdomain=92.50.152.146
+< defaultuser=2867777
+< secret=UGu40F41HW
+< context=ufanet
+< disallow=all
+< allow=alaw
+< dtmfmode=inband
+< qualify=3600
+< keepalive=3600
+< insecure=invite
+< ;nat=force_rport,comedia
+< ;directmedia=no
+< 
+< [ufanet76]
+< type=peer
+< tcpenable=yes
+< host=92.50.152.146
+< port=5401
+< fromuser=2867776
+< keepalive=3600
+< fromdomain=92.50.152.146
+< defaultuser=2867776
+< secret=HNLshtf6HQ
+< context=ufanet76
+< disallow=all
+< allow=alaw
+< dtmfmode=inband
+< qualify=3600
+< keepalive=60
+< insecure=invite
+< 
+< [sipnet]
+< type=peer
+< host=sipnet.ru
+< fromuser=0028122337
+< fromdomain=sipnet.ru
+< defaultuser=0028122337
+< secret=S7Rd35E0
+< context=sipnet
+< disallow=all
+< allow=alaw
+< dtmfmode=rfc2833
+< insecure=invite
+< qualify=3600
+< nat=no
+< directmedia=no
+< 
+< [toyota]
+< type=peer
+< host=192.168.1.9
+< context=local
+< disallow=all
+< allow=alaw
+< qualify=300
+< qualify=yes
+< insecure=port,invite
+< 
+< 
+< ;[FMTN]
+< ;type=peer
+< ;host=192.168.1.9
+< ;context=local
+< ;disallow=all
+< ;allow=alaw
+< ;qualify=300
+< ;qualify=yes
+< ;insecure=port,invite
+< 
+< 
+< [phone](!)
+---
+> [phone-est](!)
+149c9
+< context=bases
+---
+> context=local-est
+157c17,30
+< [1400](phone)
+---
+> [1403](phone-est)
+> secret=hyu@1403
+> callerid=1403
+> call-limit=2
+> 
+> [1420](phone-est)
+> secret=hyu@1420
+> callerid=1420
+> call-limit=2
+> 
+> 
+> ;--
+> 
+> [1400](phone-est)
+162c35
+< [1401](phone)
+---
+> [1401](phone-est)
+167c40
+< [1402](phone)
+---
+> [1402](phone-est)
+172c45
+< [1403](phone)
+---
+> [1403](phone-est)
+177c50
+< [1404](phone)
+---
+> [1404](phone-est)
+182c55
+< [1462](phone)
+---
+> [1462](phone-est)
+187c60
+< [1461](phone)
+---
+> [1461](phone-est)
+192c65
+< [1405](phone)
+---
+> [1405](phone-est)
+197c70
+< [1406](phone)
+---
+> [1406](phone-est)
+202c75
+< [1407](phone)
+---
+> [1407](phone-est)
+207c80
+< [1408](phone)
+---
+> [1408](phone-est)
+212c85
+< [1409](phone)
+---
+> [1409](phone-est)
+217c90
+< [1410](phone)
+---
+> [1410](phone-est)
+222c95
+< [1411](phone)
+---
+> [1411](phone-est)
+227c100
+< [1412](phone)
+---
+> [1412](phone-est)
+232c105
+< [1413](phone)
+---
+> [1413](phone-est)
+237c110
+< [1414](phone)
+---
+> [1414](phone-est)
+242c115
+< [1415](phone)
+---
+> [1415](phone-est)
+247c120
+< [1416](phone)
+---
+> [1416](phone-est)
+252c125
+< [1420](phone)
+---
+> [1420](phone-est)
+257c130
+< [1421](phone)
+---
+> [1421](phone-est)
+262c135
+< [1422](phone)
+---
+> [1422](phone-est)
+267c140
+< [1423](phone)
+---
+> [1423](phone-est)
+273c146
+< [1425](phone)
+---
+> [1425](phone-est)
+279c152
+< [1430](phone)
+---
+> [1430](phone-est)
+284c157
+< ;[1431](phone)
+---
+> ;[1431](phone-est)
+289c162
+< ;[1432](phone)
+---
+> ;[1432](phone-est)
+294c167
+< ;[1433](phone)
+---
+> ;[1433](phone-est)
+299c172
+< ;[1434](phone)
+---
+> ;[1434](phone-est)
+304c177
+< ;[1435](phone)
+---
+> ;[1435](phone-est)
+309c182
+< [1437](phone)
+---
+> [1437](phone-est)
+314c187
+< [1481](phone)
+---
+> [1481](phone-est)
+319c192
+< [1482](phone)
+---
+> [1482](phone-est)
+324c197
+< [1483](phone)
+---
+> [1483](phone-est)
+329c202
+< [1484](phone)
+---
+> [1484](phone-est)
+334c207
+< [1487](phone)
+---
+> [1487](phone-est)
+339c212
+< [1488](phone)
+---
+> [1488](phone-est)
+345c218
+< [1441](phone)
+---
+> [1441](phone-est)
+350c223
+< [1442](phone)
+---
+> [1442](phone-est)
+356c229
+< [1443](phone)
+---
+> [1443](phone-est)
+361c234
+< ;[1444](phone)
+---
+> ;[1444](phone-est)
+366c239
+< [1445](phone)
+---
+> [1445](phone-est)
+371c244
+< [1446](phone)
+---
+> [1446](phone-est)
+376c249
+< [1447](phone)
+---
+> [1447](phone-est)
+381c254
+< [1448](phone)
+---
+> [1448](phone-est)
+386c259
+< [1449](phone)
+---
+> [1449](phone-est)
+391c264
+< ;[1450](phone)
+---
+> ;[1450](phone-est)
+396c269
+< ;[1451](phone)
+---
+> ;[1451](phone-est)
+401c274
+< [1452](phone)
+---
+> [1452](phone-est)
+406c279
+< [1453](phone)
+---
+> [1453](phone-est)
+411c284
+< [1454](phone)
+---
+> [1454](phone-est)
+416c289
+< [1455](phone)
+---
+> [1455](phone-est)
+421c294
+< [1456](phone)
+---
+> [1456](phone-est)
+426c299
+< [1457](phone)
+---
+> [1457](phone-est)
+431c304
+< [1458](phone)
+---
+> [1458](phone-est)
+437c310
+< [1459](phone)
+---
+> [1459](phone-est)
+442c315
+< [1461](phone)
+---
+> [1461](phone-est)
+447c320
+< [1464](phone)
+---
+> [1464](phone-est)
+452c325
+< [1470](phone)
+---
+> [1470](phone-est)
+457c330
+< [1477](phone)
+---
+> [1477](phone-est)
+462c335
+< [1499](phone)
+---
+> [1499](phone-est)
+467c340
+< [1480](phone)
+---
+> [1480](phone-est)
+472c345
+< ;[1469](phone)
+---
+> ;[1469](phone-est)
+477c350
+< [1471](phone)
+---
+> [1471](phone-est)
+482c355
+< [1472](phone)
+---
+> [1472](phone-est)
+487c360
+< [1473](phone)
+---
+> [1473](phone-est)
+492c365
+< [1490](phone)
+---
+> [1490](phone-est)
+497c370
+< ;[1590](phone)
+---
+> ;[1590](phone-est)
+503c376
+< [6666](phone)
+---
+> [6666](phone-est)

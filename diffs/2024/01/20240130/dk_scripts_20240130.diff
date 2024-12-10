@@ -1,0 +1,40 @@
+diff -r /root/dk_scripts/tmp/2/15_dk_scr_test_megashare.py /root/dk_scripts/tmp/1/15_dk_scr_test_megashare.py
+87c87
+< def sql_select(pg_cursor,phone_num, div_day):
+---
+> def sql_select(pgsql,phone_num, div_day):
+89c89,91
+<   sql_str = f'select t_employees.family_name,t_employees.name,t_employees.surname,t_departaments.short_name, t_brands.name, t_job_titles.name1 \
+---
+>   pg_cursor = pgsql.cursor()
+>   try:
+>     sql_str = f'select t_employees.family_name,t_employees.name,t_employees.surname,t_departaments.short_name, t_brands.name, t_job_titles.name1 \
+96c98
+<   try:
+---
+> 
+117a120
+>   pg_cursor.close()
+120c123
+< def folder_iteration(pg_cursor):
+---
+> def folder_iteration(pgsql):
+129c132
+<         sql_select(pg_cursor,phone_num,div_day)
+---
+>         sql_select(pgsql,phone_num,div_day)
+137c140
+<      pg_cursor = pgsql.cursor()
+---
+> #     pg_cursor = pgsql.cursor()
+139c142,143
+<      folder_iteration(pg_cursor)
+---
+> #     folder_iteration(pg_cursor)
+>      folder_iteration(pgsql)
+141c145
+<      pg_cursor.close()
+---
+> #     pg_cursor.close()
+198a203
+>   run_script()

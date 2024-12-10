@@ -1,0 +1,7 @@
+diff -r /root/dk_scripts/tmp/2/phonebook_file_name /root/dk_scripts/tmp/1/phonebook_file_name
+1c1
+< Телефонный справочник на 07.12.2023.pdf
+\ В конце файла нет новой строки
+---
+> Телефонный справочник на 14.12.2023.pdf
+\ В конце файла нет новой строки

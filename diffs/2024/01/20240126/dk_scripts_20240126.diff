@@ -1,0 +1,64 @@
+diff -r /root/dk_scripts/tmp/2/15_dk_scr_test_megashare.py /root/dk_scripts/tmp/1/15_dk_scr_test_megashare.py
+16a17
+> 2024-01-25 Декомпозиция openen_db(), добавление функции sql_select(pg_cursor,phone_num, div_day)
+83a85,116
+> #---- sql_select ----
+> def sql_select(pg_cursor,phone_num, div_day):
+> 
+>   sql_str = f'select t_employees.family_name,t_employees.name,t_employees.surname,t_departaments.short_name, t_brands.name, t_job_titles.name1 \
+>               from   t_phone_numbers, t_employees, t_departaments, t_brands, t_job_titles \
+>               where  t_phone_numbers.id_employee=t_employees.id \
+>               and t_phone_numbers.ph_number={phone_num} \
+>               and t_employees.id_departament=t_departaments.id \
+>               and t_employees.id_brand=t_brands.id \
+>               and t_employees.id_job_title=t_job_titles.id'
+>   try:
+>     pg_cursor.execute(sql_str)
+>     res = pg_cursor.fetchall()
+> 
+>     employee = ''
+>     if res:
+>       if (res[0])[0]:
+>         employee = employee + f'{(res[0])[0]}'
+>       if (res[0])[1]:
+>         employee = employee + f' {(res[0])[1]}'
+>       if (res[0])[2]:
+>         employee = employee + f' {(res[0])[2]}'
+>       if (res[0])[3]:
+>         employee = employee + f' : {(res[0])[3]}'
+>       if (res[0])[4]:
+>         employee = employee + f' {(res[0])[4]}'
+>       if (res[0])[5]:
+>         employee = employee + f' {(res[0])[5]}'
+>       todo(phone_num, employee, div_day)
+>   except:
+>     #print(f"{datetime_message()} Ошибка выполнения запроса для тел. номера {phone_num} ")
+>     print(f"{phone_num} [e] ")
+95,119c128
+<         sql_str = f'select t_employees.family_name,t_employees.name,t_employees.surname,t_departaments.short_name, t_brands.name, t_job_titles.name1 \
+<                     from   t_phone_numbers, t_employees, t_departaments, t_brands, t_job_titles \
+<                     where  t_phone_numbers.id_employee=t_employees.id \
+<                     and t_phone_numbers.ph_number={phone_num} \
+<                     and t_employees.id_departament=t_departaments.id \
+<                     and t_employees.id_brand=t_brands.id \
+<                     and t_employees.id_job_title=t_job_titles.id'
+<         pg_cursor.execute(sql_str)
+<         res = pg_cursor.fetchall()
+< 
+<         employee = ''
+<         if res:
+<           if (res[0])[0]:
+<             employee = employee + f'{(res[0])[0]}'
+<           if (res[0])[1]:
+<             employee = employee + f' {(res[0])[1]}'
+<           if (res[0])[2]:
+<             employee = employee + f' {(res[0])[2]}'
+<           if (res[0])[3]:
+<             employee = employee + f' : {(res[0])[3]}'
+<           if (res[0])[4]:
+<             employee = employee + f' {(res[0])[4]}'
+<           if (res[0])[5]:
+<             employee = employee + f' {(res[0])[5]}'
+<           todo(phone_num, employee, div_day)
+---
+>         sql_select(pg_cursor,phone_num,div_day)

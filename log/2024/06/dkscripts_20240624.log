@@ -1,0 +1,234 @@
+2024-06-24 02:00:04 [10_dk_scr_bcp_sw_sx300_conf.py] start
+2024-06-24 02:00:04 [10_dk_scr_bcp_sw_sx300_conf.py] Файл настроек [/root/dk_scripts/10dkscrbcpswsx300conf.json] прочитан 
+Trying 192.168.22.62...
+Connected to 192.168.22.62.
+Escape character is '^]'.
+
+
+Toyota IT Отдел
+
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TCS0-SW1-24#
+
+[KTCS0-SW1-24#copy running-config tftp://172.16.1.78/switches/1_20240624/20240624_TCS0-SW1-24_192.168.22.62.conf
+copy running-config tftp://172.16.1.78/switches/1_20240624/202406TCS0-SW1-24#[K$-config tftp://172.16.1.78/switches/1_20240624/20240624_TCS0-SWTCS0-SW1-24#[K$tp://172.16.1.78/switches/1_20240624/20240624_TCS0-SW1-24_192.1TCS0-SW1-24#[K$6.1.78/switches/1_20240624/20240624_TCS0-SW1-24_192.168.22.62.cTCS0-SW1-24#[K$tches/1_20240624/20240624_TCS0-SW1-24_192.168.22.62.conf
+11-Feb-2017 13:48:09 %COPY-I-FILECPY: Files Copy - source URL running-config destination URL tftp://172.16.1.78/switches/1_20240624/20240624_TCS0-SW1-24_192.168.22.62.conf
+exit
+Trying 192.168.22.76...
+Connected to 192.168.22.76.
+Escape character is '^]'.
+
+
+Приемка страховки
+Toyota ShowRoom 
+под вторым слева столом
+
+User Name:root
+root
+Password:7e7acdee8A
+**********
+
+
+TCS0-SW2-08#
+
+[KTCS0-SW2-08#copy running-config tftp://172.16.1.78/switches/1_20240624/20240624_TCS0-SW2-08_192.168.22.76.conf
+copy running-config tftp://172.16.1.78/switches/1_20240624/202406TCS0-SW2-08#[K$-config tftp://172.16.1.78/switches/1_20240624/20240624_TCS0-SWTCS0-SW2-08#[K$tp://172.16.1.78/switches/1_20240624/20240624_TCS0-SW2-08_192.1TCS0-SW2-08#[K$6.1.78/switches/1_20240624/20240624_TCS0-SW2-08_192.168.22.76.cTCS0-SW2-08#[K$tches/1_20240624/20240624_TCS0-SW2-08_192.168.22.76.conf
+28-Nov-2011 00:32:50 %COPY-I-FILECPY: Files Copy - source URL running-config destination URL tftp://172.16.1.78/switches/1_20240624/20240624_TCS0-SW2-08_192.168.22.76.conf
+exit
+Trying 192.168.22.87...
+2024-06-24 02:00:26 [15_dk_scr_test_megashare.py] start
+2024-06-24 02:00:26 [15_dk_scr_test_megashare.py] Файл настрек [/root/dk_scripts/15dkscrtestmegashare.json] прочитан
+2024-06-24 02:00:31 [15_dk_scr_test_megashare.py] Файл настрек [/root/dk_scripts/15dkscrtestmegashare.json] прочитан
+2024-06-24 02:00:33 [15_dk_scr_test_megashare.py] stop
+2024-06-24 02:00:33 [20_dk_scr_bcp_docker.py] start
+2024-06-24 02:00:33 [20_dk_scr_bcp_docker.py] Файл настроек [/root/dk_scripts/20dkscrbcpdocker.json] прочитан
+2024-06-24 02:00:33 [20_dk_scr_bcp_docker.py] Удаляем файл: [/docker/samba/data/public/backups/docker/wiki/1_wiki_backup_20240617.tar]
+2024-06-24 02:00:33 [20_dk_scr_bcp_docker.py] Архивируем    [/docker/wiki в /docker/samba/data/public/backups/docker/wiki/1_wiki_backup_20240624.tar]
+2024-06-24 02:01:22 [20_dk_scr_bcp_docker.py] Удаляем файл: [/docker/samba/data/public/backups/docker/postgres/1_postgres_backup_20240617.tar]
+2024-06-24 02:01:22 [20_dk_scr_bcp_docker.py] Архивируем    [/docker/postgres в /docker/samba/data/public/backups/docker/postgres/1_postgres_backup_20240624.tar]
+2024-06-24 02:01:26 [20_dk_scr_bcp_docker.py] Удаляем файл: [/docker/samba/data/public/backups/docker/tftp/1_tftp_backup_20240617.tar]
+2024-06-24 02:01:26 [20_dk_scr_bcp_docker.py] Архивируем    [/docker/tftp в /docker/samba/data/public/backups/docker/tftp/1_tftp_backup_20240624.tar]
+2024-06-24 02:01:26 [20_dk_scr_bcp_docker.py] stop
+2024-06-24 02:01:26 [27_dk_scr_bcp_archiving.py] start 
+2024-06-24 02:01:26 [27_dk_scr_bcp_archiving.py] Прочитан файл настроек[INI_FILE_NAME]
+2024-06-24 02:01:26 [27_dk_scr_bcp_archiving.py] Удален файл:          [/docker/samba/data/public/backups/dk_scripts/1_dk_scripts_backup_20240617.tar]
+2024-06-24 02:01:28 [27_dk_scr_bcp_archiving.py] Создан архивный файл: [/docker/samba/data/public/backups/dk_scripts/1_dk_scripts_backup_20240624.tar]
+2024-06-24 02:01:28 [27_dk_scr_bcp_archiving.py] Удален файл:          [/docker/samba/data/public/backups/switches/1_switches_backup_20240617.tar]
+2024-06-24 02:01:28 [27_dk_scr_bcp_archiving.py] Создан архивный файл: [/docker/samba/data/public/backups/switches/1_switches_backup_20240624.tar]
+2024-06-24 02:01:29 [27_dk_scr_bcp_archiving.py] Удален файл:          [/docker/samba/data/public/backups/asterisk_toyota/1_asterisk_toyota_backup_20240617.tar]
+2024-06-24 02:01:29 [27_dk_scr_bcp_archiving.py] Создан архивный файл: [/docker/samba/data/public/backups/asterisk_toyota/1_asterisk_toyota_backup_20240624.tar]
+2024-06-24 02:01:29 [27_dk_scr_bcp_archiving.py] stop
+
+Upload finished: /backup/172.16.1.78/docker/postgres/1_postgres_backup_20240624.tar
+Logging out...
+
+Upload finished: /backup/172.16.1.78/docker/tftp/1_tftp_backup_20240624.tar
+Logging out...
+
+Upload finished: /backup/172.16.1.78/docker/wiki/1_wiki_backup_20240624.tar
+Logging out...
+
+Upload finished: /backup/172.16.1.78/switches/toyota/1_switches_backup_20240624.tar
+Logging out...
+
+Upload finished: /backup/172.16.1.78/dk_scripts/1_dk_scripts_backup_20240624.tar
+Logging out...
+
+Upload finished: /backup/172.16.1.78/asterisk/toyota/1_asterisk_toyota_backup_20240624.tar
+Logging out...
+2024-06-24 02:01:29 [29_dk_scr_bcp_copy.py] start
+2024-06-24 02:01:29 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/docker/postgres/1_postgres_backup_20240617.tar]
+2024-06-24 02:01:29 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/docker/postgres/1_postgres_backup_20240624.tar /docker/samba/data/public/backups_1/docker/postgres/]]
+2024-06-24 02:01:29 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/docker/tftp/1_tftp_backup_20240617.tar]
+2024-06-24 02:01:29 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/docker/tftp/1_tftp_backup_20240624.tar /docker/samba/data/public/backups_1/docker/tftp/]]
+2024-06-24 02:01:29 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/docker/wiki/1_wiki_backup_20240617.tar]
+2024-06-24 02:01:29 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/docker/wiki/1_wiki_backup_20240624.tar /docker/samba/data/public/backups_1/docker/wiki/]]
+2024-06-24 02:01:31 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/switches/toyota/1_switches_backup_20240617.tar]
+2024-06-24 02:01:31 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/switches/1_switches_backup_20240624.tar /docker/samba/data/public/backups_1/switches/toyota/]]
+2024-06-24 02:01:31 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/dk_scripts/1_dk_scripts_backup_20240617.tar]
+2024-06-24 02:01:31 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/dk_scripts/1_dk_scripts_backup_20240624.tar /docker/samba/data/public/backups_1/dk_scripts/]]
+2024-06-24 02:01:31 [29_dk_scr_bcp_copy.py] Удаляется : [/docker/samba/data/public/backups_1/asterisk/toyota/1_asterisk_toyota_backup_20240617.tar]
+2024-06-24 02:01:31 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/asterisk_toyota/1_asterisk_toyota_backup_20240624.tar /docker/samba/data/public/backups_1/asterisk/toyota/]]
+2024-06-24 02:01:31 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_postgres_backup_20240617.tar]
+2024-06-24 02:01:31 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/docker/postgres/1_postgres_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:01:31 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_tftp_backup_20240617.tar]
+2024-06-24 02:01:31 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/docker/tftp/1_tftp_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:01:32 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_wiki_backup_20240617.tar]
+2024-06-24 02:01:32 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/docker/wiki/1_wiki_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:01:35 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_switches_backup_20240617.tar]
+2024-06-24 02:01:35 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/switches/1_switches_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:01:35 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_dk_scripts_backup_20240617.tar]
+2024-06-24 02:01:35 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/dk_scripts/1_dk_scripts_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:01:35 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_asterisk_toyota_backup_20240617.tar]
+2024-06-24 02:01:35 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/asterisk_toyota/1_asterisk_toyota_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:01:35 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_postgres_backup_20240617.tar]
+2024-06-24 02:01:35 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/docker/postgres/1_postgres_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:01:38 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_tftp_backup_20240617.tar]
+2024-06-24 02:01:38 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/docker/tftp/1_tftp_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:01:38 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_wiki_backup_20240617.tar]
+2024-06-24 02:01:38 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/docker/wiki/1_wiki_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:02:50 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_switches_backup_20240617.tar]
+2024-06-24 02:02:50 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/switches/1_switches_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:02:50 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_dk_scripts_backup_20240617.tar]
+2024-06-24 02:02:50 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/dk_scripts/1_dk_scripts_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:02:58 [29_dk_scr_bcp_copy.py] Удаляется : [/mnt/tmp/1_asterisk_toyota_backup_20240617.tar]
+2024-06-24 02:02:59 [29_dk_scr_bcp_copy.py] Удаляется : [Копируется: [/docker/samba/data/public/backups/asterisk_toyota/1_asterisk_toyota_backup_20240624.tar /mnt/tmp/]]
+2024-06-24 02:06:50 [29_dk_scr_bcp_copy.py] stop
+2024-06-24 02:06:50 [32_dk_scr_check_dif.py] start
+2024-06-24 02:06:51 [32_dk_scr_check_dif.py] stop
+2024-06-24 02:06:52 [40_dk_scr_send_phone_to_email.py] start
+2024-06-24 02:06:52 [40_dk_scr_send_phone_to_email.py] stop
+2024-06-24 02:06:52 [50_dk_scr_test_phonebook.py] start
+2024-06-24 02:06:52 [50_dk_scr_test_phonebook.py] stop
+2024-06-24 02:06:52.799860 [10_dk_rep_backup_sw_sx_300_conf.py] start
+2024-06-24 02:06:52.800194 [10_dk_rep_backup_sw_sx_300_conf.py] stop
+backup/172.16.1.78/docker/postgres/1_postgres_backup_20240624.tar
+Logging out...
+backup/172.16.1.78/docker/tftp/1_tftp_backup_20240624.tar
+Logging out...
+backup/172.16.1.78/docker/wiki/1_wiki_backup_20240624.tar
+Logging out...
+backup/172.16.1.78/asterisk/toyota/1_asterisk_toyota_backup_20240624.tar
+Logging out...
+backup/172.16.1.78/dk_scripts/1_dk_scripts_backup_20240624.tar
+Logging out...
+backup/172.16.1.78/switches/toyota/1_switches_backup_20240624.tar
+Logging out...
+------------------------------------------------------------
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] start 
+------------------------------------------------------------
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] прочитан файл настрек 
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/docker/postgres/1_postgres_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/docker/tftp/1_tftp_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/docker/wiki/1_wiki_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/asterisk_toyota/1_asterisk_toyota_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/dk_scripts/1_dk_scripts_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups/switches/1_switches_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/docker/postgres/1_postgres_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/docker/tftp/1_tftp_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/docker/wiki/1_wiki_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/asterisk/toyota/1_asterisk_toyota_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/dk_scripts/1_dk_scripts_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /docker/samba/data/public/backups_1/switches/toyota/1_switches_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/docker/postgres/1_postgres_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/docker/tftp/1_tftp_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/docker/wiki/1_wiki_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/asterisk/toyota/1_asterisk_toyota_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/dk_scripts/1_dk_scripts_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //192.168.1.4/hyper/dk_backups/172.16.1.78/switches/toyota/1_switches_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/docker/postgres/1_postgres_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/docker/tftp/1_tftp_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/docker/wiki/1_wiki_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/asterisk/toyota/1_asterisk_toyota_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/dk_scripts/1_dk_scripts_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл //172.16.0.231/backup/172.16.1.78/switches/toyota/1_switches_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/docker/postgres/1_postgres_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/docker/tftp/1_tftp_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/docker/wiki/1_wiki_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/asterisk/toyota/1_asterisk_toyota_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/dk_scripts/1_dk_scripts_backup_20240624.tar найден [PASS]
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] Файл /Mega/backup/172.16.1.78/switches/toyota/1_switches_backup_20240624.tar найден [PASS]
+------------------------------------------------------------
+2024-06-24 02:06:52.834675 [20_dk_rep_copy_backup_files.py] end
+[1m[32mstart 30_dk_rep_test_megashare.py[0m
+[1m[32mstop 30_dk_rep_test_megashare.py[0m
+[1m[32mstart 50_dk_rep_test_phonebook.py[0m
+/root/dk_scripts/phonebook_file_name
+Not Match
+[1m[32mstop 50_dk_rep_test_phonebook.py[0m
+2024-06-24 02:06:52 [99_dk_scr_send_mi_a_report.py] start
+2024-06-24 02:06:52 [99_dk_scr_send_mi_a_report.py] Запуск report скрипта: [10_dk_rep_backup_sw_sx_300_conf.py]
+---------------------------------------------------------
+2024-06-24 02:06:52 [99_dk_scr_send_mi_a_report.py] Запуск report скрипта: [20_dk_rep_copy_backup_files.py]
+---------------------------------------------------------
+2024-06-24 02:07:41 [99_dk_scr_send_mi_a_report.py] Запуск report скрипта: [30_dk_rep_test_megashare.py]
+---------------------------------------------------------
+2024-06-24 02:07:41 [99_dk_scr_send_mi_a_report.py] Запуск report скрипта: [50_dk_rep_test_phonebook.py]
+---------------------------------------------------------
+2024-06-24 02:07:41 [99_dk_scr_send_mi_a_report.py] stop
+2024-06-24 02:00:02 [dk_main_backup.py] start
+2024-06-24 02:00:02 [dk_main_backup.py] Запуск скрипта [10_dk_scr_bcp_sw_sx300_conf.py]
+------------------------------------------------------------
+------------------------------------------------------------
+2024-06-24 02:00:25 [dk_main_backup.py] Cкрипт         [10_dk_scr_bcp_sw_sx300_conf.py] успешно выполнен.[PASS]
+2024-06-24 02:00:25 [dk_main_backup.py] Запуск скрипта [15_dk_scr_test_megashare.py]
+------------------------------------------------------------
+------------------------------------------------------------
+2024-06-24 02:00:33 [dk_main_backup.py] Cкрипт         [15_dk_scr_test_megashare.py] успешно выполнен.[PASS]
+2024-06-24 02:00:33 [dk_main_backup.py] Запуск скрипта [20_dk_scr_bcp_docker.py]
+------------------------------------------------------------
+------------------------------------------------------------
+2024-06-24 02:01:26 [dk_main_backup.py] Cкрипт         [20_dk_scr_bcp_docker.py] успешно выполнен.[PASS]
+2024-06-24 02:01:26 [dk_main_backup.py] Запуск скрипта [27_dk_scr_bcp_archiving.py]
+------------------------------------------------------------
+------------------------------------------------------------
+2024-06-24 02:01:29 [dk_main_backup.py] Cкрипт         [27_dk_scr_bcp_archiving.py] успешно выполнен.[PASS]
+2024-06-24 02:01:29 [dk_main_backup.py] Запуск скрипта [29_dk_scr_bcp_copy.py]
+------------------------------------------------------------
+------------------------------------------------------------
+2024-06-24 02:06:50 [dk_main_backup.py] Cкрипт         [29_dk_scr_bcp_copy.py] успешно выполнен.[PASS]
+2024-06-24 02:06:50 [dk_main_backup.py] Запуск скрипта [32_dk_scr_check_dif.py]
+------------------------------------------------------------
+------------------------------------------------------------
+2024-06-24 02:06:51 [dk_main_backup.py] Cкрипт         [32_dk_scr_check_dif.py] успешно выполнен.[PASS]
+2024-06-24 02:06:51 [dk_main_backup.py] Запуск скрипта [40_dk_scr_send_phone_to_email.py]
+------------------------------------------------------------
+------------------------------------------------------------
+2024-06-24 02:06:52 [dk_main_backup.py] Cкрипт         [40_dk_scr_send_phone_to_email.py] успешно выполнен.[PASS]
+2024-06-24 02:06:52 [dk_main_backup.py] Запуск скрипта [50_dk_scr_test_phonebook.py]
+------------------------------------------------------------
+------------------------------------------------------------
+2024-06-24 02:06:52 [dk_main_backup.py] Cкрипт         [50_dk_scr_test_phonebook.py] успешно выполнен.[PASS]
+2024-06-24 02:06:52 [dk_main_backup.py] Запуск скрипта [99_dk_scr_send_mi_a_report.py]
+------------------------------------------------------------
+------------------------------------------------------------
+2024-06-24 02:07:41 [dk_main_backup.py] Cкрипт         [99_dk_scr_send_mi_a_report.py] успешно выполнен.[PASS]
+2024-06-24 02:07:41 [dk_main_backup.py] stop
+
+==== Скрипт выполнялся с [2024-06-24 02:00:02] по [2024-06-24 02:07:41] ====

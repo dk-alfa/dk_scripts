@@ -1,0 +1,37 @@
+Только в /root/dk_scripts/tmp/1: 5_postgres_backup_20240823.tar
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+177c177,178
+< exten => 1826,1,macro(fmc,1826)
+---
+> ;exten => 1826,1,macro(fmc,1826)
+> exten => 1826,1,macro(mobile-nrt,1826)
+189a191,192
+> exten => 1842,1,macro(mobile-nrt,1842)
+> exten => 1881,1,macro(fmc,1881)
+diff -r /root/dk_scripts/tmp/2/sip_users_nrt.conf /root/dk_scripts/tmp/1/sip_users_nrt.conf
+131,133c131,133
+< ;[1826](phone-nrt)
+< ;secret=1826
+< ;callerid=1826
+---
+> [1826](phone-nrt)
+> secret=1826
+> callerid=1826
+156a157,160
+> [1842](phone-nrt)
+> secret=1842
+> callerid=1842
+> 
+201,203c205,207
+< [1881](phone-nrt)
+< secret=1881
+< callerid=1881
+---
+> ;[1881](phone-nrt)
+> ;secret=1881
+> ;callerid=1881
+diff -r /root/dk_scripts/tmp/2/sip_users_str.conf /root/dk_scripts/tmp/1/sip_users_str.conf
+229c229
+< callerid="STR Coder" <741>
+---
+> callerid="STR Ohrana" <741>

@@ -1,0 +1,102 @@
+diff -r /root/dk_scripts/tmp/2/LBR31-SW2-48_192.168.22.201.conf /root/dk_scripts/tmp/1/LBR31-SW2-48_192.168.22.201.conf
+1c1
+< interface range fa8,fa12,fa14,fa16-17
+---
+> interface range fa8,fa12,fa14,fa16-17,fa19
+34c34,40
+< interface range fa8,fa12,fa14,fa16-17
+---
+> interface fastethernet19
+> storm-control broadcast level 10 
+> exit
+> interface fastethernet19
+> storm-control include-multicast 
+> exit
+> interface range fa8,fa12,fa14,fa16-17,fa19
+127c133
+< interface range fa8,fa12,fa14,fa16-17
+---
+> interface range fa8,fa12,fa14,fa16-17,fa19
+130c136
+< interface range fa8,fa12,fa14,fa16-17
+---
+> interface range fa8,fa12,fa14,fa16-17,fa19
+133c139
+< interface range fa8,fa12,fa14,fa16-17
+---
+> interface range fa8,fa12,fa14,fa16-17,fa19
+139c145
+< interface range  fa12,fa16,fa31
+---
+> interface range  fa12,fa16,fa19,fa31
+252a259,261
+> interface fastethernet19
+> macro description ip_phone_desktop
+> exit
+352,353c361,365
+< switchport mode access 
+< switchport access vlan 66 
+---
+> !next command is internal.
+> macro auto smartport dynamic_type unknown 
+> switchport mode general 
+> switchport general allowed vlan add 2 tagged 
+> switchport general allowed vlan add 66 untagged 
+Только в /root/dk_scripts/tmp/1: sw-east-1-1_192.168.200.240.conf
+Только в /root/dk_scripts/tmp/1: sw-east-1-3_192.168.200.243.conf
+Только в /root/dk_scripts/tmp/1: sw-east-1-4_192.168.200.244.conf
+Только в /root/dk_scripts/tmp/1: sw-east-1-6_192.168.200.246.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-1-1_10.9.1.4.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-1-2_10.9.1.2.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-1-3_10.9.1.3.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-1-4_10.9.1.5.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-2-1_10.9.1.8.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-2-2_10.9.1.6.conf
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+1,12d0
+< interface  fa7
+< storm-control broadcast enable
+< exit
+< interface fastethernet7
+< storm-control broadcast level 10 
+< exit
+< interface fastethernet7
+< storm-control include-multicast 
+< exit
+< interface  fa7
+< spanning-tree portfast
+< exit
+22,30d9
+< interface  fa7
+< port security mode max-addresses
+< exit
+< interface  fa7
+< port security max 10
+< exit
+< interface  fa7
+< port security discard trap 60
+< exit
+78c57
+< macro description ip_phone_desktop
+---
+> macro description "ip_phone_desktop | no_ip_phone_desktop"
+121,124d99
+< exit
+< interface fastethernet7
+< !next command is internal.
+< macro auto smartport dynamic_type ip_phone_desktop 
+diff -r /root/dk_scripts/tmp/2/TCS4-SW1-48_192.168.22.71.conf /root/dk_scripts/tmp/1/TCS4-SW1-48_192.168.22.71.conf
+126,138d125
+< interface fastethernet32
+<  storm-control broadcast enable 
+<  storm-control broadcast level 10 
+<  storm-control include-multicast 
+<  port security max 10 
+<  port security mode max-addresses 
+<  port security discard trap 60 
+<  spanning-tree portfast 
+<  switchport trunk allowed vlan add 2 
+<  macro description ip_phone_desktop
+<  !next command is internal.
+<  macro auto smartport dynamic_type ip_phone_desktop 
+< !

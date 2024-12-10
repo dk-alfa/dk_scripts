@@ -1,0 +1,31 @@
+Только в /root/dk_scripts/tmp/2: 2_postgres_backup_20241112.tar
+Только в /root/dk_scripts/tmp/2: 4_postgres_backup_20241114.tar
+Только в /root/dk_scripts/tmp/2: 5_postgres_backup_20241115.tar
+Только в /root/dk_scripts/tmp/2: 6_postgres_backup_20241116.tar
+Только в /root/dk_scripts/tmp/2: 6_tftp_backup_20241116.tar
+Только в /root/dk_scripts/tmp/2: 6_wiki_backup_20241116.tar
+Только в /root/dk_scripts/tmp/2: 7_asterisk_toyota_backup_20241117.tar
+Только в /root/dk_scripts/tmp/2: 7_dk_scripts_backup_20241117.tar
+Только в /root/dk_scripts/tmp/2: 7_postgres_backup_20241117.tar
+Только в /root/dk_scripts/tmp/2: 7_switches_backup_20241117.tar
+Только в /root/dk_scripts/tmp/2: 7_tftp_backup_20241117.tar
+Только в /root/dk_scripts/tmp/2: 7_wiki_backup_20241117.tar
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+596,597c596,597
+< exten => 1611,1,macro(mobile,1553,1553)
+< ;exten => 1611,1,macro(mobile,1611,1611)
+---
+> ;exten => 1611,1,macro(mobile,1553,1553)
+> exten => 1611,1,macro(mobile,1611,1611)
+682c682
+< ;exten => 1745,1,macro(fmc,1745)
+---
+> exten => 1745,1,macro(fmc,1745)
+827c827
+< exten => 911,1,macro(mobile,911,911)
+---
+> exten => 911,1,macro(fmc,1745,1745)
+Только в /root/dk_scripts/tmp/2: extensions.conf.save
+Только в /root/dk_scripts/tmp/2: extensions.conf.save.1
+Только в /root/dk_scripts/tmp/2: extensions.conf.save.2
+Только в /root/dk_scripts/tmp/2: extensions.conf.save.3

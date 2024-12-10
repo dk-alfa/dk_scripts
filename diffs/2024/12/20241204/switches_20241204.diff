@@ -1,0 +1,6 @@
+diff -r /root/dk_scripts/tmp/2/sw-east-1-1_192.168.200.240.conf /root/dk_scripts/tmp/1/sw-east-1-1_192.168.200.240.conf
+77a78
+>  switchport access vlan 30 
+diff -r /root/dk_scripts/tmp/2/sw-east-1-3_192.168.200.243.conf /root/dk_scripts/tmp/1/sw-east-1-3_192.168.200.243.conf
+181a182
+>  switchport access vlan 30 

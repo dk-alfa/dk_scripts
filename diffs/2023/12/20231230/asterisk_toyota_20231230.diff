@@ -1,0 +1,29 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+139c139,142
+< exten => 2626565,n,MP3Player(/var/lib/asterisk/sounds/1/geely_avtootvet.mp3)
+---
+> ;----Автоответ на НГпраздники
+> ;exten => 2626565,n,MP3Player(/var/lib/asterisk/sounds/1/geely_avtootvet.mp3)
+> exten => 2626565,n,MP3Player(/var/lib/asterisk/sounds/2024/GEELY_holydays.mp3)
+> ;----Автоответ на НГпраздники
+156c159,162
+< exten => 2626000,n,MP3Player(/var/lib/asterisk/sounds/1/exeed_avtootvet.mp3)
+---
+> ;----Автоответ на НГпраздники
+> ;exten => 2626000,n,MP3Player(/var/lib/asterisk/sounds/1/exeed_avtootvet.mp3)
+> exten => 2626000,n,MP3Player(/var/lib/asterisk/sounds/2024/EXEED_holydays.mp3)
+> ;----Автоответ на НГпраздники
+193,194c199,203
+< exten => 2626555,1,Answer();
+< exten => 2626555,n,MP3Player(/var/lib/asterisk/sounds/1/tank_avtootvet.mp3)
+---
+> exten => 2626555,1,Answer()
+> ;----Автоответ на НГпраздники
+> ;exten => 2626555,n,MP3Player(/var/lib/asterisk/sounds/1/tank_avtootvet.mp3)
+> exten => 2626555,n,MP3Player(/var/lib/asterisk/sounds/2024/TANK_holydays.mp3)
+> ;----Автоответ на НГпраздники
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+293c293
+< exten =>1830,n,Dial(SIP/Cisco-GW-nrt/989272373012,,NtT)
+---
+> ;exten =>1830,n,Dial(SIP/Cisco-GW-nrt/989272373012,,NtT)

@@ -1,0 +1,18 @@
+diff -r /root/dk_scripts/tmp/2/TBR21-SW3-52_192.168.22.80.conf /root/dk_scripts/tmp/1/TBR21-SW3-52_192.168.22.80.conf
+110a111,117
+> interface gigabitethernet7
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,30,33,66,95,496 
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type switch 
+> !
+141c148
+<  switchport trunk allowed vlan add 2 
+---
+>  switchport trunk native vlan 66 
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+86c86
+< macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch"
+---
+> macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch"

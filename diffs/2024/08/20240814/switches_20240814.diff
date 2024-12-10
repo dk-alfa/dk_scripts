@@ -1,0 +1,15 @@
+Только в /root/dk_scripts/tmp/2: sw-east-1-1_192.168.200.240.conf
+Только в /root/dk_scripts/tmp/2: sw-east-1-3_192.168.200.243.conf
+Только в /root/dk_scripts/tmp/2: sw-east-1-4_192.168.200.244.conf
+Только в /root/dk_scripts/tmp/2: sw-east-1-6_192.168.200.246.conf
+Только в /root/dk_scripts/tmp/2: sw-sever-1-1_10.9.1.4.conf
+Только в /root/dk_scripts/tmp/2: sw-sever-1-2_10.9.1.2.conf
+Только в /root/dk_scripts/tmp/2: sw-sever-1-3_10.9.1.3.conf
+Только в /root/dk_scripts/tmp/2: sw-sever-1-4_10.9.1.5.conf
+Только в /root/dk_scripts/tmp/2: sw-sever-2-1_10.9.1.8.conf
+Только в /root/dk_scripts/tmp/2: sw-sever-2-2_10.9.1.6.conf
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+163c163
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+---
+>  switchport trunk native vlan 66 

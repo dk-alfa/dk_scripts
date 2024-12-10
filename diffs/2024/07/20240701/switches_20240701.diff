@@ -1,0 +1,30 @@
+diff -r /root/dk_scripts/tmp/2/TCS0-SW7-24_192.168.22.87.conf /root/dk_scripts/tmp/1/TCS0-SW7-24_192.168.22.87.conf
+63c63,67
+<  switchport trunk native vlan 66 
+---
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,66,100 
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type switch 
+72c76,80
+<  switchport trunk native vlan 66 
+---
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,66,100 
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type switch 
+108c116,120
+<  switchport trunk native vlan 66 
+---
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,66,100 
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type switch 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+190c190
+< macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"

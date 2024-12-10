@@ -1,0 +1,15 @@
+  Отчет о резервном копировании backup файлов
+
+    -  Файл /docker/samba/data/public/backups/docker/postgres/1_postgres_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups/docker/tftp/1_tftp_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups/docker/wiki/1_wiki_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups/asterisk_toyota/1_asterisk_toyota_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups/dk_scripts/1_dk_scripts_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups/switches/1_switches_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups_1/docker/postgres/1_postgres_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups_1/docker/tftp/1_tftp_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups_1/docker/wiki/1_wiki_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups_1/asterisk/toyota/1_asterisk_toyota_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups_1/dk_scripts/1_dk_scripts_backup_20231002.tar найден [PASS]
+    -  Файл /docker/samba/data/public/backups_1/switches/toyota/1_switches_backup_20231002.tar найден [PASS]
+

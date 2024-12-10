@@ -1,0 +1,12 @@
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+98a99
+>  switchport access vlan 66 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW3-48_192.168.22.75.conf /root/dk_scripts/tmp/1/TCS1-SW3-48_192.168.22.75.conf
+229c229,233
+<  switchport trunk native vlan 66 
+---
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,30,33,66,95,100,238,498,3920 
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type switch 

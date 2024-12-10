@@ -1,0 +1,8 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+528c528
+< exten => 1545,1,macro(fmc,1545)
+---
+> ;exten => 1545,1,macro(fmc,1545)
+787a788,789
+> exten => 2305,1,macro(fmc,2305,2305)
+> exten => 2325,1,macro(fmc,2325,2325)

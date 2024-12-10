@@ -1,0 +1,8 @@
+diff -r /root/dk_scripts/tmp/2/29dkscrbcpcopy.json /root/dk_scripts/tmp/1/29dkscrbcpcopy.json
+50,53c50
+<      ["/docker/samba/data/public/backups/docker/postgres",
+<       "/mnt/tmp",
+<       "rfs",
+<       "//172.16.0.231/backup/172.16.1.78/docker/postgres /mnt/tmp -o username=dkorablev,password=7522273Dk69,rw,iocharset=utf8,file_mode=0777,dir_mode=0777"],
+---
+> 

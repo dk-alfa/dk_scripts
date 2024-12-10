@@ -1,0 +1,18 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+634,639c634,642
+< exten => 1935,1,Answer()
+< exten => 1935,n,Playback(tt-monkeysintro)
+< exten => 1935,n,Queue(g-test,tT)
+< exten => 1935,n,Playtones(busy)
+< exten => 1935,n,Busy(60)
+< exten => 1935,n,Hangup()
+---
+> ;===??????????===
+> ;exten => 1935,1,Answer()
+> ;exten => 1935,n,Playback(tt-monkeysintro)
+> ;exten => 1935,n,Queue(g-test,tT)
+> ;exten => 1935,n,Playtones(busy)
+> ;exten => 1935,n,Busy(60)
+> ;exten => 1935,n,Hangup()
+> 
+> 

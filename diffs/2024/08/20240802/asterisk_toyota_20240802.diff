@@ -1,0 +1,30 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+162c162
+< exten => 2625500,n,Macro(mobile,1300)
+---
+> exten => 2625500,n,Macro(mobile,1300,1301)
+472c472
+< exten => 1523,1,macro(mobile,1723,1523)
+---
+> exten => 1523,1,macro(mobile,1523,1523)
+607c607
+< exten => 1723,1,macro(mobile,1723,1523)
+---
+> exten => 1723,1,macro(mobile,1723,1723)
+735,737c735,737
+< exten => 911,1,Dial(SIP/BeelineFMC/1745,16,rt)
+< exten => 911,n,Dial(SIP/BeelineFMC/1741,16,rt)
+< ;exten => 911,n,Dial(SIP/BeelineFMC/1675,16,rt)
+---
+> exten => 911,1,Dial(SIP/BeelineFMC/1745,25,rt)
+> exten => 911,n,Dial(SIP/BeelineFMC/1741,25,rt)
+> ;exten => 911,n,Dial(SIP/BeelineFMC/1675,25,rt)
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+131a132
+> exten => 1301,1,macro(mobile-est,1301)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+384a385,388
+> [1301](phone)
+> secret=1301
+> callerid=1301
+> 

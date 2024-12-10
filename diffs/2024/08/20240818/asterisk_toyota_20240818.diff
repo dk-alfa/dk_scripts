@@ -1,0 +1,13 @@
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+104c104
+< exten => _8.,2,Dial(SIP/Cisco-GW-nrt/${EXTEN:1},120,smtT)
+---
+> exten => _8.,2,Dial(SIP/Cisco-Gateway/8${EXTEN:1},120,smtT)
+115c115
+< ;exten =>1850,n,Dial(SIP/Cisco-GW-nrt/989177766681,,NtT)
+---
+> ;exten =>1850,n,Dial(SIP/Cisco-Gateway/89177766681,,NtT)
+338c338
+< exten => _9.,n,Dial(SIP/Cisco-GW-nrt/${EXTEN},120,smtThH)
+---
+> exten => _9.,n,Dial(SIP/Cisco-Gateway/8${EXTEN:1},120,smtThH)

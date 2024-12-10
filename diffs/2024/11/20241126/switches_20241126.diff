@@ -1,0 +1,40 @@
+Только в /root/dk_scripts/tmp/1: 6-Nov-2024015806LINK-I-Upgi10Ksw-sever-1-4_10.9.1.5.conf
+Только в /root/dk_scripts/tmp/2: sw-sever-1-4_10.9.1.5.conf
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+1c1
+< interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42
+46,51d45
+< interface fastethernet45
+< storm-control broadcast level 10 
+< exit
+< interface fastethernet45
+< storm-control include-multicast 
+< exit
+53c47
+< interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42
+68c62
+< interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42
+71c65
+< interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42
+74c68
+< interface range fa4,fa7-8,fa19,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-8,fa19,fa29,fa39,fa42
+262c256
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+344,348d337
+< exit
+< interface fastethernet45
+< !next command is internal.
+< macro auto smartport dynamic_type ip_phone_desktop 
+< switchport trunk allowed vlan add 2 

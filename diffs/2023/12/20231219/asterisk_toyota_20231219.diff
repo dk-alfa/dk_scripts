@@ -1,0 +1,28 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+356a357
+> exten => 1320,1,macro(fmc,1320)
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+123a124
+> exten => 1320,1,macro(fmc,1320)
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+101,108c101,107
+< exten => s,1,Answer()
+< exten => s,2,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+< exten => s,3,Queue(extenchief-str,8,tT,,,20)
+< exten => s,4,Dial(SIP/gsm/89173408764,40)
+< ;exten => s,4,Dial(SIP/750/89173408764,40)
+< exten => s,n,Playtones(busy)
+< exten => s,n,Busy(60)
+< exten => s,n,Hangup()
+---
+> exten => _X.,1,Answer()
+> exten => _X.,2,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUEID}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+> exten => _X.,3,Dial(SIP/701&SIP/799,12,tT)
+> exten => _X.,4,Dial(SIP/gsm/89173408764,40)
+> exten => _X.,n,Playtones(busy)
+> exten => _X.,n,Busy(60)
+> exten => _X.,n,Hangup()
+151c150
+< exten => _701,1,Goto(extenchief-str,s,1)
+---
+> exten => _701,1,Goto(extenchief-str,${EXTEN},1)

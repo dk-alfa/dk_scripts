@@ -1,0 +1,52 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+139,142c139
+< ;----Автоответ на НГпраздники
+< ;exten => 2626565,n,MP3Player(/var/lib/asterisk/sounds/1/geely_avtootvet.mp3)
+< exten => 2626565,n,MP3Player(/var/lib/asterisk/sounds/2024/GEELY_holydays.mp3)
+< ;----Автоответ на НГпраздники
+---
+> exten => 2626565,n,MP3Player(/var/lib/asterisk/sounds/1/geely_avtootvet.mp3)
+159,162c156
+< ;----Автоответ на НГпраздники
+< ;exten => 2626000,n,MP3Player(/var/lib/asterisk/sounds/1/exeed_avtootvet.mp3)
+< exten => 2626000,n,MP3Player(/var/lib/asterisk/sounds/2024/EXEED_holydays.mp3)
+< ;----Автоответ на НГпраздники
+---
+> exten => 2626000,n,MP3Player(/var/lib/asterisk/sounds/1/exeed_avtootvet.mp3)
+200,203c194
+< ;----Автоответ на НГпраздники
+< ;exten => 2626555,n,MP3Player(/var/lib/asterisk/sounds/1/tank_avtootvet.mp3)
+< exten => 2626555,n,MP3Player(/var/lib/asterisk/sounds/2024/TANK_holydays.mp3)
+< ;----Автоответ на НГпраздники
+---
+> exten => 2626555,n,MP3Player(/var/lib/asterisk/sounds/1/tank_avtootvet.mp3)
+267a259,261
+> exten => 2400,1,GotoIfTime(9:00-21:00,*,*,*?menu_gac_str_day,2400,1)
+> exten => 2400,n,Busy(10)
+> 
+1047c1041
+< exten => 1400,n,Dial(SIP/Hyundai/1400,30,tT)
+---
+> exten => 1400,n,Dial(SIP/1400,30,tT)
+1050a1045,1055
+> 
+> [menu_gac_str_day]
+> exten => 2400,1,Answer();
+> exten => 2400,n,MP3Player(/var/lib/asterisk/sounds/gac_str_2024.mp3)
+> exten => 2400,n,Macro(record,${UNIQUEID})
+> exten => 2400,n,Set(CALLERID(all)=$[CALLERID(num)])
+> exten => 2400,n,Set(CALLERID(name)=GAC_STR)
+> exten => 2400,n,Dial(SIP/710&SIP/730,30,tT)
+> exten => 2400,n,Playtones(busy)
+> exten => 2400,n,Busy(60)
+> exten => 2400,n,Hangup()
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+163c163
+< ;exten => 1888,1,macro(fmc,1888)
+---
+> exten => 1888,1,macro(fmc,1888)
+256a257
+> ;--
+270a272,273
+> --;
+> 

@@ -1,0 +1,58 @@
+diff -r /root/dk_scripts/tmp/2/TBR21-SW1-48_192.168.22.70.conf /root/dk_scripts/tmp/1/TBR21-SW1-48_192.168.22.70.conf
+220,222c220,228
+<  spanning-tree link-type point-to-point 
+<  switchport trunk allowed vlan add 2,20,30,33,66,79,95,498 
+<  macro description switch
+---
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+>  switchport trunk allowed vlan add 2 
+>  macro description ip_phone_desktop
+224c230
+<  macro auto smartport dynamic_type switch 
+---
+>  macro auto smartport dynamic_type ip_phone_desktop 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+1c1
+< interface range fa4,fa7-9,fa12,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-9,fa29,fa39,fa42,fa45
+28,33d27
+< interface fastethernet12
+< storm-control broadcast level 10 
+< exit
+< interface fastethernet12
+< storm-control include-multicast 
+< exit
+59c53
+< interface range fa4,fa7-9,fa12,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-9,fa29,fa39,fa42,fa45
+74c68
+< interface range fa4,fa7-9,fa12,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-9,fa29,fa39,fa42,fa45
+77c71
+< interface range fa4,fa7-9,fa12,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-9,fa29,fa39,fa42,fa45
+80c74
+< interface range fa4,fa7-9,fa12,fa29,fa39,fa42,fa45
+---
+> interface range fa4,fa7-9,fa29,fa39,fa42,fa45
+178c172
+< macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+308,312d301
+< !next command is internal.
+< macro auto smartport dynamic_type ip_phone_desktop 
+< switchport trunk allowed vlan add 2 
+< exit
+< interface fastethernet12
+Только в /root/dk_scripts/tmp/1: TCS4-SW1-48_192.168.22.71.conf

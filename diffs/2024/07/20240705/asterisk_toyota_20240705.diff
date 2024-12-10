@@ -1,0 +1,11 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+715a716
+> exten => 2005,1,macro(mobile,2005,2005)
+720a722
+> exten => 2035,1,macro(fmc,2035)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+1366a1367,1370
+> [2005](phone)
+> secret=2005
+> callerid=2005
+> 

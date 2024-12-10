@@ -1,0 +1,9 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+600c600
+< exten => 1710,1,macro(fmc,1710)
+---
+> exten => 1710,1,macro(fmc,1710,1712)
+603c603
+< exten => 1717,1,macro(fmc,1717)
+---
+> exten => 1717,1,macro(fmc,1717,1712)

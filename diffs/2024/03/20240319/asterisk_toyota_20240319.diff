@@ -1,0 +1,44 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+849a850,857
+> exten => _880025XXXXX,1,Answer()
+> exten => _880025XXXXX,n,Set(CALLERID(num)=73472466565)
+> exten => _880025XXXXX,n,Macro(record,${UNIQUEID})
+> exten => _880025XXXXX,n,Dial(SIP/ufanet77-est/${EXTEN},,NtT)
+> exten => _880025XXXXX,n,Busy(60)
+> exten => _880025XXXXX,n,Hangup()
+> 
+> 
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+14c14
+< exten =>s,n,Dial(SIP/ufanet77-est/${ARG3},30,NtT)
+---
+> exten =>s,n,Dial(SIP/ufanet76-est/${ARG3},30,NtT)
+80c80
+< exten => 1414,1,macro(mobile-est,1464)
+---
+> exten => 1414,1,macro(mobile-est,1414,1414)
+diff -r /root/dk_scripts/tmp/2/logger.conf /root/dk_scripts/tmp/1/logger.conf
+134c134
+< console => notice,warning,error
+---
+> console => notice,warning,error,dtmf
+diff -r /root/dk_scripts/tmp/2/sip_users_est.conf /root/dk_scripts/tmp/1/sip_users_est.conf
+8c8,9
+< dtmfmode=inband
+---
+> ;dtmfmode=inband
+> dtmfmode=rfc2833
+27c28
+< secret=hyu@1420
+---
+> secret=1420
+117,120c118,121
+< [1420](phone-est)
+< secret=hyu@1420
+< callerid=1420
+< call-limit=2
+---
+> ;[1420](phone-est)
+> ;secret=hyu@1420
+> ;callerid=1420
+> ;call-limit=2

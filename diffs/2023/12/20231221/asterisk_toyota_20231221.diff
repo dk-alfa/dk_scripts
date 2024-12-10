@@ -1,0 +1,8 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+989d988
+< exten => 2365,n,Macro(record,${UNIQUEID})
+990a990
+> exten => 2365,n,Macro(record,${UNIQUEID})
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+8d7
+< localnet=192.168.12.0/255.255.255.0

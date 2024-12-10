@@ -1,0 +1,210 @@
+diff -r /root/dk_scripts/tmp/2/10_dk_scr_bcp_sw_sx300_conf.py /root/dk_scripts/tmp/1/10_dk_scr_bcp_sw_sx300_conf.py
+6a7,9
+>     После отработки скрипта, в каталоге  BASE_TFTP_DIR/BACKUP_DIR содержатся файлы конфигурации
+> коммутаторов из списка
+> 
+116d118
+< #  print("------------------------------------------------------------")
+118d119
+< #  print("------------------------------------------------------------")
+120d120
+< #  print("------------------------------------------------------------")
+Только в /root/dk_scripts/tmp/1: 20dkscrbcpdocker.json
+diff -r /root/dk_scripts/tmp/2/20_dk_scr_bcp_docker.py /root/dk_scripts/tmp/1/20_dk_scr_bcp_docker.py
+8c8,10
+< 2024.01.22 Добавлена функция datetime_message, исправлены все сообщения - добавлена эта функция
+---
+> 2024.01.22 1.Добавлена функция datetime_message
+>            2.В сообщениях добавлено {datetime_message}
+>            3.Глобальные переменные переведены в UpperCase
+13a16
+> import json
+17,25c20,27
+< start_str = "Start script [backup_docker], writen by Dmitry Korablev 2022.03.28"
+< end_str   = "End script [backup_docker], writen by Dmitry Korablev 2022.03.28"
+< src_path  = "/docker/"                         #общая папка с docker контейнерами
+< dst_path_cur =""
+< #dst_path  = "/docker/samba/public/backups/docker/"   #Целевая папка 1
+< dst_path  = "/docker/samba/data/public/backups/docker"
+< #dst_path_bdc   = "/mnt/dk_backups_bdc/"             #Целевая папка 2
+< #dst_path_usb   = "/mnt/dk_backups_usb/dk_backups/"  #Целевая папка 3
+< list_file = "/root/dk_scripts/list_docker_stacks"
+---
+> INI_FILE_NAME = f"/root/dk_scripts/{os.path.basename(__file__).replace('_','').replace('.py','.json')}"
+> #INI_FILE_NAME = f"./{os.path.basename(__file__).replace('_','').replace('.py','.json')}"
+> SETTINGS      = {}
+> SRC_PATH  = "/docker/" #общая папка с docker контейнерами
+> DST_PATH_CUR =""
+> DST_PATH  = "/docker/samba/data/public/backups/docker"
+> LIST_FILE = "/root/dk_scripts/list_docker_stacks"
+> 
+32c34
+< 
+---
+> '''
+35c37
+<   global dst_path, now
+---
+>   global DST_PATH, now
+38,39c40,41
+<   dst_path_cur = dst_path +"/"+ st_name
+<   print ("dst_path_cur = "+dst_path_cur)
+---
+>   DST_PATH_CUR = DST_PATH +"/"+ st_name
+>   print ("DST_PATH_CUR = "+DST_PATH_CUR)
+41c43
+<   dirs = os.listdir(dst_path_cur)
+---
+>   dirs = os.listdir(DST_PATH_CUR)
+46,47c48,49
+<       print(str(now)+" "+"Удаляем файл: "+ dst_path_cur + "/"+file)
+<       os.remove(dst_path_cur + "/"+file)
+---
+>       print(str(now)+" "+"Удаляем файл: "+ DST_PATH_CUR + "/"+file)
+>       os.remove(DST_PATH_CUR + "/"+file)
+49c51
+<   bc_command = "tar cf "+dst_path_cur + "/"+file_name + " "+src_path + st_name
+---
+>   bc_command = "tar cf "+DST_PATH_CUR + "/"+file_name + " "+SRC_PATH + st_name
+64,65c66,102
+< #----- run_script -----
+< def run_script(filename):
+---
+> 
+> '''
+> 
+> 
+> 
+> 
+> #---- backup ----
+> def backup(the_docker):
+>   global DST_PATH, now
+> 
+>   cur_file = f"{DST_PATH}/{the_docker}"
+>   if os.path.isdir(cur_file):
+>     dirs = os.listdir(cur_file)
+>     match_str = f"{str(datetime.date.today().isoweekday())}_{the_docker}"
+>     #Находим и удаляем файл
+>     for file in dirs:
+>       if file.find(match_str) > -1: 
+>         del_file = f"{DST_PATH}/{the_docker}/{file}"
+>         print(f"{datetime_message()} Удаляем файл: [{del_file}]")
+>         os.remove(del_file)
+>     file_name = f"{str(datetime.date.today().isoweekday())}_{the_docker}_backup_{str(datetime.date.today()).replace('-','')}.tar"
+>     cmd = f"cd {SRC_PATH}{the_docker}/ &&  tar czpf {DST_PATH}/{the_docker}/{file_name} ./"
+>     print(f"{datetime_message()} Архивируем [{SRC_PATH}{the_docker} в {DST_PATH}/{the_docker}/{file_name}]")
+>     os.system(cmd)
+>   else: 
+>     print(f"{datetime_message()} Ошибка: Не найдена папка[{cur_file}]")
+> 
+> #---- backup_docker ----
+> def backup_docker():
+>   global SETTINGS
+>   for docker in SETTINGS["docker_stack"]:
+>     backup(docker)
+> 
+> #---- read_settings ----
+> def read_settings():
+>   global INI_FILE_NAME, SETTINGS
+>   ret = False
+67,72c104,114
+<     f = open(filename)
+<     read_file(f)
+<     f.close()
+<     print ("Ok")
+<   except FileNotFoundError:
+<     print("\033[1m\033[31m{}\033[0m".format("Файл "+filename+" не существует"))
+---
+>     ini_file = open(INI_FILE_NAME)
+>     try:
+>       SETTINGS = json.load(ini_file)
+>       print(f"{datetime_message()} Файл настроек [{INI_FILE_NAME}] прочитан")
+>       ret =  True
+>     except:
+>       print(f"{datetime_message()} Ошибка: не удалось прочитать Файл настроек [{INI_FILE_NAME}]")
+>     ini_file.close()
+>   except:
+>     print(f"{datetime_message()} Ошибка: не удалось открыть  Файл настроек [{INI_FILE_NAME}]")
+>   return ret
+74c116,119
+< #----- main -----
+---
+> #---- run_script ----
+> def run_script(filename):
+>   if read_settings():
+>     backup_docker()
+76,78c121,125
+< print(f"{datetime_message()} start")
+< run_script(list_file)
+< print(f"{datetime_message()} stop")
+---
+> #----- main -----
+> if __name__ =="__main__":
+>   print(f"{datetime_message()} start")
+>   run_script(LIST_FILE)
+>   print(f"{datetime_message()} stop")
+diff -r /root/dk_scripts/tmp/2/29_dk_scr_bcp_copy.py /root/dk_scripts/tmp/1/29_dk_scr_bcp_copy.py
+117d116
+< 
+124,125d122
+< #print("\033[1m\033[32m{}\033[0m".format(f"start [{datetime.datetime.now()}] {os.path.basename(__file__)}"))
+< print("-----------------------------------------------------------")
+129d125
+< #print("\033[1m\033[32m{}\033[0m".format(f"stop [{datetime.datetime.now()}] {os.path.basename(__file__)}"))
+diff -r /root/dk_scripts/tmp/2/40_dk_scr_send_phone_to_email.py /root/dk_scripts/tmp/1/40_dk_scr_send_phone_to_email.py
+28c28,29
+< recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru"]
+---
+> #recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru"]
+> recipients_emails = ["dkorablev@toyota-ufa.ru"]
+39c40,41
+<   os.system("umount -f /mnt/tmp")
+---
+>   if os.path.ismount("/mnt/tmp")
+>     os.system("umount -f /mnt/tmp")
+diff -r /root/dk_scripts/tmp/2/dk_main_backup.py /root/dk_scripts/tmp/1/dk_main_backup.py
+14,15c14,16
+< WORK_DIR  = "/root/dk_scripts/"
+< MATCH_STR = "dk_scr"
+---
+> WORK_DIR   = "/root/dk_scripts/"
+> MATCH_STR  = "dk_scr"
+> START_TIME = ""
+39c40
+<     print(f"{datetime_message()} запуск скрипта {WORK_DIR+scripts_list[i]}")
+---
+>     print(f"{datetime_message()} Запуск скрипта [{WORK_DIR+scripts_list[i]}]")
+50,69d50
+< 
+< '''
+<     if MATCH_STR in filename:
+<       scripts_list.append(filename)
+<   scripts_list.sort(key = file_number)
+< 
+<   for i in range(len(scripts_list)):
+<     print(f"{datetime_message()} запуск скрипта {WORK_DIR+scripts_list[i]}")
+<     print(f"============================================================================================================================")
+<     os.system(WORK_DIR+scripts_list[i])
+<   for root, dirs, files in os.walk(WORK_DIR):
+<     for filename in files:
+<       if MATCH_STR  in filename:
+<         scripts_list.append(filename)
+< #        print(filename)
+<   scripts_list.sort(key = file_number)
+<   for i in range(len(scripts_list)):
+<     print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] запуск скрипта {WORK_DIR+scripts_list[i]}")
+< #    os.system(WORK_DIR+scripts_list[i])
+< '''
+71,74c52,57
+< #print("------------------------------------------------------------")
+< print(f"{datetime_message()} start")
+< run_script()
+< print(f"{datetime_message()} stop")
+---
+> if __name__ == "__main__":
+>   START_TIME = datetime.datetime.now()
+>   print(f"{datetime_message()} start")
+>   run_script()
+>   print(f"{datetime_message()} stop")
+>   print(f"==== Скрипт выволнялся с [{START_TIME}] по [{datetime.datetime.now()}] ====")
+Только в /root/dk_scripts/tmp/2: list_docker_stacks

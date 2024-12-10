@@ -1,0 +1,104 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+99,110d98
+< ;exten => MV9eWGnrJp4PJ1V0,1,GotoIfTime(9:00-21:00,*,*,*?menu_day_exeed,2465,1)
+< ;exten => MV9eWGnrJp4PJ1V0,n,Busy(10)
+< 
+< ;;exten => MV9eWGnrJp4PJ1V0,1,Answer();
+< ;;exten => MV9eWGnrJp4PJ1V0,n,NoOp(==== Calltouch EXID ====);
+< ;;exten => MV9eWGnrJp4PJ1V0,n,Macro(record,${UNIQUEID})
+< ;;exten => MV9eWGnrJp4PJ1V0,n,Set(CALLERID(all)=$[CALLERID(num)])
+< ;;exten => MV9eWGnrJp4PJ1V0,n,Dial(SIP/2300,30,tT)
+< ;;exten => MV9eWGnrJp4PJ1V0,n,Playtones(busy)
+< ;;exten => MV9eWGnrJp4PJ1V0,n,Busy(60)
+< ;;exten => MV9eWGnrJp4PJ1V0,n,Hangup()
+< 
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+48,52d47
+< ;[local]
+< ;;include => que
+< ;include => bases
+< 
+< ;[bases]
+54d48
+< ;include => fromlocal
+162d155
+< ;exten => _8XXXXXXXXXX,n,Dial(SIP/sipnet-est/7${EXTEN:1},30,NtT)
+166,172d158
+< ;exten => _1[5678]XX,1,Answer()
+< ;exten => _1[5678]XX,n,Set(foo=${SIPPEER(${EXTEN},curcalls)})
+< ;exten => _1[5678]XX,n,Dial(SIP/toyota/${EXTEN},20,NtT)
+< ;exten => _1[5678]XX,n,Playtones(busy)
+< ;exten => _1[5678]XX,n,Busy(360)
+< ;exten => _1[5678]XX,n,Hangup()
+< 
+176,193d161
+< ;exten => _7XX,1,GoTo(local-users-str,${EXTEN},1)
+< 
+< 
+< ;exten => _1[35678]XX,1,Answer()
+< ;exten => _1[35678]XX,n,Set(foo=${SIPPEER(${EXTEN},curcalls)})
+< ;exten => _1[35678]XX,n,Dial(SIP/toyota/${EXTEN},20,NtT)
+< ;exten => _1[35678]XX,n,Playtones(busy)
+< ;exten => _1[35678]XX,n,Busy(360)
+< ;exten => _1[35678]XX,n,Hangup()
+< 
+< ;exten => _7XX,1,GoTo(local-str,${EXTEN},1)
+< ;exten => _7XX,1,Answer()
+< ;exten => _7XX,n,Set(foo=${SIPPEER(${EXTEN},curcalls)})
+< ;exten => _7XX,n,Dial(SIP/toyota/${EXTEN},20,NtT)
+< ;exten => _7XX,n,Playtones(busy)
+< ;exten => _7XX,n,Busy(360)
+< ;exten => _7XX,n,Hangup()
+< 
+228a197,213
+> 
+> [from_sitnet_est_gac]
+> ;==== Calltouch EST GAC ====
+> include => local-est
+> 
+> exten => oVmFZzvxUUuSi6L63d,1,Answer()
+> exten => oVmFZzvxUUuSi6L63d,n,NoOp(==== Calltouch EST GAC ====)
+> exten => oVmFZzvxUUuSi6L63d,n,Macro(record,${UNIQUEID})
+> exten => oVmFZzvxUUuSi6L63d,n,Set(CALLERID((all)=$[CALLERID(num)])
+> exten => oVmFZzvxUUuSi6L63d,n,Dial(SIP/1401,20,NtT)
+> exten => oVmFZzvxUUuSi6L63d,n,Playtones(busy)
+> exten => oVmFZzvxUUuSi6L63d,n,Busy(60)
+> exten => oVmFZzvxUUuSi6L63d,n,Hangup()
+> 
+> ;exten => oVmFZzvxUUuSi6L63d,1,Answer()
+> ;exten => oVmFZzvxUUuSi6L63d,n,NoOp(==== Calltouch EST GAC ====)
+> ;exten => oVmFZzvxUUuSi6L63d,n,Dial(SIP/1742,20,NtT)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+43a44
+> ;=========== Уфа ===========
+49d49
+< ;register =>MV9eWGnrJp4PJ1V0:z0zaI2qtbpo6Zs46FEi@sip9468.sitnet.ru/MV9eWGnrJp4PJ1V0	;CallTouch для EXEED
+50a51
+> ;register =>MV9eWGnrJp4PJ1V0:z0zaI2qtbpo6Zs46FEi@sip9468.sitnet.ru/MV9eWGnrJp4PJ1V0	;CallTouch для EXEED
+53,55d53
+< register =>2dVYQpB1dCKeYJ:8PI7AZBDoK@sip8232.sitnet.ru/2dVYQpB1dCKeYJ			;CallTouch для CHERY (Зубово)
+< 
+< 
+62d59
+< 
+65a63,64
+> register =>2dVYQpB1dCKeYJ:8PI7AZBDoK@sip8232.sitnet.ru/2dVYQpB1dCKeYJ			;CallTouch для CHERY (Зубово)
+> ;register =>oVmFZzvxUUuSi6L63d:RcJHMjNuSPwsju77C8V5@sip8604.sitnet.ru/oVmFZzvxUUuSi6L63d	;CallTouch для GAC   (Зубово)
+diff -r /root/dk_scripts/tmp/2/sip_trunks_est.conf /root/dk_scripts/tmp/1/sip_trunks_est.conf
+0a1,16
+> [Calltouch-est-gac]
+> type=peer
+> host=sip8604.sitnet.ru
+> ;username=oVmFZzvxUUuSi6L63d
+> ;secret=RcJHMjNuSPwsju77C8V5
+> context=from_sitnet_est_gac
+> transport=udp
+> call-limit=3
+> insecure=port,invite
+> canreinvite=no
+> disallow=all
+> allow=alaw
+> allow=ulaw
+> defaultexpirey=120
+> maxexpirey=120
+> qualify=yes

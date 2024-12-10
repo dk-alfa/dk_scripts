@@ -1,0 +1,7 @@
+diff -r /root/dk_scripts/tmp/2/TCS1-SW3-48_192.168.22.75.conf /root/dk_scripts/tmp/1/TCS1-SW3-48_192.168.22.75.conf
+173a174
+>  power inline priority critical 
+385c386
+<  switchport trunk allowed vlan add 33,95,3920 
+---
+>  switchport trunk allowed vlan add 33,95,238,3920 

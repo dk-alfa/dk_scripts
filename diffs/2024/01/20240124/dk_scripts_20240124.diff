@@ -1,0 +1,386 @@
+diff -r /root/dk_scripts/tmp/2/10_dk_scr_bcp_sw_sx300_conf.py /root/dk_scripts/tmp/1/10_dk_scr_bcp_sw_sx300_conf.py
+60c60
+<   return f"{datetime.datetime.now()} [{os.path.basename(__file__)}]"
+---
+>   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+diff -r /root/dk_scripts/tmp/2/15_dk_scr_test_megashare.py /root/dk_scripts/tmp/1/15_dk_scr_test_megashare.py
+7c7,11
+< Кораблев Дмитрий 2022.11.30
+---
+> (c) Кораблев Дмитрий 2022.11.30
+> 
+>   После отработки скрипта, в файле {PHONE_PATH}{LOG_FOLDER}{LOG_PREF}{now}{LOG_EXT}
+> содержится список должников
+> 
+42d45
+< #ignore_phone  = []
+44a48,50
+> #---- datetime_message() ----
+> def datetime_message():
+>   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+79,92c85,88
+< #---- datetime_message() ----
+< def datetime_message():
+<   return f"{datetime.datetime.now()} [{os.path.basename(__file__)}]"
+< 
+< #---- test_megashare() ----
+< def test_megashare():
+<   
+<   if os.path.ismount("/mnt/tmp"):
+<     os.system("umount -f  /mnt/tmp")
+< 
+<   cmd = f"mount -t cifs -o username={REMOTE_SERVER_USERNAME},password={REMOTE_SERVER_PASSWORD} {REMOTE_SERVER_FOLDER} {PHONE_PATH}"
+<   
+<   os.system(cmd)
+<   
+---
+> #---- iteration() ----
+> def folder_iteration(pg_cursor):
+>   global PH_COUNT
+>   #Итерация по всем папкам MegShare
+95c91,138
+<   outfile = ""
+---
+>   for phone_num in content:
+>     if phone_num.isdigit() and not is_phone_ignore(phone_num): 
+>       div_day = get_div_day(phone_num)
+>       if int(div_day) >= MAX_DAY_DIV:
+>         sql_str = f'select t_employees.family_name,t_employees.name,t_employees.surname,t_departaments.short_name, t_brands.name, t_job_titles.name1 \
+>                     from   t_phone_numbers, t_employees, t_departaments, t_brands, t_job_titles \
+>                     where  t_phone_numbers.id_employee=t_employees.id \
+>                     and t_phone_numbers.ph_number={phone_num} \
+>                     and t_employees.id_departament=t_departaments.id \
+>                     and t_employees.id_brand=t_brands.id \
+>                     and t_employees.id_job_title=t_job_titles.id'
+>         pg_cursor.execute(sql_str)
+>         res = pg_cursor.fetchall()
+> 
+>         employee = ''
+>         if res:
+>           if (res[0])[0]:
+>             employee = employee + f'{(res[0])[0]}'
+>           if (res[0])[1]:
+>             employee = employee + f' {(res[0])[1]}'
+>           if (res[0])[2]:
+>             employee = employee + f' {(res[0])[2]}'
+>           if (res[0])[3]:
+>             employee = employee + f' : {(res[0])[3]}'
+>           if (res[0])[4]:
+>             employee = employee + f' {(res[0])[4]}'
+>           if (res[0])[5]:
+>             employee = employee + f' {(res[0])[5]}'
+>           todo(phone_num, employee, div_day)
+>   print()
+>   print(f"Итого: {PH_COUNT}")
+> 
+> #---- openen_db() ----
+> def openen_db():
+>   try:
+>      pgsql = psycopg2.connect(f'postgresql://{PG_USER_NAME}:{PG_PASSWORD}@{PG_SERVER_NAME}:5432/{PG_DATABASE}')
+>      pg_cursor = pgsql.cursor()
+>      #Итерация по всем папкам MegShare
+>      folder_iteration(pg_cursor)
+>      pgsql.close()
+>      pg_cursor.close()
+> #     print("=======")
+>   except:
+>     print(f"{datetime_message()} Ошибка соединения с базой данных ")
+> 
+> #---- open_report_file() ----
+> def open_report_file():
+> #открыть файл отчета
+98d140
+<   #открыть файл отчета
+103,155c145,160
+<     #Подключиться к базе данных
+<     try:
+<       pgsql = psycopg2.connect(f'postgresql://{PG_USER_NAME}:{PG_PASSWORD}@{PG_SERVER_NAME}:5432/{PG_DATABASE}')
+<       pg_cursor = pgsql.cursor()
+<       #print('Соединение с БД Ок')
+<     except: print("Ошибка присоединения к базе данных ")
+< 
+<     #Итерация по всем папкам MegShare
+<     for phone_num in content:
+<       #ph_num  = phone_num #.strip()
+<       #если папка является числом и не находится в списке игнорируемых
+<       #if ph_num.isdigit(): #and not is_phone_ignore(phone_num): 
+<       if phone_num.isdigit() and not is_phone_ignore(phone_num): 
+<         div_day = get_div_day(phone_num)
+<         if int(div_day) >= MAX_DAY_DIV:
+<           sql_str = f'select t_employees.family_name,t_employees.name,t_employees.surname,t_departaments.short_name, t_brands.name, t_job_titles.name1 \
+<                   from   t_phone_numbers, t_employees, t_departaments, t_brands, t_job_titles \
+<                   where  t_phone_numbers.id_employee=t_employees.id \
+<                      and t_phone_numbers.ph_number={phone_num} \
+<                      and t_employees.id_departament=t_departaments.id \
+<                      and t_employees.id_brand=t_brands.id \
+<                      and t_employees.id_job_title=t_job_titles.id'
+<           pg_cursor.execute(sql_str)
+<           res = pg_cursor.fetchall()
+< 
+<           employee = ''
+<           if res:
+<             if (res[0])[0]:
+<               employee = employee + f'{(res[0])[0]}'
+<             if (res[0])[1]:
+<               employee = employee + f' {(res[0])[1]}'
+<             if (res[0])[2]:
+<               employee = employee + f' {(res[0])[2]}'
+<             if (res[0])[3]:
+<               employee = employee + f' : {(res[0])[3]}'
+<             if (res[0])[4]:
+<               employee = employee + f' {(res[0])[4]}'
+<             if (res[0])[5]:
+<               employee = employee + f' {(res[0])[5]}'
+<           #print(employee)
+<           todo(phone_num, employee, div_day)
+<     print()
+<     print(f"Итого: {PH_COUNT}")
+<     
+<     try:
+<       sys.stdout = sys.__stdout__
+<       pgsql.close()
+<       pg_cursor.close()
+<       f.close()
+<     except: print("Ошибка закрытия файла вывода")
+<   except: print("Ошибка открытия файла")
+<   if os.path.ismount("/mnt/tmp"):
+<     os.system("umount -f  /mnt/tmp")
+---
+>     openen_db()
+>     #Возвращаем sdtdout
+>     sys.stdout = sys.__stdout__
+>     f.close()
+>   except:
+>     print(f"{datetime_message()} Ошибка открытия файла отчета [{outfile}]")
+> 
+> #---- test_megashare() ----
+> def test_megashare():
+>   umount = f"umount -f {PHONE_PATH}"
+>   mount  = f"mount -t cifs -o username={REMOTE_SERVER_USERNAME},password={REMOTE_SERVER_PASSWORD} {REMOTE_SERVER_FOLDER} {PHONE_PATH}"
+> 
+>   os.system(umount)
+>   os.system(mount)
+>   open_report_file()
+>   os.system(umount)
+181d185
+< 
+184d187
+< #  print("------------------------------------------------------------")
+186d188
+< #  print("------------------------------------------------------------")
+189d190
+< #  print("------------------------------------------------------------")
+diff -r /root/dk_scripts/tmp/2/20_dk_scr_bcp_docker.py /root/dk_scripts/tmp/1/20_dk_scr_bcp_docker.py
+4a5,9
+> (c) Дмитрий Кораблев
+> 
+>    После отработки скрипта, в каталоге {DST_PATH}/{the_docker}/{file_name} содержится 
+> архив docker контейнера
+> 
+33,70c38
+<   return f"{datetime.datetime.now()} [{os.path.basename(__file__)}]"
+< '''
+< #----- backup_stack -----
+< def backup_stack(st_name):
+<   global DST_PATH, now
+< #  st_name = st_name[0:len(st_name)-1]
+<   st_name = st_name.strip()
+<   DST_PATH_CUR = DST_PATH +"/"+ st_name
+<   print ("DST_PATH_CUR = "+DST_PATH_CUR)
+< 
+<   dirs = os.listdir(DST_PATH_CUR)
+<   for file in dirs:
+<     match_str = str(datetime.date.today().isoweekday())+"_"+st_name
+< #    print("match_str = "+match_str)
+<     if file.find(match_str) > -1: 
+<       print(str(now)+" "+"Удаляем файл: "+ DST_PATH_CUR + "/"+file)
+<       os.remove(DST_PATH_CUR + "/"+file)
+<   file_name  = str(datetime.date.today().isoweekday())+"_"+st_name +"_backup_" + str(datetime.date.today()).replace("-","")+".tar"
+<   bc_command = "tar cf "+DST_PATH_CUR + "/"+file_name + " "+SRC_PATH + st_name
+<   print(str(now)+" "+"Старт архивации ")
+< #  print (bc_command)
+<   os.system(bc_command)
+<   print(str(now)+" "+"Конец архивации ") 
+< 
+< 
+< #----- read_file -----
+< def read_file(f):
+<   while True:
+<     stack_name = f.readline()
+<     if not stack_name:
+<       break
+< #    print ( "stack_name  = " + stack_name)
+<     backup_stack(stack_name)
+< 
+< '''
+< 
+< 
+< 
+---
+>   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+88c56
+<     print(f"{datetime_message()} Архивируем [{SRC_PATH}{the_docker} в {DST_PATH}/{the_docker}/{file_name}]")
+---
+>     print(f"{datetime_message()} Архивируем    [{SRC_PATH}{the_docker} в {DST_PATH}/{the_docker}/{file_name}]")
+diff -r /root/dk_scripts/tmp/2/27_dk_scr_bcp_archiving.py /root/dk_scripts/tmp/1/27_dk_scr_bcp_archiving.py
+3,4c3,5
+<  Скрипт копирования backup файлов
+<  Типы копирования:
+---
+>  Скрипт архивирования папок из списка
+> 
+>  Типы источников архивирования:
+9a11,12
+>  После отработки скрипта создаютя архивы папок из списка
+> 
+28,75c31,33
+< """
+< #----- del_file_in_dst_path(dst_path) -----
+< 
+< def del_file_in_dst_path(dst_path,src_file):
+<   filename = glob.glob( f"{dst_path}/{src_file[0:5]}*.*", recursive=True)
+<   for name in filename:
+<     print(f"Удаляется файл: [{name}]")
+<     os.remove(name)
+< #  else: print("Удалять нечего")
+< 
+< #----- get_last_file(src_path) -----
+< 
+< def get_last_file(src_path):
+< 
+<   #Ищем файл с самой ранней датой
+<   entry = max((e for e in os.scandir(src_path) if e.is_file(follow_symlinks=False)),
+<             key=lambda e: getattr(e.stat(), 'st_birthtime', None) or e.stat().st_ctime)
+<   return entry.name
+< 
+< #----- copy_rfs(src_path,dst_path) -----
+< 
+< def copy_rfs(src_path,dst_path,mnt_path):
+<   os.system(f"sudo mount -t cifs {mnt_path}")
+<   copy_fs(src_path,dst_path)
+<   os.system(f"sudo umount {dst_path}")
+< 
+< #----- copy_fs(src_path,dst_path) -----
+< 
+< def copy_fs(src_path,dst_path):
+<   src_file =  get_last_file(src_path)
+<   del_file_in_dst_path(dst_path,src_file)
+<   print (f"Копируется: {src_path}/{src_file} {dst_path}/")
+<   shutil.copy2(f"{src_path}/{src_file}", f"{dst_path}/{src_file}")
+< 
+< #----- copy_mega(path) -----
+< 
+< def copy_mega(src_path,dst_path):
+<   src_file =  get_last_file(src_path)
+<   os.system(f"mega-login {MEGA_LOGIN} {MEGA_PASS}")
+<   os.system(f"mega-rm {dst_path}/{src_file[0:7]}*.*")
+<   os.system(f"mega-put {src_path}/{src_file} {dst_path}/{src_file}")
+<   os.system("mega-logout")
+< 
+< #----- copy_yd(path) -----
+< 
+< def copy_yd(src_path,dst_path):
+<   pass
+< #  print(f"copy {src_path} to {dst_path}"
+---
+> #---- datetime_message()  ----
+> def datetime_message():
+>   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+77d34
+< """
+80d36
+< 
+93,94c49,50
+<     print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Удален файл: [{name}]")
+<     #print(f"Удален файл: [{name}]")
+---
+>     #print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Удален файл:          [{name}]")
+>     print(f"{datetime_message()} Удален файл:          [{name}]")
+96,97d51
+< 
+< 
+110,112c64,65
+<   print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Создан архивный файл: [{dst_path}/{filename}]")
+<   #print(f"Создан архивный файл: [{dst_path}/{filename}]")
+< 
+---
+>   #print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Создан архивный файл: [{dst_path}/{filename}]")
+>   print(f"{datetime_message()} Создан архивный файл: [{dst_path}/{filename}]")
+121,122c74
+<   print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Создан архивный файл: [{dst_path}/{filename}]")
+<   #print(f"Создан архивный файл: [{dst_path}/{filename}]")
+---
+>   #print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Создан архивный файл: [{dst_path}/{filename}]")
+123a76
+>   print(f"{datetime_message()} Создан архивный файл: [{dst_path}/{filename}]")
+132c85
+<   print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Создан архивный файл: [{dst_path}/{filename}]")
+---
+>   #print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Создан архивный файл: [{dst_path}/{filename}]")
+134a88
+>   print(f"{datetime_message()} Создан архивный файл: [{dst_path}/{filename}]")
+160,161c114,115
+<       print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Прочитан файл настроек")
+< #      print("Прочитан файл настроек")
+---
+>       print(f"{datetime_message()} Прочитан файл настроек[INI_FILE_NAME]")
+> #      print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Прочитан файл настроек")
+165,166c119,120
+<       print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Ошибка: Не удалость прочитать файл настроек [{INI_FILE_NAME}]")
+<       #print(f"Ошибка: Не удалость прочитать файл настроек [{INI_FILE_NAME}]")
+---
+> #      print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Ошибка: Не удалость прочитать файл настроек [{INI_FILE_NAME}]")
+>       print(f"{datetime_message()} Ошибка: Не удалость прочитать файл настроек [{INI_FILE_NAME}]")
+170,171c124,125
+<     print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Ошибка: Не удалость открыть файл настроек [{INI_FILE_NAME}]")
+<     #print(f"Ошибка: Не удалость открыть файл настроек [{INI_FILE_NAME}]")
+---
+>     print(f"{datetime_message()} Ошибка: Не удалость открыть файл настроек [{INI_FILE_NAME}]")
+> #    print(f"start {datetime.datetime.now()} [{os.path.basename(__file__)}] Ошибка: Не удалость открыть файл настроек [{INI_FILE_NAME}]")
+181,183c135,136
+< #print("------------------------------------------------------------")
+< print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] start")
+< #print("------------------------------------------------------------")
+---
+> print(f"{datetime_message()} start ")
+> #print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] start")
+185,186c138,139
+< #print("------------------------------------------------------------")
+< print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] stop")
+---
+> print(f"{datetime_message()} stop")
+> #print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] stop")
+diff -r /root/dk_scripts/tmp/2/40_dk_scr_send_phone_to_email.py /root/dk_scripts/tmp/1/40_dk_scr_send_phone_to_email.py
+40c40
+<   if os.path.ismount("/mnt/tmp")
+---
+>   if os.path.ismount("/mnt/tmp"):
+diff -r /root/dk_scripts/tmp/2/dk_main_backup.py /root/dk_scripts/tmp/1/dk_main_backup.py
+20c20
+<   return f"{datetime.datetime.now()} [{os.path.basename(__file__)}]"
+---
+>   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+40c40,41
+<     print(f"{datetime_message()} Запуск скрипта [{WORK_DIR+scripts_list[i]}]")
+---
+> #    print(f"{datetime_message().replace(microsecond=0)} Запуск скрипта [{WORK_DIR+scripts_list[i]}]")
+>     print(f"{datetime_message()} Запуск скрипта [{scripts_list[i]}]")
+46c47,48
+<       print (f"{datetime_message()} Cкрипт [{cmd}] успешно выполнен.[PASS]")
+---
+> #      print (f"{datetime_message()} Cкрипт [{cmd}] успешно выполнен.[PASS]")
+>       print (f"{datetime_message()} Cкрипт         [{scripts_list[i]}] успешно выполнен.[PASS]")
+49c51,52
+<       print (f"{datetime_message()} Ошибка: не удалось выполнить скрипт [{cmd}]. [FAIL!!!]")
+---
+> #      print (f"{datetime_message()} Ошибка: не удалось выполнить скрипт [{cmd}] [FAIL!!!]")
+>       print (f"{datetime_message()} Ошибка: не удалось выполнить скрипт [{scripts_list[i]}] [FAIL!!!]")
+53c56
+<   START_TIME = datetime.datetime.now()
+---
+>   START_TIME = datetime.datetime.now().replace(microsecond=0)
+57c60,61
+<   print(f"==== Скрипт выволнялся с [{START_TIME}] по [{datetime.datetime.now()}] ====")
+---
+>   print()
+>   print(f"==== Скрипт выполнялся с [{START_TIME}] по [{datetime.datetime.now().replace(microsecond=0)}] ====")

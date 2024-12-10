@@ -1,0 +1,8 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+241,242c241,243
+< exten => 1555,2,Busy(10)
+< exten => 1555,3,Hangup()
+---
+> exten => 1555,2,Dial(SIP/1744,20,tT)
+> exten => 1555,n,Busy(10)
+> exten => 1555,n,Hangup()

@@ -1,0 +1,27 @@
+diff -r /root/dk_scripts/tmp/2/TCS4-SW1-48_192.168.22.71.conf /root/dk_scripts/tmp/1/TCS4-SW1-48_192.168.22.71.conf
+16c16
+< vlan 2,66 
+---
+> vlan 2,66,95,497-498 
+43a44,52
+> interface vlan 95
+>  name WiFi_95 
+> !
+> interface vlan 497
+>  name WiFi_497 
+> !
+> interface vlan 498
+>  name WiFi_498 
+> !
+143a153,155
+> interface fastethernet42
+>  switchport trunk allowed vlan add 95,497-498 
+> !
+172c184
+<  switchport trunk allowed vlan add 2,66 
+---
+>  switchport trunk allowed vlan add 2,66,95,497-498 
+178c190
+<  switchport trunk allowed vlan add 2,66 
+---
+>  switchport trunk allowed vlan add 2,66,95,497-498 

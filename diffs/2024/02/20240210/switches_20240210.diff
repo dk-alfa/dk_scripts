@@ -1,0 +1,8 @@
+diff -r /root/dk_scripts/tmp/2/sw-sever-2-2_10.9.1.6.conf /root/dk_scripts/tmp/1/sw-sever-2-2_10.9.1.6.conf
+116c116
+< macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch"
+---
+> macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch"
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+118d117
+<  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 

@@ -1,0 +1,6 @@
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+370c370,371
+< exten => _X.,n,Dial(SIP/710&SIP/730,40,tT)
+---
+> ;exten => _X.,n,Dial(SIP/710&SIP/730,40,tT)
+> exten => _X.,n,Dial(SIP/771,40,tT)

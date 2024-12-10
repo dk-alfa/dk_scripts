@@ -1,0 +1,14 @@
+diff -r /root/dk_scripts/tmp/2/40_dk_scr_send_phone_to_email.py /root/dk_scripts/tmp/1/40_dk_scr_send_phone_to_email.py
+28,29c28,29
+< #recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru"]
+< recipients_emails = ["dkorablev@toyota-ufa.ru"]
+---
+> recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru"]
+> #recipients_emails = ["dkorablev@toyota-ufa.ru"]
+diff -r /root/dk_scripts/tmp/2/phonebook_file_name /root/dk_scripts/tmp/1/phonebook_file_name
+1c1
+< Телефонный справочник на 25.01.2024.pdf
+\ В конце файла нет новой строки
+---
+> Телефонный справочник на 30.01.2024.pdf
+\ В конце файла нет новой строки

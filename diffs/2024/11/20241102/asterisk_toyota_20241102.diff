@@ -1,0 +1,33 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+111,113c111,117
+< exten => 9ZtaT1B8YP81JjWu,n,NoOp(==== Calltouch GEELY ====);
+< ;exten => 9ZtaT1B8YP81JjWu,n,Playback(tt-monkeysintro)
+< exten => 9ZtaT1B8YP81JjWu,n,Dial(SIP/1742,14,t)
+---
+> exten => 9ZtaT1B8YP81JjWu,n,NoOp(==== Calltouch TANK ====);
+> exten => 9ZtaT1B8YP81JjWu,n,Macro(record,${UNIQUEID})
+> exten => 9ZtaT1B8YP81JjWu,n,Set(CALLERID(all)=$[CALLERID(num)])
+> exten => 9ZtaT1B8YP81JjWu,n,macro(toyota,1)
+> exten => 9ZtaT1B8YP81JjWu,n,Playtones(busy)
+> exten => 9ZtaT1B8YP81JjWu,n,Busy(60)
+> exten => 9ZtaT1B8YP81JjWu,n,Hangup()
+114a119,122
+> ;exten => 9ZtaT1B8YP81JjWu,1,Answer();
+> ;exten => 9ZtaT1B8YP81JjWu,n,NoOp(==== Calltouch GEELY ====);
+> ;exten => 9ZtaT1B8YP81JjWu,n,Playback(tt-monkeysintro)
+> ;exten => 9ZtaT1B8YP81JjWu,n,Dial(SIP/1742,14,t)
+116,121d123
+< ;exten => verra_uf_haval,n,Macro(record,${UNIQUEID})
+< ;exten => verra_uf_haval,n,Set(CALLERID(all)=$[CALLERID(num)])
+< ;exten => verra_uf_haval,n,macro(toyota,1)
+< ;exten => verra_uf_haval,n,Playtones(busy)
+< ;exten => verra_uf_haval,n,Busy(60)
+< ;exten => verra_uf_haval,n,Hangup()
+561c563
+< ;exten => 1568,1,macro(fmc,1568,1568)
+---
+> exten => 1568,1,macro(fmc,1568,1568)
+815d816
+< ;exten => 911,1,Dial(SIP/911)
+816a818
+> exten => 9111,1,macro(mobile,911,911)

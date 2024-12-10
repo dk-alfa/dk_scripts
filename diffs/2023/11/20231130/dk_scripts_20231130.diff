@@ -1,0 +1,6 @@
+diff -r /root/dk_scripts/tmp/2/30_dk_scr_test_megashare.py /root/dk_scripts/tmp/1/30_dk_scr_test_megashare.py
+81a82
+> os.system("umount /mnt/tmp")
+diff -r /root/dk_scripts/tmp/2/40_dk_scr_send_phone_to_email.py /root/dk_scripts/tmp/1/40_dk_scr_send_phone_to_email.py
+92a93
+>   os.system("umount /mnt/tmp")

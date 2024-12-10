@@ -1,0 +1,42 @@
+diff -r /root/dk_scripts/tmp/2/TBR21-SW3-52_192.168.22.80.conf /root/dk_scripts/tmp/1/TBR21-SW3-52_192.168.22.80.conf
+153d152
+<  switchport trunk native vlan 66 
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+107c107
+< switchport trunk native vlan 66 
+---
+> switchport trunk native vlan 2 
+diff -r /root/dk_scripts/tmp/2/TCS5-SW1-48_192.168.22.86.conf /root/dk_scripts/tmp/1/TCS5-SW1-48_192.168.22.86.conf
+81a82,94
+> interface fastethernet3
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+>  switchport trunk allowed vlan add 2 
+>  macro description ip_phone_desktop
+>  !next command is internal.
+>  macro auto smartport dynamic_type ip_phone_desktop 
+> !
+92c105,116
+<  switchport trunk native vlan 66 
+---
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+>  switchport mode access 
+>  switchport access vlan 2 
+>  macro description ip_phone_desktop
+>  !next command is internal.
+>  macro auto smartport dynamic_type unknown 
+96c120
+<  switchport access vlan 66 
+---
+>  switchport access vlan 2 

@@ -1,0 +1,7 @@
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+95a96
+>  spanning-tree link-type point-to-point 
+96a98,100
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type unknown 

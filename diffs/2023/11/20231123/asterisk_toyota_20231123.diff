@@ -1,0 +1,137 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+158c158,159
+< exten => 2626000,n,Dial(SIP/sever/1820,30,tT)
+---
+> ;exten => 2626000,n,Dial(SIP/sever/1820,30,tT)
+> exten => 2626000,n,Dial(SIP/1820,30,tT)
+270a272,273
+> ;Все звонки из Уфы  на Северные короткие номера льем в контекст [local-nrt]
+> exten => _18XX,1,GoTo(local-nrt,${EXTEN},1)
+664c667
+< ;exten => 911,1,Dial(SIP/BeelineFMC/1745,16,rt)
+---
+> exten => 911,1,Dial(SIP/BeelineFMC/1745,16,rt)
+667d669
+< exten => 911,1,Dial(SIP/BeelineFMC/1745,16,rt)
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+182c182,187
+< exten => 1819,1,macro(fmc,1819)
+---
+> ;exten => 1819,1,macro(fmc,1819)
+> ;exten => 1819,1,Playtones(busy)
+> exten => 1819,1,MP3Player(/var/lib/asterisk/sounds/1/geely_avtootvet.mp3)
+> 
+> 
+> 
+385c390
+< exten => 1800,n,MP3Player(/etc/asterisk/mp3//night.mp3)
+---
+> exten => 1800,n,MP3Player(/etc/asterisk/mp3/night.mp3)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+11a12
+> localnet=192.168.8.0/255.255.255.0
+1332c1333
+< ;#include /etc/asterisk/sip_trunks_nrt.conf ;Транки  Северного офиса
+---
+> #include /etc/asterisk/sip_trunks_nrt.conf ;Транки  Северного офиса
+diff -r /root/dk_scripts/tmp/2/sip_trunks_nrt.conf /root/dk_scripts/tmp/1/sip_trunks_nrt.conf
+1c1
+< ;--
+---
+> 
+9d8
+< --;
+\ В конце файла нет новой строки
+diff -r /root/dk_scripts/tmp/2/sip_users_nrt.conf /root/dk_scripts/tmp/1/sip_users_nrt.conf
+27,28d26
+< 
+< ;--
+32c30
+< 
+---
+> ;--
+36c34
+< 
+---
+> --;
+44c42
+< 
+---
+> ;--
+48,51c46,49
+< 
+< ;[1805](phone-nrt)
+< ;secret=1805
+< ;callerid=1805
+---
+> --;
+> [1805](phone-nrt)
+> secret=1805
+> callerid=1805
+65c63
+< 
+---
+> ;--
+69c67
+< 
+---
+> --;
+73c71
+< 
+---
+> ;--
+81c79
+< 
+---
+> --;
+85c83
+< 
+---
+> ;--
+89c87
+< 
+---
+> --;
+93c91
+< 
+---
+> ;--
+101c99
+< 
+---
+> --;
+123a122
+> ;--
+131c130
+< 
+---
+> --;
+136a136
+> 
+148c148
+< 
+---
+> ;--
+155c155
+< 
+---
+> --;
+163c163
+< 
+---
+> ;--
+170a171
+> --;
+173a175
+> 
+178c180
+< 
+---
+> ;--
+189a192
+> --;
+194a198
+> 
+218d221
+< --;
+\ В конце файла нет новой строки

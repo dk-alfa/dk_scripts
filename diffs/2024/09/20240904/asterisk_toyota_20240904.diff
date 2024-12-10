@@ -1,0 +1,10 @@
+Только в /root/dk_scripts/tmp/2: 5_postgres_backup_20240823.tar
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+518a519
+> exten => 1574,1,macro(mobile,1574,1574)
+527,528c528,529
+< ;exten => 1588,1,macro(mobile,1588,1588,9174355715)
+< exten => 1588,1,macro(mobile,1558,1558)
+---
+> exten => 1588,1,macro(mobile,1588,1588)
+> ;exten => 1588,1,macro(mobile,1558,1558)

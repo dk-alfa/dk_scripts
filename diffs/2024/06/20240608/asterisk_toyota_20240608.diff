@@ -1,0 +1,14 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+264c264,268
+< ;exten => 2402,1,Dial(SIP/1742,24,tT)
+---
+> 
+> exten => 2402,1,Answer()
+> ;exten => 2402,n,MP3Player(/var/lib/asterisk/sounds/1/tank_avtootvet.mp3)
+> ;exten => 2402,n,MP3Player(/var/lib/asterisk/sounds/1/gac-est.mp4)
+> exten => 2402,n,Dial(SIP/1401,24,tT) 
+diff -r /root/dk_scripts/tmp/2/sip_users_str.conf /root/dk_scripts/tmp/1/sip_users_str.conf
+69c69
+< callerid="STR Chief" <701>
+---
+> callerid="STR Chief OP" <702>

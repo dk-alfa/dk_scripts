@@ -1,0 +1,40 @@
+{
+ 
+ "checks":[
+   ["/docker/samba/data/public/backups/docker/postgres","postgres_backup","fs"],
+   ["/docker/samba/data/public/backups/docker/tftp","tftp_backup","fs"],
+   ["/docker/samba/data/public/backups/docker/wiki","wiki_backup","fs"],
+   ["/docker/samba/data/public/backups/asterisk_toyota","asterisk_toyota_backup","fs"],
+   ["/docker/samba/data/public/backups/dk_scripts","dk_scripts_backup","fs"],
+   ["/docker/samba/data/public/backups/switches","switches_backup","fs"],
+
+   ["/docker/samba/data/public/backups_1/docker/postgres","postgres_backup","fs"],
+   ["/docker/samba/data/public/backups_1/docker/tftp","tftp_backup","fs"],
+   ["/docker/samba/data/public/backups_1/docker/wiki","wiki_backup","fs"],
+   ["/docker/samba/data/public/backups_1/asterisk/toyota","asterisk_toyota_backup","fs"],
+   ["/docker/samba/data/public/backups_1/dk_scripts","dk_scripts_backup","fs"],
+   ["/docker/samba/data/public/backups_1/switches/toyota","switches_backup","fs"],
+
+   ["//192.168.1.4/hyper/dk_backups/172.16.1.78/docker/postgres /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","postgres_backup","rfs"],
+   ["//192.168.1.4/hyper/dk_backups/172.16.1.78/docker/tftp /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","tftp_backup","rfs"],
+   ["//192.168.1.4/hyper/dk_backups/172.16.1.78/docker/wiki /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","wiki_backup","rfs"],
+   ["//192.168.1.4/hyper/dk_backups/172.16.1.78/asterisk/toyota /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","asterisk_toyota_backup","rfs"],
+   ["//192.168.1.4/hyper/dk_backups/172.16.1.78/dk_scripts /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","dk_scripts_backup","rfs"],
+   ["//192.168.1.4/hyper/dk_backups/172.16.1.78/switches/toyota /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","switches_backup","rfs"],
+
+   ["//172.16.0.231/backup/172.16.1.78/docker/postgres /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","postgres_backup","rfs"],
+   ["//172.16.0.231/backup/172.16.1.78/docker/tftp /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","tftp_backup","rfs"],
+   ["//172.16.0.231/backup/172.16.1.78/docker/wiki /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","wiki_backup","rfs"],
+   ["//172.16.0.231/backup/172.16.1.78/asterisk/toyota /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","asterisk_toyota_backup","rfs"],
+   ["//172.16.0.231/backup/172.16.1.78/dk_scripts /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","dk_scripts_backup","rfs"],
+   ["//172.16.0.231/backup/172.16.1.78/switches/toyota /mnt/tmp -o username=sadmin,password=nhbvbnbk,rw,iocharset=utf8,file_mode=0777,dir_mode=0777","switches_backup","rfs"],
+
+   ["/backup/172.16.1.78/docker/postgres","postgres_backup","mega"],
+   ["/backup/172.16.1.78/docker/tftp","tftp_backup","mega"],
+   ["/backup/172.16.1.78/docker/wiki","wiki_backup","mega"],
+   ["/backup/172.16.1.78/asterisk/toyota","asterisk_toyota_backup","mega"],
+   ["/backup/172.16.1.78/dk_scripts","dk_scripts_backup","mega"],
+   ["/backup/172.16.1.78/switches/toyota","switches_backup","mega"]
+
+ ]
+}

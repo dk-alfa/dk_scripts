@@ -1,0 +1,52 @@
+diff -r /root/dk_scripts/tmp/2/sw-sever-1-3_10.9.1.3.conf /root/dk_scripts/tmp/1/sw-sever-1-3_10.9.1.3.conf
+1c1
+< interface range gi1,gi4,gi6,gi16,gi22
+---
+> interface range gi1,gi4,gi6,gi10,gi16,gi22
+21a22,27
+> interface gigabitethernet10
+> storm-control broadcast level 10 
+> exit
+> interface gigabitethernet10
+> storm-control include-multicast 
+> exit
+34c40
+< interface range gi1,gi4,gi6,gi13,gi16,gi22
+---
+> interface range gi1,gi4,gi6,gi10,gi13,gi16,gi22
+51c57
+< interface  gi4
+---
+> interface range gi4,gi10
+105a112,114
+> interface gigabitethernet10
+> macro description ip_phone_desktop
+> exit
+169a179,180
+> !next command is internal.
+> macro auto smartport dynamic_type unknown 
+diff -r /root/dk_scripts/tmp/2/TCS3-SW1-24_192.168.22.81.conf /root/dk_scripts/tmp/1/TCS3-SW1-24_192.168.22.81.conf
+68a69,75
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+69a77,79
+>  macro description ip_phone_desktop
+>  !next command is internal.
+>  macro auto smartport dynamic_type ip_phone_desktop 
+134a145,151
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+135a153,155
+>  macro description ip_phone_desktop
+>  !next command is internal.
+>  macro auto smartport dynamic_type ip_phone_desktop 

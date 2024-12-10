@@ -1,0 +1,27 @@
+diff -r /root/dk_scripts/tmp/2/TBR21-SW3-52_192.168.22.80.conf /root/dk_scripts/tmp/1/TBR21-SW3-52_192.168.22.80.conf
+127,129c127,135
+<  spanning-tree link-type point-to-point 
+<  switchport trunk allowed vlan add 2,30,33,66,95,496 
+<  macro description ap
+---
+>  storm-control broadcast enable 
+>  storm-control broadcast level 10 
+>  storm-control include-multicast 
+>  port security max 10 
+>  port security mode max-addresses 
+>  port security discard trap 60 
+>  spanning-tree portfast 
+>  switchport trunk allowed vlan add 2 
+>  macro description ip_phone_desktop
+131c137
+<  macro auto smartport dynamic_type ap 
+---
+>  macro auto smartport dynamic_type ip_phone_desktop 
+141,143d146
+<  storm-control broadcast enable 
+<  storm-control broadcast level 10 
+<  storm-control include-multicast 
+321,323d323
+<  storm-control broadcast enable 
+<  storm-control broadcast level 10 
+<  storm-control include-multicast 

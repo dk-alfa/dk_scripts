@@ -1,0 +1,12 @@
+diff -r /root/dk_scripts/tmp/2/TCS5-SW1-48_192.168.22.86.conf /root/dk_scripts/tmp/1/TCS5-SW1-48_192.168.22.86.conf
+132,133c132,133
+<  switchport mode access 
+<  switchport access vlan 2 
+---
+>  switchport mode general 
+>  switchport general pvid 4095 
+178a179,182
+> !
+> interface fastethernet37
+>  switchport mode access 
+>  switchport access vlan 2 

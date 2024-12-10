@@ -1,0 +1,35 @@
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+348a349,355
+> 
+> [calltouch-gac-str]
+> exten => _X.,1,NoOp(-- calltouch-gac-str --)
+> exten => _X.,n,Answer
+> ;exten => _X.,n,PlayBack(/etc/asterisk/mp3/chery_str)
+> exten => _X.,n,Dial(SIP/710&SIP/730,40,tT)
+> 
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+55a56
+> register =>gacstrru:FhNJOmtQEf@sip12013.sitnet.ru/73473418925				;CallTouch для Стерлитамака (GAC)
+diff -r /root/dk_scripts/tmp/2/sip_users_str.conf /root/dk_scripts/tmp/1/sip_users_str.conf
+23c23
+< [Calltouch-str]
+---
+> [Calltouch-str-chery]
+43a44,60
+> 
+> [Calltouch-str-gac]
+> type=peer
+> host=sip12013.sitnet.ru
+> username=gacstrru
+> secret=FhNJOmtQEf
+> context=calltouch-gac-str
+> transport=udp
+> call-limit=3
+> insecure=port,invite
+> canreinvite=no
+> disallow=all
+> allow=alaw
+> allow=ulaw
+> defaultexpirey=120
+> maxexpirey=120
+> qualify=yes

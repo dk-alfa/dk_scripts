@@ -1,0 +1,8 @@
+diff -r /root/dk_scripts/tmp/2/15dkscrtestmegashare.json /root/dk_scripts/tmp/1/15dkscrtestmegashare.json
+19d18
+<      "2042",
+23c22,23
+<      "2034"
+---
+>      "2034",
+>      "2042"

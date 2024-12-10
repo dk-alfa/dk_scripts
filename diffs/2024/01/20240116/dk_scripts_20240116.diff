@@ -1,0 +1,121 @@
+diff -r /root/dk_scripts/tmp/2/phonebook_file_name /root/dk_scripts/tmp/1/phonebook_file_name
+1c1
+< Телефонный справочник на 14.12.2023.pdf
+\ В конце файла нет новой строки
+---
+> Телефонный справочник на 15.01.2024.pdf
+\ В конце файла нет новой строки
+diff -r /root/dk_scripts/tmp/2/reports_scripts/10_dk_rep_backup_sw_sx_300_conf.py /root/dk_scripts/tmp/1/reports_scripts/10_dk_rep_backup_sw_sx_300_conf.py
+8c8,9
+< конфигурационных файлов коммутаторов коммутаторов за паредыдущий день
+---
+> конфигурационных файлов коммутаторов коммутаторов за паредыдущий день.
+> Скрипт запускается с аргументом - папка с файлами отчетов [/root/dk_scripts/reports/2024-01-15]
+12a14
+> 2024.01.15 Добавлено: datetime_message(), настроена работа с json файлом настройки
+18a21,22
+> import re
+> import json
+21c25,26
+< LIST_SWITCHES_FILE = "/root/dk_scripts/list_sw_sx300" 
+---
+> INI_FILE_NAME      = "/root/dk_scripts/10dkscrbcpswsx300conf.json"
+> #LIST_SWITCHES_FILE = "/root/dk_scripts/list_sw_sx300" 
+22a28
+> SETTINGS = {}
+24c30,39
+< #--- do_script(file_name) ---
+---
+> #---- read_settings - ---
+> def read_settings(ini_file):
+>   global SETTINGS
+>   SETTINGS = json.load(ini_file)
+> 
+> #--- datetime_message() ---
+> def datetime_message():
+>   return f"{datetime.datetime.now()} [{os.path.basename(__file__)}]"
+> 
+> #---- do_script(file_name) ----
+26c41,42
+<   import re
+---
+>   global SETTINGS
+> 
+28d43
+< # Записываем количество коммутаторов в файле списка коммутаторов в expected_switch_count
+30,36c45,55
+<     with open(LIST_SWITCHES_FILE) as list_sw_file:
+<       expected_switch_count = len(re.findall(r".+\n*",list_sw_file.read()))
+<   except: print("Ошибка открытия файла списка коммутаторов")
+< 
+< # Записываем количество файлов конфигурации коммутаторов в real_switch_count
+<   path = BACKUP_PATH + str(datetime.date.today().isoweekday())+'_'+str(datetime.date.today()).replace("-","")
+<   real_switch_count = len([f for f in os.listdir(path)
+---
+>     ini_file = open(INI_FILE_NAME)
+>     try: 
+>       read_settings(ini_file)
+> 
+>       #Записываем количество коммутаторов в файле списка коммутаторов в expected_switch_count
+>       expected_switch_count = len(SETTINGS["switches_ip"])
+> 
+>       #Записываем количество файлов конфигурации коммутаторов в real_switch_count
+>       path = f"{BACKUP_PATH}{str(datetime.date.today().isoweekday())}_{str(datetime.date.today()).replace('-','')}"
+> #      path = BACKUP_PATH + str(datetime.date.today().isoweekday())+'_'+str(datetime.date.today()).replace("-","")
+>       real_switch_count = len([f for f in os.listdir(path)
+38,50c57,72
+< # формируем отчет
+<   rep_file = open(file_name,"w+")
+<   rep_file.write(PREAMBLE + "\r\n")
+<   message = f"   -  Сохранено {real_switch_count} конфигураций из {expected_switch_count} "
+<   if real_switch_count == expected_switch_count:
+<     message +=  "[PASS]"
+<   else:
+<     message += "[FAIL!!!]"
+<   message += "\r\n"
+<   message += f"   -  Расположение архива:\r\n      {path}\r\n\r\n"
+<   rep_file.write(message)
+<   rep_file.close()
+< 
+---
+>       # формируем отчет
+>       rep_file = open(file_name,"w+")
+>       rep_file.write(PREAMBLE + "\r\n")
+>       message = f"   -  Сохранено {real_switch_count} конфигураций из {expected_switch_count} "
+>       if real_switch_count == expected_switch_count:
+>         message +=  "[PASS]"
+>       else:
+>         message += "[FAIL!!!]"
+>       message += "\r\n"
+>       message += f"   -  Расположение архива:\r\n      {path}\r\n\r\n"
+>       rep_file.write(message)
+>       rep_file.close()
+>     except: print(f"{datetime_message()} Ошибка: не удалось прочитать файл настроек [{INI_FILE_NAME}]")
+>     ini_file.close()
+>   except:
+>     print(f"{datetime_message()} Ошибка: не удалось открыть файл настроек [{INI_FILE_NAME}]")
+51a74
+> #---- main ----
+53,54c76,78
+<   
+<   print("\033[1m\033[32m{}\033[0m".format("start "+os.path.basename(__file__)))
+---
+> 
+>   print (f"{datetime_message()} start")
+>   filename = ""
+56c80
+<     filename = sys.argv[1] +  os.path.basename(__file__)
+---
+>     filename = f"{sys.argv[1]}/{os.path.basename(__file__)}"
+58,61c82,87
+<     do_script(filename)
+<   except: print ("Ошибка")
+< 
+<   print("\033[1m\033[32m{}\033[0m".format("stop "+os.path.basename(__file__)))
+---
+>     try:
+>       do_script(filename)
+>     except: pass
+>   except:
+>     print (f"{datetime_message()} Ошибка: скрипт должен запускаться с аргументом [/root/dk_scripts/reports/2024-01-15]")
+>   print (f"{datetime_message()} stop")

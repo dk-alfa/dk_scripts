@@ -1,0 +1,36 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+747,758d746
+< ;===??????????===
+< ;exten => 1935,1,Answer()
+< ;exten => 1935,n,Playback(tt-monkeysintro)
+< ;exten => 1935,n,Queue(g-test,tT)
+< ;exten => 1935,n,Playtones(busy)
+< ;exten => 1935,n,Busy(60)
+< ;exten => 1935,n,Hangup()
+< 
+< 
+< exten => 1936,1,macro(mobile,1936,1936)
+< 
+< 
+782,784c770,772
+< 
+< ;----------
+< 
+---
+> ;---- Geely ---
+> exten => 1911,1,macro(mobile,1911,1911)
+> exten => 1936,1,macro(mobile,1936,1936)
+787c775
+< exten => 1911,1,macro(mobile,1911,1911)
+---
+> exten => 1929,1,macro(fmc,1929)
+801c789
+< ;---- Tank FMC ---
+---
+> ;---- Tank ---
+802a791,792
+> 
+> ;---- Tank FMC ---
+813a804,805
+> 
+> ;---- Exeed FMC ---

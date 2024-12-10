@@ -1,0 +1,32 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+1048c1048,1049
+< exten => 2400,n,MP3Player(/var/lib/asterisk/sounds/gac_str_2024.mp3)
+---
+> ;exten => 2400,n,MP3Player(/var/lib/asterisk/sounds/gac_str_2024.mp3)
+> exten => 2400,n,MP3Player(/etc/asterisk/mp3/gac-str2024.mp3)
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+186c186
+< ;exten => 1819,1,macro(fmc,1819)
+---
+> exten => 1819,1,macro(fmc,1819)
+188c188
+< exten => 1819,1,MP3Player(/var/lib/asterisk/sounds/1/geely_avtootvet.mp3)
+---
+> ;exten => 1819,1,MP3Player(/var/lib/asterisk/sounds/1/geely_avtootvet.mp3)
+196a197,199
+> 
+> exten => 1876,1,macro(mobile-nrt,1876)
+> 
+371c374,375
+< exten => 1800,n,MP3Player(/etc/asterisk/mp3/gudok.mp3)
+---
+> ;exten => 1800,n,MP3Player(/etc/asterisk/mp3/gudok.mp3)
+> exten => 1800,n,MP3Player(/etc/asterisk/mp3/gac-alfa2024.mp3)
+Только в /root/dk_scripts/tmp/1/mp3: gac-alfa2024.mp3
+Только в /root/dk_scripts/tmp/1/mp3: gac-str2024.mp3
+diff -r /root/dk_scripts/tmp/2/sip_users_nrt.conf /root/dk_scripts/tmp/1/sip_users_nrt.conf
+16a17,20
+> [1876](phone-nrt)
+> secret=1876
+> callerid=1876
+> 

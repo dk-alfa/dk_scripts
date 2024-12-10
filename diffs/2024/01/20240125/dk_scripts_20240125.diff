@@ -1,0 +1,146 @@
+diff -r /root/dk_scripts/tmp/2/10_dk_scr_bcp_sw_sx300_conf.py /root/dk_scripts/tmp/1/10_dk_scr_bcp_sw_sx300_conf.py
+35a36,40
+> 
+> #---- datetime_message() ----
+> def datetime_message():
+>   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+> 
+57,60d61
+< 
+< #---- datetime_message() ----
+< def datetime_message():
+<   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+diff -r /root/dk_scripts/tmp/2/29_dk_scr_bcp_copy.py /root/dk_scripts/tmp/1/29_dk_scr_bcp_copy.py
+27c27,30
+< #----- del_file_in_dst_path(dst_path) -----
+---
+> #---- datetime_message() ----
+> def datetime_message():
+>   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+> 
+28a32
+> #----- del_file_in_dst_path(dst_path) -----
+32c36,37
+<     print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] Удаляется : [{name}]")
+---
+>     print(f"{datetime_message()} Удаляется : [{name}]")
+> #    print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] Удаляется : [{name}]")
+34d38
+< #  else: print("Удалять нечего")
+44d47
+< #  print(ret)
+47,53d49
+<   #Ищем файл с самой ранней датой
+< #  entry = max((e for e in os.scandir(src_path) if e.is_file(follow_symlinks=False)),
+< #            key=lambda e: getattr(e.stat(), 'st_birthtime', None) or e.stat().st_ctime)
+< #  print(entry.name)
+< #  return entry.name
+< 
+< 
+66c62,63
+<   print (f"{datetime.datetime.now()} [{os.path.basename(__file__)}] Копируется: [{src_path}/{src_file} {dst_path}/]")
+---
+>   print(f"{datetime_message()} Удаляется : [Копируется: [{src_path}/{src_file} {dst_path}/]]")
+>   #print (f"{datetime.datetime.now()} [{os.path.basename(__file__)}] Копируется: [{src_path}/{src_file} {dst_path}/]")
+111c108,109
+<       print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] Ошибка: Не удалость прочитать файл настроек [{INI_FILE_NAME}]")
+---
+>       print(f"{datetime_message()} Ошибка: Не удалость прочитать файл настроек [{INI_FILE_NAME}]")
+>       #print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] Ошибка: Не удалость прочитать файл настроек [{INI_FILE_NAME}]")
+114c112
+<     print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] Ошибка: Не удалость открыть файл настроек [{INI_FILE_NAME}]")
+---
+>     print(f"{datetime_message()} Ошибка: Не удалость открыть файл настроек [{INI_FILE_NAME}]")
+122,125c120,123
+< 
+< print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] start")
+< run_script()
+< print(f"{datetime.datetime.now()} [{os.path.basename(__file__)}] stop")
+---
+> if __name__ == "__main__":
+>   print(f"{datetime_message()} start")
+>   run_script()
+>   print(f"{datetime_message()} stop")
+diff -r /root/dk_scripts/tmp/2/32_dk_scr_check_dif.py /root/dk_scripts/tmp/1/32_dk_scr_check_dif.py
+20a21,25
+> 
+> #---- datetime_message() ----
+> def datetime_message():
+>   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+> 
+76,78c81
+< #---- datetime_message() ----
+< def datetime_message():
+<   return f"{datetime.datetime.now()} [{os.path.basename(__file__)}]"
+---
+> 
+diff -r /root/dk_scripts/tmp/2/40_dk_scr_send_phone_to_email.py /root/dk_scripts/tmp/1/40_dk_scr_send_phone_to_email.py
+31a32,34
+> #---- datetime_message()  ----
+> def datetime_message():
+>   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+59c62,64
+<   except: print("Ошибка открытия файла отчета ")
+---
+>   except: 
+> #    print("Ошибка открытия файла отчета ")
+>     print(f"{datetime_message()} Ошибка открытия файла отчета")
+63c68,71
+<   except: print("Ошибка закрытия  файла отчета ")
+---
+>   except: 
+> #    print("Ошибка закрытия  файла отчета ")
+>     print(f"{datetime_message()} Ошибка закрытия файла отчета")
+> 
+93,94c101,102
+< 
+<   print("\033[1m\033[32m{}\033[0m".format("start "+os.path.basename(__file__)))
+---
+> #  print("\033[1m\033[32m{}\033[0m".format("start "+os.path.basename(__file__)))
+>   print(f"{datetime_message()} start")
+99c107,108
+<   print("\033[1m\033[32m{}\033[0m".format("stop "+os.path.basename(__file__)))
+---
+>   print(f"{datetime_message()} stop")
+> #  print("\033[1m\033[32m{}\033[0m".format("stop "+os.path.basename(__file__)))
+diff -r /root/dk_scripts/tmp/2/50_dk_scr_test_phonebook.py /root/dk_scripts/tmp/1/50_dk_scr_test_phonebook.py
+2a3,7
+> import datetime
+> 
+> #---- datetime_message()  ----
+> def datetime_message():
+>   return f"{datetime.datetime.now().replace(microsecond = 0)} [{os.path.basename(__file__)}]"
+6,8c11,12
+< 
+<   print("\033[1m\033[32m{}\033[0m".format("start "+os.path.basename(__file__)))
+<   print("\033[1m\033[32m{}\033[0m".format("stop "+os.path.basename(__file__)))
+---
+>   print(f"{datetime_message()} start")
+>   print(f"{datetime_message()} stop")
+diff -r /root/dk_scripts/tmp/2/99_dk_scr_send_mi_a_report.py /root/dk_scripts/tmp/1/99_dk_scr_send_mi_a_report.py
+37a38,41
+> #---- datetime_message()  ----
+> def datetime_message():
+>   return f"{datetime.datetime.now().replace(microsecond=0)} [{os.path.basename(__file__)}]"
+> 
+63c67,68
+<     print(f"{PRINT_PREFIX} Выполняется скрипт: {report_script}")
+---
+>     print(f"{datetime_message()} Запуск report скрипта: [{scripts_list[i]}]")
+>     print("---------------------------------------------------------")
+109,112c114,117
+< 
+<   print("------------------------------------------------------------")
+<   print(f"{PRINT_PREFIX} start")
+<   print("------------------------------------------------------------")
+---
+>   print(f"{datetime_message()} start")
+> #  print("------------------------------------------------------------")
+> #  print(f"{PRINT_PREFIX} start")
+> #  print("------------------------------------------------------------")
+116,118c121
+<   print("------------------------------------------------------------")
+<   print(f"{PRINT_PREFIX} stop")
+< 
+---
+>   print(f"{datetime_message()} stop")

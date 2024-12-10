@@ -1,0 +1,92 @@
+Только в /root/dk_scripts/tmp/2: 2-Oct-2024015343LINK-I-Upgi27Ksw-sever-2-2_10.9.1.6.conf
+Только в /root/dk_scripts/tmp/2: 5-Jan-2016152945LINK-W-Downfa41KTCS1-SW3-48_192.168.22.75.conf
+diff -r /root/dk_scripts/tmp/2/sw-sever-1-2_10.9.1.2.conf /root/dk_scripts/tmp/1/sw-sever-1-2_10.9.1.2.conf
+1c1
+< interface  gi22
+---
+> interface range gi22,gi28
+58c58,64
+< interface range gi1-2,gi15-16,gi19,gi22
+---
+> interface gigabitethernet28
+> storm-control broadcast level 10 
+> exit
+> interface gigabitethernet28
+> storm-control include-multicast 
+> exit
+> interface range gi1-2,gi15-16,gi19,gi22,gi28
+69c75
+< interface range gi1-26
+---
+> interface range gi1-26,gi28
+72c78
+< interface range gi1-26
+---
+> interface range gi1-26,gi28
+74a81,83
+> interface  gi28
+> port security discard trap 60
+> exit
+112a122
+> snmp-server contact servernaya
+152c162
+< macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch"
+---
+> macro description "no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | ip_phone_desktop"
+278c288,290
+< switchport trunk allowed vlan add 2-4,66 
+---
+> !next command is internal.
+> macro auto smartport dynamic_type ip_phone_desktop 
+> switchport trunk allowed vlan add 2-4,66,100 
+diff -r /root/dk_scripts/tmp/2/sw-sever-1-3_10.9.1.3.conf /root/dk_scripts/tmp/1/sw-sever-1-3_10.9.1.3.conf
+236c236
+< switchport trunk allowed vlan add 2,4,66 
+---
+> switchport trunk allowed vlan add 2,4,66,100 
+248c248
+< switchport trunk allowed vlan add 2,4,66 
+---
+> switchport trunk allowed vlan add 2,4,66,100 
+diff -r /root/dk_scripts/tmp/2/sw-sever-1-4_10.9.1.5.conf /root/dk_scripts/tmp/1/sw-sever-1-4_10.9.1.5.conf
+1c1
+< interface range gi1,gi4,gi14,gi21,gi26
+---
+> interface range gi1,gi4,gi14,gi21
+28,33d27
+< interface gigabitethernet26
+< storm-control broadcast level 10 
+< exit
+< interface gigabitethernet26
+< storm-control include-multicast 
+< exit
+35c29
+< interface range gi1,gi4,gi10,gi14,gi21,gi26
+---
+> interface range gi1,gi4,gi10,gi14,gi21
+46c40
+< interface range gi1,gi4,gi10,gi14,gi21,gi26
+---
+> interface range gi1,gi4,gi10,gi14,gi21
+49c43
+< interface range gi1,gi4,gi10,gi14,gi21,gi26
+---
+> interface range gi1,gi4,gi10,gi14,gi21
+52c46
+< interface range gi1,gi4,gi10,gi14,gi21,gi26
+---
+> interface range gi1,gi4,gi10,gi14,gi21
+83a78
+> snmp-server contact Service
+120c115
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+242,246d236
+< exit
+< interface gigabitethernet26
+< !next command is internal.
+< macro auto smartport dynamic_type ip_phone_desktop 
+< switchport trunk allowed vlan add 2,66,100 
+Только в /root/dk_scripts/tmp/1: sw-sever-2-2_10.9.1.6.conf
+Только в /root/dk_scripts/tmp/1: TCS1-SW3-48_192.168.22.75.conf

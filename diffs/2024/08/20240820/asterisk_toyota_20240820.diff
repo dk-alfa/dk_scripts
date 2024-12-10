@@ -1,0 +1,118 @@
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+32c32,33
+< exten =>s,n,Dial(SIP/Cisco-GW-nrt/98{ARG1},30,tT)
+---
+> ;exten =>s,n,Dial(SIP/Cisco-GW-nrt/98{ARG1},30,tT)
+> exten =>s,n,Dial(SIP/Cisco-Gateway/98{ARG1},30,tT)
+80c81
+< [gateway]
+---
+> [fromcity]
+135c136
+< exten => _18XX,n,Goto(gateway,${EXTEN},1))
+---
+> exten => _18XX,n,Goto(gateway,${EXTEN},1)
+159a161,167
+> 
+> exten => _8.,1,Answer()
+> exten => _8.,2,Dial(SIP/Cisco-Gateway/9${EXTEN},120,smtT)
+> exten => _8.,3,MixMonitor(/wav/${UNIQUEID}.wav,b,nice -n 19 /usr/bin/lame -b 16 --silent "/wav/${UNIQUEID}.wav" "/srv/mp3/${UNIQUED}.mp3" && chmod 777 /srv/mp3/${UNIQUEID}.mp3)
+> exten => _8.,n,Busy(10)
+> exten => _8.,n,Hangup()
+> 
+213c221
+< exten =>1808,n,Dial(SIP/Cisco-GW-nrt/989173465620,,NtT)
+---
+> exten =>1808,n,Dial(SIP/Cisco-Gateway/989173465620,,NtT)
+241c249
+< exten =>1837,n,Dial(SIP/Cisco-GW-nrt/989625462426,35,NtT)
+---
+> exten =>1837,n,Dial(SIP/Cisco-Gateway/989625462426,35,NtT)
+251c259
+< exten =>1801,n,Dial(SIP/Cisco-GW-nrt/989639008895,,NtT)
+---
+> exten =>1801,n,Dial(SIP/Cisco-Gateway/989639008895,,NtT)
+269c277
+< exten =>1888,n,Dial(SIP/Cisco-GW-nrt/989273150940,,NtT)
+---
+> exten =>1888,n,Dial(SIP/Cisco-Gateway/989273150940,,NtT)
+338c346
+< exten => _9.,n,Dial(SIP/Cisco-Gateway/8${EXTEN:1},120,smtThH)
+---
+> exten => _9.,n,Dial(SIP/Cisco-Gateway/4${EXTEN:1},120,t)
+389c397
+< exten => 1800,n,Dial(SIP/Cisco-GW-nrt/989625462426,,NtT)
+---
+> exten => 1800,n,Dial(SIP/Cisco-Gateway/989625462426,,NtT)
+405c413
+< exten => 1800,n,Dial(SIP/Cisco-GW-nrt/989625462426,,NtT)
+---
+> exten => 1800,n,Dial(SIP/Cisco-Gateway/989625462426,,NtT)
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+232a233
+> ;[str-toyota]
+242a244
+> ;[str-chery]
+252d253
+< 
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+56a57,59
+> register =>3473203322:qCe1ZFjhns2f@83.174.196.84/3473203322				;Ростелеком 2 (Для Стерлитамака)
+> register =>3473203620:IqKm9T6cWJmS@83.174.196.84/3473203620				;Ростелеком 3 (Для Стерлитамака)
+> register =>3473207336:diyue4AWVR2k@83.174.196.84/3473207336				;Ростелеком 4 (Для Стерлитамака)
+diff -r /root/dk_scripts/tmp/2/sip_trunks_str.conf /root/dk_scripts/tmp/1/sip_trunks_str.conf
+18a19,72
+> [Bis2-Str]
+> host=83.174.196.84
+> username=3473203322
+> secret=qCe1ZFjhns2f
+> fromuser=3473203322
+> type=peer
+> qualify=yes
+> dtmfmode=rfc2833
+> disallow=all
+> allow=alaw
+> allow=ulaw
+> insecure=port,invite
+> canreinvite=no
+> context=str-761
+> rtpstart=16000
+> transport=udp
+> keepalive=3600
+> 
+> [Bis3-Str]
+> host=83.174.196.84
+> username=3473203620
+> secret=IqKm9T6cWJmS
+> fromuser=3473203620
+> type=peer
+> qualify=yes
+> dtmfmode=rfc2833
+> disallow=all
+> allow=alaw
+> allow=ulaw
+> insecure=port,invite
+> canreinvite=no
+> context=str-762
+> rtpstart=16000
+> transport=udp
+> keepalive=3600
+> 
+> [Bis4-Str] 
+> host=83.174.196.84
+> username=3473207336
+> secret=diyue4AWVR2k
+> fromuser=3473207336
+> type=peer
+> qualify=yes
+> dtmfmode=rfc2833
+> disallow=all
+> allow=alaw
+> allow=ulaw
+> insecure=port,invite
+> canreinvite=no
+> context=str-764
+> rtpstart=16000
+> transport=udp
+> keepalive=3600
+> 

@@ -1,0 +1,24 @@
+diff -r /root/dk_scripts/tmp/2/TBR21-SW1-48_192.168.22.70.conf /root/dk_scripts/tmp/1/TBR21-SW1-48_192.168.22.70.conf
+91a92,98
+> interface fastethernet4
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,20,30,33,66,79,95,498 
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type switch 
+> !
+175c182,186
+<  switchport trunk allowed vlan add 33 
+---
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,20,30,33,66,79,95,498 
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type switch 
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+95a96
+>  spanning-tree link-type point-to-point 
+96a98,100
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type unknown 

@@ -1,0 +1,45 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+521a522
+> exten => 1568,1,macro(fmc,1568,1568)
+532c533,534
+< exten => 1580,1,macro(mobile,1580,1580)
+---
+> exten => 1580,1,macro(fmc,1580,1580)
+> exten => 1581,1,macro(fmc,1581,1581)
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+74c74,75
+< exten => 1325,n,Dial(SIP/BeelineFMC/1311&SIP/BeelineFMC/1312&SIP/BeelineFMC/1313&SIP/BeelineFMC/1314&SIP/BeelineFMC/1315&SIP/BeelineFMC/1316&SIP/BeelineFMC/1317&SIP/BeelineFMC/1318&SIP/BeelineFMC/1319&SIP/BeelineFMC/1320,30,NtT)
+---
+> ;exten => 1325,n,Dial(SIP/BeelineFMC/1311&SIP/BeelineFMC/1312&SIP/BeelineFMC/1313&SIP/BeelineFMC/1314&SIP/BeelineFMC/1315&SIP/BeelineFMC/1316&SIP/BeelineFMC/1317&SIP/BeelineFMC/1318&SIP/BeelineFMC/1319&SIP/BeelineFMC/1320,30,NtT)
+> exten => 1325,n,Dial(SIP/BeelineFMC/1316&SIP/BeelineFMC/1320&SIP/BeelineFMC/1315&SIP/BeelineFMC/1314&SIP/BeelineFMC/1317,30,NtT)
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+94a95,98
+> exten => _899XXXXXXXX,1,Gosub(call-record-str,s,1)
+> exten => _899XXXXXXXX,n,Dial(SIP/gsm/${EXTEN},40) ;!!!!!
+> exten => _899XXXXXXXX,n,HangUp
+> 
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+670,672c670,672
+< [1568](phone)   
+< secret=1568 
+< callerid=1568
+---
+> ;[1568](phone)   
+> ;secret=1568 
+> ;callerid=1568
+718,724c718,724
+< [1580](phone)   
+< secret=1580 
+< callerid=1580
+< 
+< [1581](phone)   
+< secret=1581 
+< callerid=1581
+---
+> ;[1580](phone)   
+> ;secret=1580 
+> ;callerid=1580
+> 
+> ;[1581](phone)   
+> ;secret=1581 
+> ;callerid=1581

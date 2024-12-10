@@ -1,0 +1,144 @@
+diff -r /root/dk_scripts/tmp/2/LBR31-SW2-48_192.168.22.201.conf /root/dk_scripts/tmp/1/LBR31-SW2-48_192.168.22.201.conf
+137c137
+< vlan 2,33,66,79,95,100,497-498 
+---
+> vlan 2,33,66,79,95,100,240,497-498 
+491a492,494
+> exit
+> interface vlan 240
+> name Ufanet_WiFI_Tank 
+diff -r /root/dk_scripts/tmp/2/LBR31-SW4-48_192.168.22.203.conf /root/dk_scripts/tmp/1/LBR31-SW4-48_192.168.22.203.conf
+35c35
+< vlan 2,33,66,79,95,100,497-498 
+---
+> vlan 2,33,66,79,95,100,240,497-498 
+120c120
+< switchport trunk allowed vlan add 33,95,497-498 
+---
+> switchport trunk allowed vlan add 33,95,240,497-498 
+123c123
+< switchport trunk allowed vlan add 33,95,497-498 
+---
+> switchport trunk allowed vlan add 33,95,240,497-498 
+243c243
+< switchport trunk allowed vlan add 33,79,95,497-498 
+---
+> switchport trunk allowed vlan add 33,79,95,240,497-498 
+260c260
+< switchport trunk allowed vlan add 2,33,66,79,95,100,497-498 
+---
+> switchport trunk allowed vlan add 2,33,66,79,95,100,240,497-498 
+265c265
+< switchport trunk allowed vlan add 2,33,66,79,95,100,497-498 
+---
+> switchport trunk allowed vlan add 2,33,66,79,95,100,240,497-498 
+268c268
+< switchport trunk allowed vlan add 2,33,66,79,95,497-498 
+---
+> switchport trunk allowed vlan add 2,33,66,79,95,240,497-498 
+286a287,289
+> exit
+> interface vlan 240
+> name Ufanet_WiFI_Tank 
+Только в /root/dk_scripts/tmp/1: sw-east-1-1_192.168.200.240.conf
+Только в /root/dk_scripts/tmp/1: sw-east-1-3_192.168.200.243.conf
+Только в /root/dk_scripts/tmp/1: sw-east-1-4_192.168.200.244.conf
+Только в /root/dk_scripts/tmp/1: sw-east-1-6_192.168.200.246.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-1-1_10.9.1.4.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-1-2_10.9.1.2.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-1-3_10.9.1.3.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-1-4_10.9.1.5.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-2-1_10.9.1.8.conf
+Только в /root/dk_scripts/tmp/1: sw-sever-2-2_10.9.1.6.conf
+diff -r /root/dk_scripts/tmp/2/TBR21-SW3-52_192.168.22.80.conf /root/dk_scripts/tmp/1/TBR21-SW3-52_192.168.22.80.conf
+77c77
+<  switchport trunk allowed vlan add 2,30,33,66,95,496 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,238-241,496 
+97c97
+<  switchport trunk allowed vlan add 2,30,33,66,95,496 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,238-241,496 
+129c129
+<  switchport trunk allowed vlan add 2,30,33,66,95,496 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,238-241,496 
+329c329
+<  switchport trunk allowed vlan add 2,30,33,66,95,496 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,238-241,496 
+336c336
+<  switchport trunk allowed vlan add 2,30,33,66,95,496,498 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,238-241,496,498 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+78c78
+< vlan 2,11,30,33,66,77,79,83,95,100,498,3920 
+---
+> vlan 2,11,30,33,66,77,79,83,95,100,238,498,3920 
+366c366,367
+< switchport trunk allowed vlan add 2,11,30,33,66,77,79,83,95,100,498,3920 
+---
+> switchport trunk allowed vlan add 2,11,30,33,66,77,79,83,95,100,238,498 
+> switchport trunk allowed vlan add 3920 
+371c372,373
+< switchport trunk allowed vlan add 2,11,30,33,66,77,79,83,95,100,498,3920 
+---
+> switchport trunk allowed vlan add 2,11,30,33,66,77,79,83,95,100,238,498 
+> switchport trunk allowed vlan add 3920 
+376c378,379
+< switchport trunk allowed vlan add 2,11,30,33,66,77,79,83,95,100,498,3920 
+---
+> switchport trunk allowed vlan add 2,11,30,33,66,77,79,83,95,100,238,498 
+> switchport trunk allowed vlan add 3920 
+381c384,385
+< switchport trunk allowed vlan add 2,11,30,33,66,77,79,83,95,100,498,3920 
+---
+> switchport trunk allowed vlan add 2,11,30,33,66,77,79,83,95,100,238,498 
+> switchport trunk allowed vlan add 3920 
+411a416,418
+> exit
+> interface vlan 238
+> name Ufanet_WiFI_Haval 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW3-48_192.168.22.75.conf /root/dk_scripts/tmp/1/TCS1-SW3-48_192.168.22.75.conf
+16c16
+< vlan 2,30,33,66,95,100,498,3920 
+---
+> vlan 2,30,33,66,95,100,238,498,3920 
+66a67,69
+> interface vlan 238
+>  name Ufanet_WiFI_Haval 
+> !
+365c368
+<  switchport trunk allowed vlan add 2,30,33,66,95,100,498,3920 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,100,238,498,3920 
+372c375
+<  switchport trunk allowed vlan add 2,30,33,66,95,100,498,3920 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,100,238,498,3920 
+379c382
+<  switchport trunk allowed vlan add 2,30,33,66,95,100,498,3920 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,100,238,498,3920 
+diff -r /root/dk_scripts/tmp/2/TCS4-SW1-48_192.168.22.71.conf /root/dk_scripts/tmp/1/TCS4-SW1-48_192.168.22.71.conf
+16c16
+< vlan 2,66,95,497-498 
+---
+> vlan 2,66,95,238,497-498 
+46a47,49
+> interface vlan 238
+>  name Ufanet_WiFI_Haval 
+> !
+154c157
+<  switchport trunk allowed vlan add 95,497-498 
+---
+>  switchport trunk allowed vlan add 95,238,497-498 
+184c187
+<  switchport trunk allowed vlan add 2,66,95,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,238,497-498 
+190c193
+<  switchport trunk allowed vlan add 2,66,95,497-498 
+---
+>  switchport trunk allowed vlan add 2,66,95,238,497-498 

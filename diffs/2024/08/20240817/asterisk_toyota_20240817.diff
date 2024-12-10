@@ -1,0 +1,23 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+263a264,271
+> exten => 2403,1,Answer()
+> ;exten => 2403,n,Dial(SIP/local-nrt/1800,24,tT) 
+> exten => 2403,n,GoTo(local-nrt,1800,1)
+> ;exten => 2403,n,MP3Player(/var/lib/asterisk/sounds/1/gac-est.mp3)
+> ;exten => 2403,n,macro(record,${UNIQUEID},${CALLERID(num)},${EXTEN})
+> ;exten => 2403,n,Dial(SIP/1401,24,tT) 
+> ;exten => 2403,n,Dial(SIP/1400,24,tT) 
+> 
+552c560
+< exten => 1641,1,macro(fmc,1641)
+---
+> exten => 1641,1,macro(mobile,1641,1641)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+908,910c908,910
+< ;[1641](phone)
+< ;secret=1641
+< ;callerid=1641
+---
+> [1641](phone)
+> secret=1641
+> callerid=1641

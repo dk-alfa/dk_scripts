@@ -1,0 +1,67 @@
+diff -r /root/dk_scripts/tmp/2/10_dk_scr_bcp_sw_sx300_conf.py /root/dk_scripts/tmp/1/10_dk_scr_bcp_sw_sx300_conf.py
+1a2,5
+> 
+> #Скрипт создания backup конфигураций коммутаторов
+> #2024.01.11 Исправлено: корректное удаление каталога предидущего дня недели, замена на f стринги
+> 
+20,43d23
+< 
+< #--------------------------------
+< def create_dir():
+<  
+<   global base_tftp_dir, backup_dir, cur_dir_name, cur_date
+<  
+<   the_base_dir = base_tftp_dir+backup_dir
+<   dirs = os.listdir(base_tftp_dir+backup_dir)
+<   match = str(datetime.date.today().isoweekday())+"_*"
+< 
+<   for file in dirs:
+<     if fnmatch.fnmatch(file,match):
+<       try:
+<         shutil.rmtree(the_base_dir+file)
+<       except OSError as e:
+<         print("Ошибка: %s : %s" % (the_base_dir+file, e.strerror))
+<   try:
+<     cur_dir_name = cur_dir_name+str(cur_date).replace("-","")
+<     print(cur_dir_name)
+<     os.mkdir(cur_dir_name)
+<     os.chmod(cur_dir_name, 0o0777)
+<   except OSError:
+<     print ("Создать директорию %s не удалось" % match)
+< 
+60,61c40
+< #  copy_path = "/"+backup_dir+"/"+str(datetime.date.today().isoweekday())+"_"+cur_date +"/"+cur_date+"_"+sw_ip_address+"_"+sw_name+".conf"
+<   copy_path = "/"+backup_dir+str(datetime.date.today().isoweekday())+"_"+cur_date +"/"+cur_date+"_"+sw_name+"_"+sw_ip_address+".conf"
+---
+>   copy_path = f"/{backup_dir}{str(datetime.date.today().isoweekday())}_{cur_date}/{cur_date}_{sw_name}_{sw_ip_address}.conf"
+63,64d41
+< #  print("cmd = "+cmd) 
+< #  cmd = "show users"
+75a53,59
+> #--------------------------------
+> def create_dir():
+>   global base_tftp_dir, backup_dir, cur_dir_name, cur_date
+>  
+>   the_base_dir = base_tftp_dir+backup_dir
+>   dirs = os.listdir(base_tftp_dir+backup_dir)
+>   match = str(datetime.date.today().isoweekday())+"_*"
+76a61,73
+>   for file in dirs:
+>     if fnmatch.fnmatch(file,match ) and os.path.isdir(the_base_dir+file):
+>       try:
+>           shutil.rmtree(the_base_dir+file)
+>       except OSError as e:
+>           print("Ошибка: %s : %s" % (the_base_dir+file, e.strerror))
+> 
+>   try:
+>     cur_dir_name = cur_dir_name+str(cur_date).replace("-","")
+>     os.mkdir(cur_dir_name)
+>     os.chmod(cur_dir_name, 0o0777)
+>   except OSError:
+>     print ("Ошибка: Создать директорию %s не удалось" % cur_dir_name)
+85,87c82
+<     print('Файл '+filename+' не существует!')
+<     print ("\033[1m\033[31m{}\033[0m".format ("Файл "+filename+" не существует") )
+< 
+---
+>     print(f"Файл {filename} не существует!")

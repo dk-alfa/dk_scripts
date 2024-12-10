@@ -1,0 +1,39 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+400c400
+< ;exten => 1803,1,macro(mobile,1803,1803)
+---
+> exten => 1803,1,macro(mobile,1803,1803)
+421d420
+< exten => 1844,1,macro(mobile,1844,1844)
+422a422,423
+> ;exten => 1844,1,macro(mobile,1844,1844)
+> ;exten => 1835,1,macro(mobile,1835,1835)
+diff -r /root/dk_scripts/tmp/2/extensions_nrt.conf /root/dk_scripts/tmp/1/extensions_nrt.conf
+179a180,182
+> exten => 1835,1,macro(mobile-nrt,1835)
+> ;exten => 1835,1,macro(fmc,1835)
+> ;exten => 1844,1,macro(fmc,1844)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+302a303
+> ;--
+314a316,317
+> --;
+> 
+diff -r /root/dk_scripts/tmp/2/sip_users_nrt.conf /root/dk_scripts/tmp/1/sip_users_nrt.conf
+152,156d151
+< ;--
+< [1837](phone-nrt)
+< call-limit=1
+< secret=1837
+< callerid="1827" <1827>
+158d152
+< callerid=1827
+163c157,162
+< --;
+---
+> 
+> [1837](phone-nrt)
+> call-limit=1
+> secret=1837
+> callerid="1827" <1827>
+> 

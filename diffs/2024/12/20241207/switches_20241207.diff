@@ -1,0 +1,9 @@
+diff -r /root/dk_scripts/tmp/2/TCS3-SW1-24_192.168.22.81.conf /root/dk_scripts/tmp/1/TCS3-SW1-24_192.168.22.81.conf
+304a305,311
+> interface gigabitethernet3
+>  spanning-tree link-type point-to-point 
+>  switchport trunk allowed vlan add 2,33,66,95,100,498 
+>  macro description switch
+>  !next command is internal.
+>  macro auto smartport dynamic_type switch 
+> !

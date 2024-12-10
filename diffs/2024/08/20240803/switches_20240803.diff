@@ -1,0 +1,48 @@
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+1c1
+< interface  fa39
+---
+> interface  fa7
+4c4
+< interface fastethernet39
+---
+> interface fastethernet7
+7c7
+< interface fastethernet39
+---
+> interface fastethernet7
+10c10
+< interface  fa39
+---
+> interface  fa7
+22c22
+< interface  fa39
+---
+> interface  fa7
+25c25
+< interface  fa39
+---
+> interface  fa7
+28c28
+< interface  fa39
+---
+> interface  fa7
+76a77,79
+> interface fastethernet7
+> macro description ip_phone_desktop
+> exit
+90c93
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+120c123,124
+< switchport trunk native vlan 66 
+---
+> !next command is internal.
+> macro auto smartport dynamic_type ip_phone_desktop 
+196,200d199
+< exit
+< interface fastethernet39
+< !next command is internal.
+< macro auto smartport dynamic_type ip_phone_desktop 
+< switchport trunk allowed vlan add 2 

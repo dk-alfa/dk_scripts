@@ -1,0 +1,46 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+98a99,116
+> [fromsitnethaval]
+> include => fromcity
+> 
+> exten => verra_uf_haval,1,Answer();
+> exten => verra_uf_haval,n,NoOp(==== Calltouch HAVAL ====);
+> exten => verra_uf_haval,n,Playback(tt-monkeysintro)
+> 
+> 
+> ;exten => verra_uf_haval,n,Dial(SIP/1742,14,t)
+> 
+> 
+> ;exten => verra_uf_haval,n,Macro(record,${UNIQUEID})
+> ;exten => verra_uf_haval,n,Set(CALLERID(all)=$[CALLERID(num)])
+> ;exten => verra_uf_haval,n,macro(toyota,1)
+> ;exten => verra_uf_haval,n,Playtones(busy)
+> ;exten => verra_uf_haval,n,Busy(60)
+> ;exten => verra_uf_haval,n,Hangup()
+> 
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+49a50
+> register =>verra_uf_haval:wI5lwRDpSuZ@sip13077.sitnet.ru/verra_uf_haval			;CallTouch для HAVAL ???
+149a151,172
+> 
+> 
+> [sitnet-haval]
+> type=peer
+> host=sip13077.sitnet.ru
+> username=verra_uf_haval
+> secret=wI5lwRDpSuZ
+> context=fromsitnethaval
+> transport=udp
+> call-limit=3
+> insecure=port,invite
+> canreinvite=no
+> disallow=all
+> allow=alaw
+> allow=ulaw
+> defaultexpirey=120
+> maxexpirey=120
+> ;nat=yes
+> ;directmedia=yes
+> ;dtmfmode=rfc2833
+> qualify=yes
+> 

@@ -1,0 +1,100 @@
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+32c32
+< exten => _[2-4]XXXXX,1,GoTo(menu-main-str,${EXTEN},1) ;Звонки на городские Стерлитамакские номера
+---
+> exten => _[2-4]XXXXX,1,GoTo(menu-main-str,${EXTEN},1)	;Звонки на городские Стерлитамакские номера
+34c34
+< exten => _7XX,1,GoTo(local-users-str,${EXTEN},1)
+---
+> exten => _7XX,1,GoTo(local-users-str,${EXTEN},1)	;Звонки по внутренним в Стерлитамак
+36c36
+< exten => _1[45678]XX,1,Goto(ufa-str,${EXTEN},1)
+---
+> exten => _1[45678]XX,1,Goto(ufa-str,${EXTEN},1)		;Звонки по внутренним в Уфу
+61a62,65
+> exten => s,1,NoOp(---====781====---)
+> ;exten => s,1,GotoIf($["${$CALLERID(num)}" = "781"]?true)
+> ;same => n(true),NoOp(---====781====---)
+> 
+63c67
+< exten => _0X,2,Dial(SIP/750/${EXTEN},40)
+---
+> exten => _0X,n,Dial(SIP/750/${EXTEN},40)
+67,68c71,72
+< exten => _8XXX,2,Dial(SIP/750/${EXTEN},40)
+< exten => _8XXX,3,HangUp
+---
+> exten => _8XXX,n,Dial(SIP/750/${EXTEN},40)
+> exten => _8XXX,n,HangUp
+71,73c75,77
+< ;exten => _[2-4]XXXXX,2,Dial(SIP/750/${EXTEN},40)
+< exten => _[2-4]XXXXX,2,Dial(SIP/Bis1-Str/${EXTEN},40)
+< exten => _[2-4]XXXXX,3,HangUp
+---
+> ;exten => _[2-4]XXXXX,n,Dial(SIP/750/${EXTEN},40)
+> exten => _[2-4]XXXXX,n,Dial(SIP/Bis1-Str/${EXTEN},40)
+> exten => _[2-4]XXXXX,n,HangUp
+76,77c80,82
+< exten => _810800XXXXXXXX,2,Dial(SIP/750/${EXTEN},40)
+< exten => _810800XXXXXXXX,3,HangUp
+---
+> exten => _810800XXXXXXXX,n,Dial(SIP/750/${EXTEN},40)
+> exten => _810800XXXXXXXX,n,HangUp
+> 
+79,80c84,87
+< exten => _89XXXXXXXXX,1,Gosub(call-record-str,s,1)
+< exten => _89XXXXXXXXX,2,Goto(vmobile-str,7${EXTEN:1},1)
+---
+> exten => _89XXXXXXXXX,1,GotoIf($["${CALLERID(num)}" = "781"]?gac:over)
+> exten => _89XXXXXXXXX,n(gac),Goto(call-from-gac-str,2400${EXTEN:1},1)
+> exten => _89XXXXXXXXX,n(over),Gosub(call-record-str,s,1)
+> exten => _89XXXXXXXXX,n,Goto(vmobile-str,7${EXTEN:1},1)
+83,85c90,92
+< ;exten => _8347XXXXXXX,2,Dial(SIP/sipnet/${EXTEN},40)
+< exten => _8347XXXXXXX,2,Dial(SIP/sipnetstr/${EXTEN},40)
+< exten => _8347XXXXXXX,3,HangUp
+---
+> ;exten => _8347XXXXXXX,n,Dial(SIP/sipnet/${EXTEN},40)
+> exten => _8347XXXXXXX,n,Dial(SIP/sipnetstr/${EXTEN},40)
+> exten => _8347XXXXXXX,n,HangUp
+86a94,95
+> ;exten => _8XXXXXXXXXX,1,GotoIf($["${CALLERID(num)}" = "781"]?2)
+> ;exten => _8XXXXXXXXXX,2,Gosub(call-from-gac-str,s,1)
+88,89c97,98
+< exten => _8XXXXXXXXXX,2,Dial(SIP/sipnetstr/7${EXTEN:1},40)
+< exten => _8XXXXXXXXXX,3,HangUp
+---
+> exten => _8XXXXXXXXXX,n,Dial(SIP/sipnetstr/7${EXTEN:1},40)
+> exten => _8XXXXXXXXXX,n,HangUp
+93,94c102,103
+< exten => _0XXXXXXXXXX,2,Dial(SIP/ufanet/7${EXTEN:1},40)
+< exten => _0XXXXXXXXXX,3,HangUp
+---
+> exten => _0XXXXXXXXXX,n,Dial(SIP/ufanet/7${EXTEN:1},40)
+> exten => _0XXXXXXXXXX,n,HangUp
+97,98c106,112
+< exten => _880XXXXXXXX,2,Dial(SIP/750/${EXTEN},60)
+< exten => _880XXXXXXXX,3,HangUp
+---
+> exten => _880XXXXXXXX,n,Dial(SIP/750/${EXTEN},60)
+> exten => _880XXXXXXXX,n,HangUp
+> 
+> 
+> [call-from-gac-str]
+> exten => s,1,Noop(---=== call-from-gac-str ===---)
+> exten => s,n,Dial(SIP/Cisco-Gateway/2400${EXTEN:1},40)
+100a115
+> 
+diff -r /root/dk_scripts/tmp/2/sip_users_str.conf /root/dk_scripts/tmp/1/sip_users_str.conf
+279,281c279,285
+< [798](user-str)
+< secret=test98
+< callerid="STR Chief" <701>
+---
+> [782](user-str)
+> secret=test82
+> callerid="STR Call" <782>
+> 
+> ;[798](user-str)
+> ;secret=test98
+> ;callerid="STR Chief" <701>

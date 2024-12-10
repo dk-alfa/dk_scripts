@@ -1,0 +1,14 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+156c156,157
+< exten => 2626000,n,MP3Player(/var/lib/asterisk/sounds/1/exeed_avtootvet.mp3)
+---
+> exten => 2626000,n,MP3Player(/var/lib/asterisk/sounds/2024/ALFA_EXEED_2024.mp3)
+> ;exten => 2626000,n,MP3Player(/var/lib/asterisk/sounds/1/exeed_avtootvet.mp3)
+261a263,264
+> exten => 2401,1,Dial(SIP/1742,24,tT)
+> 
+1003c1006
+< exten => 2365,n,MP3Player(/var/lib/asterisk/sounds/exeed_alfa_2023.mp3)
+---
+> exten => 2365,n,MP3Player(/var/lib/asterisk/sounds/2024/ALFA_EXEED_2024.mp3)
+Только в /root/dk_scripts/tmp/1/mp3: ALFA_EXEED_2024.mp3

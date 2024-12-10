@@ -1,0 +1,49 @@
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+1c1
+< interface  fa21
+---
+> interface  fa39
+4c4
+< interface fastethernet21
+---
+> interface fastethernet39
+7c7
+< interface fastethernet21
+---
+> interface fastethernet39
+10c10
+< interface  fa21
+---
+> interface  fa39
+22c22
+< interface  fa21
+---
+> interface  fa39
+25c25
+< interface  fa21
+---
+> interface  fa39
+28c28
+< interface  fa21
+---
+> interface  fa39
+81c81
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+90c90
+< macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+---
+> macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+155,159d154
+< interface fastethernet21
+< !next command is internal.
+< macro auto smartport dynamic_type ip_phone_desktop 
+< switchport trunk allowed vlan add 2 
+< exit
+200a196,200
+> exit
+> interface fastethernet39
+> !next command is internal.
+> macro auto smartport dynamic_type ip_phone_desktop 
+> switchport trunk allowed vlan add 2 

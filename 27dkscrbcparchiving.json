@@ -1,0 +1,19 @@
+{
+  "arch_paths":[
+
+     ["/root/dk_scripts",
+      "/docker/samba/data/public/backups/dk_scripts",
+      "fs"],
+
+     ["/docker/samba/data/public/backups/switches",
+      "/docker/samba/data/public/backups/switches",
+      "fsd"],
+
+     ["/mnt/tmp",
+      "/docker/samba/data/public/backups/asterisk_toyota",
+      "rfs",
+      "root@192.168.1.9:/etc/asterisk /mnt/tmp <<< 'CjkywtDc[jlbnYfDjcnjrt'"
+     ]
+   ]
+
+}

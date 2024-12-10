@@ -1,0 +1,141 @@
+Только в /root/dk_scripts/tmp/1: 1
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+272a273
+> include=> local-est
+361a363
+> ;--
+372c374
+< exten => 1444,1,macro(fmc,1444)
+---
+> ;exten => 1444,1,macro(fmc,1444)
+383a386,387
+> --;
+> 
+889,894c893,898
+< exten => _14XX,1,Answer()
+< exten => _14XX,n,Macro(record,${UNIQUEID})
+< exten => _14XX,n,Dial(SIP/Hyundai/${EXTEN},30,tT)
+< exten => _14XX,n,Playtones(busy)
+< exten => _14XX,n,Busy(60)
+< exten => _14XX,n,Hangup()
+---
+> ;exten => _14XX,1,Answer()
+> ;exten => _14XX,n,Macro(record,${UNIQUEID})
+> ;exten => _14XX,n,Dial(SIP/Hyundai/${EXTEN},30,tT)
+> ;exten => _14XX,n,Playtones(busy)
+> ;exten => _14XX,n,Busy(60)
+> ;exten => _14XX,n,Hangup()
+915c919,920
+< exten => _14XX,n,Dial(SIP/Hyundai/${EXTEN},,tT)
+---
+> ;exten => _14XX,n,Dial(SIP/Hyundai/${EXTEN},,tT)
+> exten => _14XX,n,Dial(SIP/${EXTEN},,tT)
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+58c58
+< exten => 1430,n,Queue(call_sale,tT,,,20)
+---
+> exten => 1430,n,Queue(call_sale_est,tT,,,20)
+60c60
+< exten => 1430,n,Queue(call_sale_rop,tT,,,20)
+---
+> exten => 1430,n,Queue(call_sale_rop_est,tT,,,20)
+69,70c69,70
+< exten => 1440,n,Queue(call_service,12,NtT)
+< exten => 1440,n,Dial(SIP/1470,8,NtT)
+---
+> exten => 1440,n,Queue(call_service_est,12,NtT)
+> ;exten => 1440,n,Dial(SIP/1470,8,NtT)
+79c79
+< exten => 1410,1,macro(mobile-est,1410,1410,89173540013)
+---
+> exten => 1410,1,macro(mobile-est,1410,1410)
+136c136
+< ;exten => _2XXXXXX,n,Dial(SIP/sipnet/7347${EXTEN},30)
+---
+> ;exten => _2XXXXXX,n,Dial(SIP/sipnet-est/7347${EXTEN},30)
+143c143
+< ;exten => _89XXXXXXXXX,n,Dial(SIP/sipnet/79${EXTEN:2},30,NtT)
+---
+> ;exten => _89XXXXXXXXX,n,Dial(SIP/sipnet-est/79${EXTEN:2},30,NtT)
+150c150
+< ;exten => _8XXXXXXXXXX,n,Dial(SIP/sipnet/7${EXTEN:1},30,NtT)
+---
+> ;exten => _8XXXXXXXXXX,n,Dial(SIP/sipnet-est/7${EXTEN:1},30,NtT)
+190d189
+< ;exten => 1499,n,Queue(call,tT)
+205,206c204,205
+< ;exten => 2867777,2,Playback(/etc/asterisk/mp3/hyundai.mp3)
+< exten => 2867777,2,Playback(/etc/asterisk/mp3/base_0321.mp3)
+---
+> ;exten => 2867777,2,Playback(/etc/asterisk/mp3/base_0321.mp3)
+> exten => 2867777,2,MP3Player(/etc/asterisk/mp3/base_0321.mp3)
+212c211,213
+< exten => 2867776,2,Playback(/etc/asterisk/mp3/genesis.mp3)
+---
+> exten => 2867776,2,MP3Player(/etc/asterisk/mp3/genesis.mp3)
+> ;exten => 2867776,2,Playback(/etc/asterisk/mp3/genesis.mp3)
+> ;exten => 2867776,2,Playback(/1.mp3)
+Только в /root/dk_scripts/tmp/1/mp3: 1.mp3
+diff -r /root/dk_scripts/tmp/2/queues.conf /root/dk_scripts/tmp/1/queues.conf
+146c146,180
+< member => SIP/1821,1
+\ В конце файла нет новой строки
+---
+> member => SIP/1821,1
+> 
+> 
+> 
+> [call_sale_est]
+> musicclass = default
+> timeout =8
+> strategy = ringall
+> member => SIP/1454,1
+> member => SIP/1455,1
+> member => SIP/1456,1
+> member => SIP/1453,1
+> member => SIP/1457,1
+> member => SIP/1458,1
+> member => SIP/1459,1
+> member => SIP/1481,1
+> member => SIP/1488,1
+> member => SIP/1487,1
+> 
+> [call_sale_rop_est]
+> musicclass = default
+> timeout =30
+> strategy = ringall
+> member => SIP/1451,1
+> member => SIP/1452,1
+> 
+> [call_service_est]
+> musicclass = default
+> timeout =30
+> strategy = ringall
+> member => SIP/1447,1
+> member => SIP/1471,1
+> member => SIP/1446,1
+> 
+> 
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+58,59c58,59
+< ;register =>2867777:UGu40F41HW@92.50.152.146:5401/2867777			;Уфанет  Альфа-Сервис Восток[Hyundai]
+< ;register =>2867776:HNLshtf6HQ@92.50.152.146:5401/2867776			;Уфанет  Альфа-Сервис Восток[Genesis]
+---
+> register =>2867777:UGu40F41HW@92.50.152.146:5401/2867777			;Уфанет  Альфа-Сервис Восток[Hyundai]
+> register =>2867776:HNLshtf6HQ@92.50.152.146:5401/2867776			;Уфанет  Альфа-Сервис Восток[Genesis]
+1346c1346
+< ;#include /etc/asterisk/sip_users_est.conf  ;Телефоны Восточного офиса [Зубово]
+---
+> #include /etc/asterisk/sip_users_est.conf  ;Телефоны Восточного офиса [Зубово]
+diff -r /root/dk_scripts/tmp/2/sip_trunks_est.conf /root/dk_scripts/tmp/1/sip_trunks_est.conf
+1c1
+< ;--
+---
+> 
+47c47
+< context=sipnet
+---
+> context=sipnet-est
+55d54
+< --;
+\ В конце файла нет новой строки

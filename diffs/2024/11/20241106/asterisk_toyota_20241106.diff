@@ -1,0 +1,21 @@
+Только в /root/dk_scripts/tmp/1: 2_postgres_backup_20241105.tar
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+719c719
+< ;=== HAVAL ===
+---
+> ;=== HAVAL FMTN  ===
+720a721,725
+> exten => 2431,1,macro(fmc,2431,2431)
+> 
+> ;=== TOYOTA FMTN  ===
+> exten => 1532,1,macro(fmc,1532,1532)
+> 
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+578,580c578,580
+< [1532](phone)   
+< secret=1532 
+< callerid=1532
+---
+> ;[1532](phone)   
+> ;secret=1532 
+> ;callerid=1532

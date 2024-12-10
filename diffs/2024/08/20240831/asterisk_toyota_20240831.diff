@@ -1,0 +1,17 @@
+diff -r /root/dk_scripts/tmp/2/extensions_est.conf /root/dk_scripts/tmp/1/extensions_est.conf
+86c86
+< exten => 1425,1,macro(mobile-est,1425,1425,89603870320)
+---
+> exten => 1425,1,macro(mobile-est,1425,1425)
+diff -r /root/dk_scripts/tmp/2/queues.conf /root/dk_scripts/tmp/1/queues.conf
+161c161
+< member => SIP/1481,1
+---
+> member => SIP/1483,1
+163c163,164
+< member => SIP/1487,1
+---
+> member => SIP/1412,1
+> member => SIP/1484,1
+178a180
+> member => SIP/1441,1

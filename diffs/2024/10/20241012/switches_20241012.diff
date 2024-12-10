@@ -1,0 +1,4 @@
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+353,354d352
+< switchport mode general 
+< switchport general allowed vlan add 2,66 tagged 

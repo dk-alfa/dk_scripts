@@ -1,0 +1,30 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+2d1
+< ;DYNAMIC_FEATURES=monkeys#automon#nway-start
+99,100c98
+< exten => MV9eWGnrJp4PJ1V0,n,macro(toyota,1)
+< ;exten => MV9eWGnrJp4PJ1V0,n,Dial(SIP/1742,24,tT)
+---
+> exten => MV9eWGnrJp4PJ1V0,n,Dial(SIP/2300,30,tT)
+456c454,455
+< exten => 1539,1,macro(mobile,1539,1539)
+---
+> ;exten => 1539,1,macro(mobile,1539,1539)
+> exten => 1539,1,macro(fmc,1539,1539)
+612a612,613
+> exten => 333,n,NoOp(=== 333 ===)
+> exten => 333,n,NoOp(=== ${DYNAMIC_FEATURES} ===)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+527,529c527,529
+< [1539](phone)   
+< secret=1539 
+< callerid=1539
+---
+> ;[1539](phone)   
+> ;secret=1539 
+> ;callerid=1539
+diff -r /root/dk_scripts/tmp/2/sip_trunks_str.conf /root/dk_scripts/tmp/1/sip_trunks_str.conf
+139c139
+< context=str-ofmobile
+---
+> context=ofmobile-str

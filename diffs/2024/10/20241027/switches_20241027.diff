@@ -1,0 +1,15 @@
+Только в /root/dk_scripts/tmp/1: 7-Oct-2024015311LINK-W-Downgi27Ksw-sever-2-2_10.9.1.6.conf
+Только в /root/dk_scripts/tmp/2: sw-sever-2-2_10.9.1.6.conf
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+56c56
+< interface range gi1-4
+---
+> interface range gi1-3
+283c283
+< macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch"
+---
+> macro description "no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch | switch | no_switch"
+377c377
+< macro auto smartport dynamic_type switch 
+---
+> macro auto smartport dynamic_type unknown 

@@ -1,0 +1,21 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+266,267c266,267
+< ;exten => 2402,n,MP3Player(/var/lib/asterisk/sounds/1/tank_avtootvet.mp3)
+< ;exten => 2402,n,MP3Player(/var/lib/asterisk/sounds/1/gac-est.mp4)
+---
+> ;exten => 2402,n,PlayBack(/var/lib/asterisk/sounds/1/gac-est.wav)
+> ;exten => 2402,n,MP3Player(/var/lib/asterisk/sounds/1/gac-est.wav)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+49c49,50
+< register =>MV9eWGnrJp4PJ1V0:z0zaI2qtbpo6Zs46FEi@sip9468.sitnet.ru/MV9eWGnrJp4PJ1V0	;CallTouch для EXEED
+---
+> ;register =>MV9eWGnrJp4PJ1V0:z0zaI2qtbpo6Zs46FEi@sip9468.sitnet.ru/MV9eWGnrJp4PJ1V0	;CallTouch для EXEED
+> register =>Zgz2JmDME:QAtKzNnJ8@sip9468.sitnet.ru/Zgz2JmDME				;CallTouch для EXEED Zgz2JmDME    QAtKzNnJ8
+89,90c90,93
+< username=MV9eWGnrJp4PJ1V0
+< secret=z0zaI2qtbpo6Zs46FEi
+---
+> ;username=MV9eWGnrJp4PJ1V0
+> ;secret=z0zaI2qtbpo6Zs46FEi
+> username=Zgz2JmDME      ;Zgz2JmDME
+> secret=QAtKzNnJ8	;QAtKzNnJ8

@@ -1,0 +1,19 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+158c158,159
+< exten => 2626000,n,Dial(SIP/1820,30,tT)
+---
+> exten => 2626000,n,macro(toyota,1)
+> ;exten => 2626000,n,Dial(SIP/1820,30,tT)
+550c551
+< exten => 1644,1,macro(mobile,1644,1644)
+---
+> exten => 1644,1,macro(fmc,1644,1644)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+888,890c888,890
+< [1644](phone)   
+< secret=1644 
+< callerid=1644
+---
+> ;[1644](phone)   
+> ;secret=1644 
+> ;callerid=1644

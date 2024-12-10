@@ -1,0 +1,26 @@
+diff -r /root/dk_scripts/tmp/2/TBR21-SW3-52_192.168.22.80.conf /root/dk_scripts/tmp/1/TBR21-SW3-52_192.168.22.80.conf
+16c16
+< vlan 2,30,33,66,95,496,498 
+---
+> vlan 2,30,33,66,95,238,496,498 
+56a57,59
+> interface vlan 238
+>  name Ufanet_WiFI_geely 
+> !
+124a128,131
+> interface gigabitethernet12
+>  description Ufanet_FreeWiFi
+>  switchport trunk allowed vlan add 238 
+> !
+159c166
+<  switchport trunk allowed vlan add 2,30,33,66,95,496,498 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,238,496,498 
+359c366
+<  switchport trunk allowed vlan add 2,30,33,66,95,496 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,238,496 
+372c379
+<  switchport trunk allowed vlan add 2,30,33,66,95,496,498 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,238,496,498 

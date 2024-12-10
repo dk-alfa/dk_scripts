@@ -1,0 +1,37 @@
+diff -r /root/dk_scripts/tmp/2/sip_users_nrt.conf /root/dk_scripts/tmp/1/sip_users_nrt.conf
+136c136
+< call-limit=1
+---
+> ;call-limit=1
+163c163
+< call-limit=1
+---
+> ;call-limit=1
+diff -r /root/dk_scripts/tmp/2/sip_users_str.conf /root/dk_scripts/tmp/1/sip_users_str.conf
+247,249c247,265
+< [777](user-str)
+< secret=test77
+< callerid="STR test" <777>
+---
+> ;=== GAC str ===
+> 
+> [771](user-str)
+> secret=test71
+> callerid="STR GAC 1" <771>
+> 
+> [772](user-str)
+> secret=test72
+> callerid="STR GAC 2" <772>
+> 
+> [773](user-str)
+> secret=test73
+> callerid="STR GAC 3" <773>
+> 
+> ;=== -GAC str- ===
+> 
+> ;[777](user-str)
+> ;secret=test77
+> ;callerid="STR test" <777>
+255a272,273
+> 
+> ;=== Test ===

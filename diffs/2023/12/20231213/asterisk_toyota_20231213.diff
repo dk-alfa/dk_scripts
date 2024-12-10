@@ -1,0 +1,58 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+96c96
+< exten => MV9eWGnrJp4PJ1V0,n,NoOp(==== Calltouch TANK ====);
+---
+> exten => MV9eWGnrJp4PJ1V0,n,NoOp(==== Calltouch EXID ====);
+109c109
+< exten => 2dVYQpB1dCKeYJ,n,NoOp(==== Calltouch TANK ====);
+---
+> exten => 2dVYQpB1dCKeYJ,n,NoOp(==== Calltouch CHERY ====);
+114d113
+< ;exten => 2dVYQpB1dCKeYJ,n,MP3Player(/var/lib/asterisk/sounds/1/geely_avtootvet.mp3)
+156a156
+> exten => 2626000,n,Macro(record,${UNIQUEID})
+164a165
+> exten => 2625500,n,Macro(record,${UNIQUEID})
+357c358,359
+< exten => 1315,1,macro(mobile,1315,1315,9378354639)
+---
+> exten => 1315,1,macro(fmc,1315)
+> ;exten => 1315,1,macro(mobile,1315,1315,9378354639)
+361a364
+> exten => 1320,1,macro(fmc,1320)
+diff -r /root/dk_scripts/tmp/2/extensions_str.conf /root/dk_scripts/tmp/1/extensions_str.conf
+38c38,39
+< exten => _8X.,1,GoTo(outgo-str,${EXTEN},1)
+---
+> ;exten => _8X.,1,GoTo(outgo-str,${EXTEN},1)
+> exten => _8X.,1,GoTo(menu-main-str,${EXTEN},1)
+82c83,84
+< exten => _8347XXXXXXX,2,Dial(SIP/sipnet/${EXTEN},40)
+---
+> ;exten => _8347XXXXXXX,2,Dial(SIP/sipnet/${EXTEN},40)
+> exten => _8347XXXXXXX,2,Dial(SIP/sipnetstr/${EXTEN},40)
+86c88
+< exten => _8XXXXXXXXXX,2,Dial(SIP/sipnet/7${EXTEN:1},40)
+---
+> exten => _8XXXXXXXXXX,2,Dial(SIP/sipnetstr/7${EXTEN:1},40)
+338c340
+< exten => _X.,5,Dial(SIP/sipnet/${EXTEN},40)
+---
+> exten => _X.,5,Dial(SIP/sipnetstr/${EXTEN},40)
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+358,360c358,360
+< [1315](phone)
+< secret=1315
+< callerid=1315
+---
+> ;[1315](phone)
+> ;secret=1315
+> ;callerid=1315
+diff -r /root/dk_scripts/tmp/2/sip_trunks_str.conf /root/dk_scripts/tmp/1/sip_trunks_str.conf
+19c19,20
+< [sipnet]
+---
+> 
+> [sipnetstr]
+38a40
+> 

@@ -1,0 +1,31 @@
+diff -r /root/dk_scripts/tmp/2/15dkscrtestmegashare.json /root/dk_scripts/tmp/1/15dkscrtestmegashare.json
+3,5c3
+<      "1543",
+<      "1545",
+<      "1546",
+---
+>      "1541",
+9d6
+<      "1630",
+11c8
+<      "1645",
+---
+>      "1643",
+21,24c18
+<      "1641",
+<      "1933",
+<      "1934",
+<      "2031",
+---
+>      "1851",
+26d19
+<      "2034",
+diff -r /root/dk_scripts/tmp/2/40_dk_scr_send_phone_to_email.py /root/dk_scripts/tmp/1/40_dk_scr_send_phone_to_email.py
+28c28
+< #recipients_emails = ["dkorablev@toyota-ufa.ru"]
+---
+> recipients_emails = ["dkorablev@toyota-ufa.ru"]
+30c30
+< recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru","vbezrukov@toyota-ufa.ru"]
+---
+> #recipients_emails = ["dkorablev@toyota-ufa.ru","semelev@toyota-ufa.ru","vbezrukov@toyota-ufa.ru"]

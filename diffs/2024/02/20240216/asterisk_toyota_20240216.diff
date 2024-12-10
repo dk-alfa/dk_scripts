@@ -1,0 +1,10 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+663c663
+< exten => 1747,1,macro(mobile,1747,1747,9874851166)
+---
+> exten => 1747,1,macro(mobile,1747,1747)
+1058c1058,1059
+< exten => 2400,n,Dial(SIP/710&SIP/730,30,tT)
+---
+> ;exten => 2400,n,Dial(SIP/710&SIP/730,30,tT)
+> exten => 2400,n,Dial(SIP/771,30,tT)

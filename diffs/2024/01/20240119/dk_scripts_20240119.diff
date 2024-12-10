@@ -1,0 +1,259 @@
+Только в /root/dk_scripts/tmp/1: 30dkscrtestmegashare.json
+diff -r /root/dk_scripts/tmp/2/30_dk_scr_test_megashare.py /root/dk_scripts/tmp/1/30_dk_scr_test_megashare.py
+11a12
+> 2024-01-18 Рефакторинг: Настройки из json, f - строки
+20a22
+> import json
+35a38,40
+> SETTINGS                = {} #Настройки
+> #INI_FILE_NAME           = f"/root/dk_scripts/{os.path.basename(__file__).replace('_','').replace('py','json')}"
+> INI_FILE_NAME           = f"./{os.path.basename(__file__).replace('_','').replace('py','json')}"
+37,38c42,43
+< ignore_phone  = []
+< ph_count = 0
+---
+> #ignore_phone  = []
+> PH_COUNT = 0
+40c45,56
+< #--------------------------
+---
+> 
+> #--- todo ----
+> def todo(phone_num,employee,div_day):
+>   global PH_COUNT
+>   if  employee:
+>     employee_p = f'[{employee}]'
+>   else: employee_p = ''
+>   print(f'{phone_num} {employee_p} задержка {div_day} дней')
+>   PH_COUNT = PH_COUNT + 1
+> 
+> 
+> #---- get_div_day ----
+42,43c58
+<   global phone_path,ignore_phone
+<   day_div = 0
+---
+>   global PHONE_PATH,ignore_phone
+45c60,61
+<   ph_path = PHONE_PATH + str(num_phone)
+---
+>   day_div = 0
+>   ph_path =f"{PHONE_PATH}{str(num_phone)}"
+56,64c72
+< #--------------------------
+< def get_phones_ignore():
+<   global PHONES_IGNORE_FNAME, ignore_phone
+< 
+<   with open(PHONES_IGNORE_FNAME) as f:
+<     for line in f:
+<       ignore_phone.append([int(x) for x in line.split()])
+< 
+< #--------------------------
+---
+> #---- is_phone_ignore(phone) ----
+66,118c74,118
+<   for ph in ignore_phone:
+<     if str(ph)[1:len(str(ph))-1] == phone: return(True)
+<   return(False)
+< 
+< #--------------------------
+< def todo(phone_num,employee,div_day):
+<   global ph_count
+<   if  employee:
+<     employee_p = f'[{employee}]'
+<   else: employee_p = ''
+<   #print(phone_num + " задержка " + div_day  +" дней")
+<   print(f'{phone_num} {employee_p} задержка {div_day} дней')
+<   ph_count = ph_count + 1
+< 
+< #----------main------------
+< print("\033[1m\033[32m{}\033[0m".format("start "+os.path.basename(__file__)))
+< os.system("umount /mnt/tmp")
+< os.system("mount -t cifs -o username=" + REMOTE_SERVER_USERNAME  + ",password=" + REMOTE_SERVER_PASSWORD  + "  " + REMOTE_SERVER_FOLDER  + " "  + PHONE_PATH)
+< 
+< get_phones_ignore()
+< content = os.listdir(PHONE_PATH)
+< outfile = ""
+< 
+< now = str(datetime.datetime.now().strftime("%Y-%m-%d"))
+< outfile =  PHONE_PATH + LOG_FOLDER + LOG_PREF  + now + LOG_EXT
+< 
+< #открыть файл отчета
+< try:
+<   f = open(outfile,'w')
+<   #!!!---Перенаправляем stdout в файл ---!!!
+<   sys.stdout = f
+< except: print("Ошибка открытия файла")
+< 
+< 
+< #Подключиться к базе данных
+< try:
+<   pgsql = psycopg2.connect(f'postgresql://{PG_USER_NAME}:{PG_PASSWORD}@{PG_SERVER_NAME}:5432/{PG_DATABASE}')
+<   pg_cursor = pgsql.cursor()
+< #  print('Соединение с БД Ок')
+< except: print("Ошибка присоединения к базе данных ")
+< 
+< 
+< for phone_num in content:
+<   ph_num  = phone_num.strip()
+<   if ph_num.isdigit() and not is_phone_ignore(phone_num ): 
+<     div_day = get_div_day(phone_num)
+<     if int(div_day) >= MAX_DAY_DIV:
+< 
+< #      sql_str = f'select t_employees.family_name,t_employees.name,t_employees.surname \
+< #                  from   t_phone_numbers, t_employees \
+< #                  where  t_phone_numbers.id_employee=t_employees.id and t_phone_numbers.ph_number={ph_num}'
+< 
+<       sql_str = f'select t_employees.family_name,t_employees.name,t_employees.surname,t_departaments.short_name, t_brands.name, t_job_titles.name1 \
+---
+>   global SETTINGS
+>   for ph in SETTINGS["ignore_numbers"]:
+>     if ph == phone : return True
+>   return False
+> 
+> #---- datetime_message() ----
+> def datetime_message():
+>   return f"{datetime.datetime.now()} [{os.path.basename(__file__)}]"
+> 
+> #---- test_megashare() ----
+> def test_megashare():
+>   
+>   try:
+>     os.system("umount -f  /mnt/tmp")
+>   except: pass
+>   cmd = f"mount -t cifs -o username={REMOTE_SERVER_USERNAME},password={REMOTE_SERVER_PASSWORD} {REMOTE_SERVER_FOLDER} {PHONE_PATH}"
+>   
+>   os.system(cmd)
+>   
+>   content = os.listdir(PHONE_PATH)
+>   #В content находится список всех папок MegaShare
+>   outfile = ""
+>   now = str(datetime.datetime.now().strftime("%Y-%m-%d"))
+>   outfile =  f"{PHONE_PATH}{LOG_FOLDER}{LOG_PREF}{now}{LOG_EXT}"
+>   #открыть файл отчета
+>   try:
+>     f = open(outfile,'w')
+>     #Перенаправляем stdout в файл
+>     sys.stdout = f
+>     #Подключиться к базе данных
+>     try:
+>       pgsql = psycopg2.connect(f'postgresql://{PG_USER_NAME}:{PG_PASSWORD}@{PG_SERVER_NAME}:5432/{PG_DATABASE}')
+>       pg_cursor = pgsql.cursor()
+>       #print('Соединение с БД Ок')
+>     except: print("Ошибка присоединения к базе данных ")
+> 
+>     #Итерация по всем папкам MegShare
+>     for phone_num in content:
+>       #ph_num  = phone_num #.strip()
+>       #если папка является числом и не находится в списке игнорируемых
+>       #if ph_num.isdigit(): #and not is_phone_ignore(phone_num): 
+>       if phone_num.isdigit() and not is_phone_ignore(phone_num): 
+>         div_day = get_div_day(phone_num)
+>         if int(div_day) >= MAX_DAY_DIV:
+>           sql_str = f'select t_employees.family_name,t_employees.name,t_employees.surname,t_departaments.short_name, t_brands.name, t_job_titles.name1 \
+121c121
+<                      and t_phone_numbers.ph_number={ph_num} \
+---
+>                      and t_phone_numbers.ph_number={phone_num} \
+125,155c125,126
+<       pg_cursor.execute(sql_str)
+<       res = pg_cursor.fetchall()
+< 
+<       employee = ''
+< 
+< 
+<       if res:
+<         #print((res[0])[4])
+<         if (res[0])[0]:
+<           employee = employee + f'{(res[0])[0]}'
+<         if (res[0])[1]:
+<           employee = employee + f' {(res[0])[1]}'
+<         if (res[0])[2]:
+<           employee = employee + f' {(res[0])[2]}'
+<         if (res[0])[3]:
+<           employee = employee + f' : {(res[0])[3]}'
+<         if (res[0])[4]:
+<           employee = employee + f' {(res[0])[4]}'
+<         if (res[0])[5]:
+<           employee = employee + f' {(res[0])[5]}'
+<       
+<       todo(phone_num, employee, div_day)
+< print()
+< print(f'Итого: {ph_count}')
+< 
+< try:
+<   sys.stdout = sys.__stdout__
+<   pgsql.close()
+<   pg_cursor.close()
+<   f.close()
+< except: print("Ошибка закрытия файла вывода")
+---
+>           pg_cursor.execute(sql_str)
+>           res = pg_cursor.fetchall()
+157c128,188
+< os.system("umount -f  /mnt/tmp")
+---
+>           employee = ''
+>           if res:
+>             if (res[0])[0]:
+>               employee = employee + f'{(res[0])[0]}'
+>             if (res[0])[1]:
+>               employee = employee + f' {(res[0])[1]}'
+>             if (res[0])[2]:
+>               employee = employee + f' {(res[0])[2]}'
+>             if (res[0])[3]:
+>               employee = employee + f' : {(res[0])[3]}'
+>             if (res[0])[4]:
+>               employee = employee + f' {(res[0])[4]}'
+>             if (res[0])[5]:
+>               employee = employee + f' {(res[0])[5]}'
+>           #print(employee)
+>           todo(phone_num, employee, div_day)
+>     print()
+>     print(f"Итого: {PH_COUNT}")
+>     
+>     try:
+>       sys.stdout = sys.__stdout__
+>       pgsql.close()
+>       pg_cursor.close()
+>       f.close()
+>     except: print("Ошибка закрытия файла вывода")
+>   except: print("Ошибка открытия файла")
+>   os.system("umount -f  /mnt/tmp")
+> 
+> #---- read_Settings() ----
+> def read_Settings():
+>   global INI_FILE_NAME, SETTINGS
+>   ret = False
+>   try:
+>     ini_file = open(INI_FILE_NAME)
+>     try:
+>       SETTINGS = json.load(ini_file)
+> 
+>       print(f"{datetime_message()} Файл настрек [{INI_FILE_NAME}] прочитан")
+>       ret = True
+>     except:
+>       print(f"{datetime_message()} Ошибка: не удалось прочитать файл настрек [{INI_FILE_NAME}]")
+>       ret = False
+>   except:
+>     print(f"{datetime_message()} Ошибка: не удалось открыть файл настрек [{INI_FILE_NAME}]")
+>     ret = False
+>   return ret
+> 
+> #---- run_script() ----
+> def run_script():
+>   if(read_Settings()):
+>     test_megashare()
+> 
+> 
+> #---- main() ----
+> if __name__ == "__main__":
+>   print("------------------------------------------------------------")
+>   print(f"{datetime_message()} start")
+>   print("------------------------------------------------------------")
+>   run_script()
+>   print(f"{datetime_message()} stop")
+>   print("------------------------------------------------------------")
+159d189
+< print("\033[1m\033[32m{}\033[0m".format("stop "+os.path.basename(__file__)))
+Только в /root/dk_scripts/tmp/2: phones.ignore

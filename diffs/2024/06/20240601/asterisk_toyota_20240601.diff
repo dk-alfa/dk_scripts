@@ -1,0 +1,17 @@
+diff -r /root/dk_scripts/tmp/2/sip_users_str.conf /root/dk_scripts/tmp/1/sip_users_str.conf
+275,277c275,277
+< [781](user-str)
+< secret=test81
+< callerid="STR Call" <781>
+---
+> ;[781](user-str)
+> ;secret=test81
+> ;callerid="STR Call" <781>
+279,281c279,281
+< [782](user-str)
+< secret=test82
+< callerid="STR Call" <782>
+---
+> ;[782](user-str)
+> ;secret=test82
+> ;callerid="STR Call" <782>

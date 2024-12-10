@@ -1,0 +1,88 @@
+diff -r /root/dk_scripts/tmp/2/LBR31-SW2-48_192.168.22.201.conf /root/dk_scripts/tmp/1/LBR31-SW2-48_192.168.22.201.conf
+137c137
+< vlan 2,33,66,79,95,100,240,497-498 
+---
+> vlan 2,33,66,79,95,100,497-498 
+492,494d491
+< exit
+< interface vlan 240
+< name Ufanet_WiFI_Tank 
+diff -r /root/dk_scripts/tmp/2/LBR31-SW4-48_192.168.22.203.conf /root/dk_scripts/tmp/1/LBR31-SW4-48_192.168.22.203.conf
+292c292
+< name Tank_FreeWiFi 
+---
+> name WiFi_Beeline_lexus 
+diff -r /root/dk_scripts/tmp/2/TCS0-SW1-24_192.168.22.62.conf /root/dk_scripts/tmp/1/TCS0-SW1-24_192.168.22.62.conf
+83c83
+<  switchport trunk native vlan 66 
+---
+>  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+99d98
+<  switchport access vlan 66 
+164c163
+<  switchport trunk native vlan 66 
+---
+>  switchport trunk allowed vlan add 2,33,66,77,95,100,497-498 
+diff -r /root/dk_scripts/tmp/2/TCS0-SW2-08_192.168.22.76.conf /root/dk_scripts/tmp/1/TCS0-SW2-08_192.168.22.76.conf
+52c52
+< macro description "switch | no_switch | switch"
+---
+> macro description "switch | no_switch | switch | no_switch | switch | no_switch | switch"
+diff -r /root/dk_scripts/tmp/2/TCS0-SW7-24_192.168.22.87.conf /root/dk_scripts/tmp/1/TCS0-SW7-24_192.168.22.87.conf
+33d32
+< snmp-server community notpubliccommunity ro view Default 
+64,68c63
+<  spanning-tree link-type point-to-point 
+<  switchport trunk allowed vlan add 2,66,100 
+<  macro description switch
+<  !next command is internal.
+<  macro auto smartport dynamic_type switch 
+---
+>  switchport trunk native vlan 66 
+77,81c72
+<  spanning-tree link-type point-to-point 
+<  switchport trunk allowed vlan add 2,66,100 
+<  macro description switch
+<  !next command is internal.
+<  macro auto smartport dynamic_type switch 
+---
+>  switchport trunk native vlan 66 
+117,121c108
+<  spanning-tree link-type point-to-point 
+<  switchport trunk allowed vlan add 2,66,100 
+<  macro description switch
+<  !next command is internal.
+<  macro auto smartport dynamic_type switch 
+---
+>  switchport trunk native vlan 66 
+diff -r /root/dk_scripts/tmp/2/TCS1-SW2-48_192.168.22.63.conf /root/dk_scripts/tmp/1/TCS1-SW2-48_192.168.22.63.conf
+190c190
+< macro description "no_ip_phone_deskto | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop"
+---
+> macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_deskto | ip_phone_desktop"
+diff -r /root/dk_scripts/tmp/2/TCS1-SW3-48_192.168.22.75.conf /root/dk_scripts/tmp/1/TCS1-SW3-48_192.168.22.75.conf
+85c85
+<  macro description "switch | ip_phone_desktop | no_switch                               | ip_phone_desktop"
+---
+>  macro description "switch | ip_phone_desktop | no_switch                                  | ip_phone_desktop"
+276c276
+<  switchport trunk native vlan 66 
+---
+>  switchport trunk allowed vlan add 2 
+392c392
+<  switchport trunk allowed vlan add 2,30,33,66,95,100,498,3920 
+---
+>  switchport trunk allowed vlan add 2,30,33,66,95,100,238,498,3920 
+diff -r /root/dk_scripts/tmp/2/TCS2-SW1-48_192.168.22.84.conf /root/dk_scripts/tmp/1/TCS2-SW1-48_192.168.22.84.conf
+93c93
+< macro description "no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+---
+> macro description "ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop | ip_phone_desktop | no_ip_phone_desktop"
+diff -r /root/dk_scripts/tmp/2/TCS3-SW1-24_192.168.22.81.conf /root/dk_scripts/tmp/1/TCS3-SW1-24_192.168.22.81.conf
+159c159,160
+<  switchport trunk native vlan 66 
+---
+>  switchport mode general 
+>  switchport general allowed vlan add 66 untagged 
+160a162
+>  switchport default-vlan tagged 

@@ -1,0 +1,127 @@
+diff -r /root/dk_scripts/tmp/2/extensions.conf /root/dk_scripts/tmp/1/extensions.conf
+92,94c92,93
+< ;exten => 7uwOtzjpZcnF0t,1,Answer();
+< ;exten => 7uwOtzjpZcnF0t,n,NoOp(==== Calltouch TANK ====);
+< ;exten => 7uwOtzjpZcnF0t,n,MP3Player(/var/lib/asterisk/sounds/1/geely_avtootvet.mp3)
+---
+> [fromsitnetexeed]
+> include => fromcity
+95a95,103
+> exten => MV9eWGnrJp4PJ1V0,1,Answer();
+> exten => MV9eWGnrJp4PJ1V0,n,NoOp(==== Calltouch TANK ====);
+> exten => MV9eWGnrJp4PJ1V0,n,Macro(record,${UNIQUEID})
+> exten => MV9eWGnrJp4PJ1V0,n,Set(CALLERID(all)=$[CALLERID(num)])
+> exten => MV9eWGnrJp4PJ1V0,n,macro(toyota,1)
+> ;exten => MV9eWGnrJp4PJ1V0,n,Dial(SIP/1742,24,tT)
+> exten => MV9eWGnrJp4PJ1V0,n,Playtones(busy)
+> exten => MV9eWGnrJp4PJ1V0,n,Busy(60)
+> exten => MV9eWGnrJp4PJ1V0,n,Hangup()
+97,116c105,106
+< ;--
+< exten => alfa-tank,1,Answer();
+< exten => alfa-tank,n,NoOp(==== CallFrom SITNET ====)
+< exten => alfa-tank,n,Macro(record,${UNIQUEID})
+< exten => alfa-tank,n,Set(CALLERID(all)=$[CALLERID(num)])
+< exten => alfa-tank,n,macro(toyota,1)
+< exten => alfa-tank,n,Playtones(busy)
+< exten => alfa-tank,n,Busy(60)
+< exten => alfa-tank,n,Hangup()
+< 
+< exten => s,1,Answer();
+< exten => s,n,NoOp(==== CallFrom SITNET ====)
+< exten => s,n,Macro(record,${UNIQUEID})
+< exten => s,n,Set(CALLERID(all)=$[CALLERID(num)])
+< exten => s,n,macro(toyota,1)
+< exten => s,n,Playtones(busy)
+< exten => s,n,Busy(60)
+< exten => s,n,Hangup()
+< --;
+< 
+---
+> [fromsitnetchery]
+> include => fromcity
+117a108,117
+> exten => 2dVYQpB1dCKeYJ,1,Answer();
+> exten => 2dVYQpB1dCKeYJ,n,NoOp(==== Calltouch TANK ====);
+> exten => 2dVYQpB1dCKeYJ,n,Macro(record,${UNIQUEID})
+> exten => 2dVYQpB1dCKeYJ,n,Set(CALLERID(all)=$[CALLERID(num)])
+> ;exten => 2dVYQpB1dCKeYJ,n,macro(toyota,1)
+> exten => 2dVYQpB1dCKeYJ,n,Dial(SIP/1300,24,tT)
+> ;exten => 2dVYQpB1dCKeYJ,n,MP3Player(/var/lib/asterisk/sounds/1/geely_avtootvet.mp3)
+> exten => 2dVYQpB1dCKeYJ,n,Playtones(busy)
+> exten => 2dVYQpB1dCKeYJ,n,Busy(60)
+> exten => 2dVYQpB1dCKeYJ,n,Hangup()
+Только в /root/dk_scripts/tmp/1: OC
+diff -r /root/dk_scripts/tmp/2/sip.conf /root/dk_scripts/tmp/1/sip.conf
+45,49c45,52
+< register =>2626565:14489424781@10.108.210.7/2626565				;Мегафон Альфа-Сервис Драйв[Geely]
+< register =>2626000:15984632@10.108.210.7/2626000				;Мегафон Уфа Авто[Exceed]
+< register =>2625577:12QzPn@m*@10.108.210.7/2625577				;Мегафон Альфа-Трейд [Skywell]
+< register =>2626555:51796582@10.108.210.7/2626555				;Мегафон Альфа-Сервис Гранд [TANK]
+< register =>7uwOtzjpZcnF0t:pWv4GRoZaTPOHj@sip7829.sitnet.ru/7uwOtzjpZcnF0t	;CallTouch для TANK
+---
+> register =>2626565:14489424781@10.108.210.7/2626565					;Мегафон Альфа-Сервис Драйв[Geely]
+> register =>2626000:15984632@10.108.210.7/2626000					;Мегафон Уфа Авто[Exceed]
+> register =>2625577:12QzPn@m*@10.108.210.7/2625577					;Мегафон Альфа-Трейд [Skywell]
+> register =>2626555:51796582@10.108.210.7/2626555					;Мегафон Альфа-Сервис Гранд [TANK]
+> register =>7uwOtzjpZcnF0t:pWv4GRoZaTPOHj@sip7829.sitnet.ru/7uwOtzjpZcnF0t		;CallTouch для TANK
+> register =>MV9eWGnrJp4PJ1V0:z0zaI2qtbpo6Zs46FEi@sip9468.sitnet.ru/MV9eWGnrJp4PJ1V0	;CallTouch для EXEED
+> register =>2dVYQpB1dCKeYJ:8PI7AZBDoK@sip8232.sitnet.ru/2dVYQpB1dCKeYJ			;CallTouch для CHERY (Зубово)
+> 
+52,53c55,56
+< register =>73473203620:hfRqB0PWMFZ@sip9088.sitnet.ru/73473203620		;CallTouch для Стерлитамака (Chery)
+< register =>3473207716:ev3Lh9LcWfso@83.174.196.84/3473207716			;Ростелеком 1 (Для Стерлитамака)
+---
+> register =>73473203620:hfRqB0PWMFZ@sip9088.sitnet.ru/73473203620			;CallTouch для Стерлитамака (Chery)
+> register =>3473207716:ev3Lh9LcWfso@83.174.196.84/3473207716				;Ростелеком 1 (Для Стерлитамака)
+57,63c60,101
+< register =>2625500:14353602@10.108.210.7/2625500				;Мегафон Альфа-Сервис Восток[Chery]
+< register =>2867777:UGu40F41HW@92.50.152.146:5401/2867777			;Уфанет  Альфа-Сервис Восток[Hyundai]
+< register =>2867776:HNLshtf6HQ@92.50.152.146:5401/2867776			;Уфанет  Альфа-Сервис Восток[Genesis]
+< 
+< ;;=========== Стерлитамак  ===========
+< ;register =>73473203620:hfRqB0PWMFZ@sip9088.sitnet.ru/73473203620		;CallTouch для Стерлитамака (Chery)
+< ;register =>3473207716:ev3Lh9LcWfso@83.174.196.84/3473207716			;Ростелеком 1 (Для Стерлитамака)
+---
+> register =>2625500:14353602@10.108.210.7/2625500					;Мегафон Альфа-Сервис Восток[Chery]
+> register =>2867777:UGu40F41HW@92.50.152.146:5401/2867777				;Уфанет  Альфа-Сервис Восток[Hyundai]
+> register =>2867776:HNLshtf6HQ@92.50.152.146:5401/2867776				;Уфанет  Альфа-Сервис Восток[Genesis]
+> 
+> 
+> [sitnet-chery]
+> type=peer
+> host=sip8232.sitnet.ru
+> username=2dVYQpB1dCKeYJ
+> secret=8PI7AZBDoK
+> ;fromuser=alfa-tank
+> context=fromsitnetchery
+> transport=udp
+> call-limit=3
+> insecure=port,invite
+> canreinvite=no
+> disallow=all
+> allow=alaw
+> allow=ulaw
+> defaultexpirey=120
+> maxexpirey=120
+> ;nat=yes
+> ;directmedia=yes
+> ;dtmfmode=rfc2833
+> qualify=yes
+> 
+> [sitnet-exeed]
+> type=peer
+> host=sip9468.sitnet.ru
+> username=MV9eWGnrJp4PJ1V0
+> secret=z0zaI2qtbpo6Zs46FEi
+> context=fromsitnetexeed
+> transport=udp
+> call-limit=3
+> insecure=port,invite
+> canreinvite=no
+> disallow=all
+> allow=alaw
+> allow=ulaw
+> defaultexpirey=120
+> maxexpirey=120
+> qualify=yes

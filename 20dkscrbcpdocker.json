@@ -1,0 +1,8 @@
+{
+  "docker_stack":[
+      "wiki",
+      "postgres",
+      "tftp"
+
+   ]
+}
